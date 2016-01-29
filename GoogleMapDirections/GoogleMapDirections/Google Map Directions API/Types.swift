@@ -18,12 +18,12 @@ extension GoogleMapDirections {
      - Coordinate:        Coordinate
      - PlaceID:           Place id from Google Map API
      */
-    enum Place {
+    public enum Place {
         case StringDescription(address: String)
         case Coordinate(coordinate: CLLocationCoordinate2D)
         case PlaceID(id: String)
         
-        func toString() -> String {
+        public func toString() -> String {
             switch self {
             case .StringDescription(let address):
                 return address

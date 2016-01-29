@@ -10,18 +10,20 @@ import Foundation
 import ObjectMapper
 import MapKit
 
+// Documentations: https://developers.google.com/maps/documentation/directions/intro#DirectionsResponseElements
+
 // MARK: - Response
 extension GoogleMapDirections {
-    struct Response: Mappable {
-        var status: StatusCode?
-        var geocodedWaypoints: [GeocodedWaypoint] = []
-        var routes: [Route] = []
-        var errorMessage: String?
+    public struct Response: Mappable {
+        public var status: StatusCode?
+        public var geocodedWaypoints: [GeocodedWaypoint] = []
+        public var routes: [Route] = []
+        public var errorMessage: String?
         
-        init() {}
-        init?(_ map: Map) { }
+        public init() {}
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             status <- (map["status"], EnumTransform())
             geocodedWaypoints <- map["geocoded_waypoints"]
             routes <- map["routes"]
@@ -33,15 +35,15 @@ extension GoogleMapDirections {
 
 // MARK: - GeocodedWaypoint
 extension GoogleMapDirections {
-    struct GeocodedWaypoint: Mappable {
-        var geocoderStatus: GeocoderStatus?
-        var partialMatch: Bool = false
-        var placeID: String?
-        var types: [AddressType] = []
+    public struct GeocodedWaypoint: Mappable {
+        public var geocoderStatus: GeocoderStatus?
+        public var partialMatch: Bool = false
+        public var placeID: String?
+        public var types: [AddressType] = []
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             geocoderStatus <- (map["geocoder_status"], EnumTransform())
             partialMatch <- map["geocoded_waypoints"]
             placeID <- map["place_id"]
@@ -53,19 +55,19 @@ extension GoogleMapDirections {
 
 // MARK: - Route
 extension GoogleMapDirections {
-    struct Route: Mappable {
-        var summary: String?
-        var legs: [Leg] = []
-        var waypointOrder: [Int] = []
-        var overviewPolylinePoints: String?
-        var bounds: Bounds?
-        var copyrights: String?
-        var warnings: [String] = []
-        var fare: Fare?
+    public struct Route: Mappable {
+        public var summary: String?
+        public var legs: [Leg] = []
+        public var waypointOrder: [Int] = []
+        public var overviewPolylinePoints: String?
+        public var bounds: Bounds?
+        public var copyrights: String?
+        public var warnings: [String] = []
+        public var fare: Fare?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             summary <- map["summary"]
             legs <- map["legs"]
             waypointOrder <- map["waypointOrder"]
@@ -77,21 +79,21 @@ extension GoogleMapDirections {
         }
     }
     
-    struct Leg: Mappable {
-        var steps: [Step] = []
-        var distance: Distance?
-        var duration: Duration?
-        var durationInTraffic: DurationInTraffic?
-        var arrivalTime: Time?
-        var departureTime: Time?
-        var startLocation: CLLocationCoordinate2D?
-        var endLocation: CLLocationCoordinate2D?
-        var startAddress: String?
-        var endAddress: String?
+    public struct Leg: Mappable {
+        public var steps: [Step] = []
+        public var distance: Distance?
+        public var duration: Duration?
+        public var durationInTraffic: DurationInTraffic?
+        public var arrivalTime: Time?
+        public var departureTime: Time?
+        public var startLocation: CLLocationCoordinate2D?
+        public var endLocation: CLLocationCoordinate2D?
+        public var startAddress: String?
+        public var endAddress: String?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             steps <- map["steps"]
             distance <- map["distance"]
             duration <- map["duration"]
@@ -105,22 +107,22 @@ extension GoogleMapDirections {
         }
     }
     
-    struct Step: Mappable {
+    public struct Step: Mappable {
         /// formatted instructions for this step, presented as an HTML text string.
-        var htmlInstructions: String?
-        var distance: Distance?
-        var duration: Duration?
-        var startLocation: CLLocationCoordinate2D?
-        var endLocation: CLLocationCoordinate2D?
-        var polylinePoints: String?
-        var steps: [Step] = []
-        var travelMode: TravelMode?
-        var maneuver: String?
-        var transitDetails: TransitDetails?
+        public var htmlInstructions: String?
+        public var distance: Distance?
+        public var duration: Duration?
+        public var startLocation: CLLocationCoordinate2D?
+        public var endLocation: CLLocationCoordinate2D?
+        public var polylinePoints: String?
+        public var steps: [Step] = []
+        public var travelMode: TravelMode?
+        public var maneuver: String?
+        public var transitDetails: TransitDetails?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             htmlInstructions <- map["html_instructions"]
             distance <- map["distance"]
             duration <- map["duration"]
@@ -134,50 +136,50 @@ extension GoogleMapDirections {
         }
     }
     
-    struct Distance: Mappable {
-        var value: Int? // the distance in meters
-        var text: String? // human-readable representation of the distance
+    public struct Distance: Mappable {
+        public var value: Int? // the distance in meters
+        public var text: String? // human-readable representation of the distance
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             value <- map["value"]
             text <- map["text"]
         }
     }
     
-    struct Duration: Mappable {
-        var value: Int? // the duration in seconds.
-        var text: String? // human-readable representation of the duration.
+    public struct Duration: Mappable {
+        public var value: Int? // the duration in seconds.
+        public var text: String? // human-readable representation of the duration.
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             value <- map["value"]
             text <- map["text"]
         }
     }
     
-    struct DurationInTraffic: Mappable {
-        var value: Int? // the duration in seconds.
-        var text: String? // human-readable representation of the duration.
+    public struct DurationInTraffic: Mappable {
+        public var value: Int? // the duration in seconds.
+        public var text: String? // human-readable representation of the duration.
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             value <- map["value"]
             text <- map["text"]
         }
     }
     
-    struct Time: Mappable {
-        var value: NSDate? // the time specified as a JavaScript Date object.
-        var text: String? // the time specified as a string.
-        var timeZone: NSTimeZone? // the time zone of this station. The value is the name of the time zone as defined in the IANA Time Zone Database, e.g. "America/New_York".
+    public struct Time: Mappable {
+        public var value: NSDate? // the time specified as a JavaScript Date object.
+        public var text: String? // the time specified as a string.
+        public var timeZone: NSTimeZone? // the time zone of this station. The value is the name of the time zone as defined in the IANA Time Zone Database, e.g. "America/New_York".
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             value <- (map["value"], DateTransformInteger())
             text <- map["text"]
             timeZone <- (map["time_zone"], timeZoneTransform())
@@ -198,45 +200,45 @@ extension GoogleMapDirections {
         }
     }
     
-    struct Bounds: Mappable {
-        var northeast: CLLocationCoordinate2D?
-        var southwest: CLLocationCoordinate2D?
+    public struct Bounds: Mappable {
+        public var northeast: CLLocationCoordinate2D?
+        public var southwest: CLLocationCoordinate2D?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             northeast <- (map["northeast"], CLLocationCoordinate2DTransform())
             southwest <- (map["southwest"], CLLocationCoordinate2DTransform())
         }
     }
     
-    struct Fare: Mappable {
-        var currency: String?
-        var value: Float?
-        var text: String?
+    public struct Fare: Mappable {
+        public var currency: String?
+        public var value: Float?
+        public var text: String?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             currency <- map["currency"]
             value <- map["value"]
             text <- map["text"]
         }
     }
     
-    struct TransitDetails: Mappable {
-        var arrivalStop: Stop?
-        var departureStop: Stop?
-        var arrivalTime: Time?
-        var departureTime: Time?
-        var headsign: String?
-        var headway: Int?
-        var numStops: Int?
-        var line: TransitLine?
+    public struct TransitDetails: Mappable {
+        public var arrivalStop: Stop?
+        public var departureStop: Stop?
+        public var arrivalTime: Time?
+        public var departureTime: Time?
+        public var headsign: String?
+        public var headway: Int?
+        public var numStops: Int?
+        public var line: TransitLine?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             arrivalStop <- map["arrival_stop"]
             departureStop <- map["departure_stop"]
             arrivalTime <- map["arrival_time"]
@@ -248,31 +250,31 @@ extension GoogleMapDirections {
         }
     }
     
-    struct Stop: Mappable {
-        var location: CLLocationCoordinate2D?
-        var name: String?
+    public struct Stop: Mappable {
+        public var location: CLLocationCoordinate2D?
+        public var name: String?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             location <- (map["location"], CLLocationCoordinate2DTransform())
             name <- map["name"]
         }
     }
     
-    struct TransitLine: Mappable {
-        var name: String?
-        var shortName: String?
-        var color: UIColor?
-        var agencies: [TransitAgency] = []
-        var url: NSURL?
-        var icon: NSURL?
-        var textColor: UIColor?
-        var vehicle: [TransitLineVehicle] = []
+    public struct TransitLine: Mappable {
+        public var name: String?
+        public var shortName: String?
+        public var color: UIColor?
+        public var agencies: [TransitAgency] = []
+        public var url: NSURL?
+        public var icon: NSURL?
+        public var textColor: UIColor?
+        public var vehicle: [TransitLineVehicle] = []
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             name <- map["name"]
             shortName <- map["short_name"]
             color <- (map["color"], colorTransform())
@@ -298,28 +300,28 @@ extension GoogleMapDirections {
         }
     }
     
-    struct TransitAgency: Mappable {
-        var name: String?
-        var phone: String?
-        var url: NSURL?
+    public struct TransitAgency: Mappable {
+        public var name: String?
+        public var phone: String?
+        public var url: NSURL?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             name <- map["name"]
             phone <- map["phone"]
             url <- (map["url"], URLTransform())
         }
     }
     
-    struct TransitLineVehicle: Mappable {
-        var name: String?
-        var type: VehicleType?
-        var icon: NSURL?
+    public struct TransitLineVehicle: Mappable {
+        public var name: String?
+        public var type: VehicleType?
+        public var icon: NSURL?
         
-        init?(_ map: Map) { }
+        public init?(_ map: Map) { }
         
-        mutating func mapping(map: Map) {
+        public mutating func mapping(map: Map) {
             name <- map["name"]
             type <- (map["type"], EnumTransform())
             icon <- (map["icon"], URLTransform())
@@ -327,25 +329,30 @@ extension GoogleMapDirections {
     }
 }
 
+// MARK: - Hex Colors
 private extension UIColor {
-    /// UIColor(hexString: "#cc0000")
-    convenience init?(hexString: String) {
-        guard hexString.characters[hexString.startIndex] == Character("#") else {
+    /**
+     UIColor(hexString: "#CC0000")
+     
+     - parameter hexString: hexString, e.g. "#CC0000"
+     
+     - returns: UIColor
+     */
+    private convenience init?(hexString: String) {
+        guard hexString.hasPrefix("#") else {
             return nil
         }
         guard hexString.characters.count == "#000000".characters.count else {
             return nil
         }
-        
         let digits = hexString.substringFromIndex(hexString.startIndex.advancedBy(1))
         guard Int(digits, radix: 16) != nil else {
             return nil
         }
-        
         let red = digits.substringToIndex(digits.startIndex.advancedBy(2))
         let green = digits.substringWithRange(Range<String.Index>(start: digits.startIndex.advancedBy(2),
             end: digits.startIndex.advancedBy(4)))
-        let blue = digits.substringWithRange(Range<String.Index>(start:digits.startIndex.advancedBy(4),
+        let blue = digits.substringWithRange(Range<String.Index>(start: digits.startIndex.advancedBy(4),
             end:digits.startIndex.advancedBy(6)))
         let redf = CGFloat(Double(Int(red, radix: 16)!) / 255.0)
         let greenf = CGFloat(Double(Int(green, radix: 16)!) / 255.0)
@@ -353,13 +360,14 @@ private extension UIColor {
         self.init(red: redf, green: greenf, blue: bluef, alpha: CGFloat(1.0))
     }
     
-    var hexString: String {
+    /// Get Hex6 String, e.g. "#CC0000"
+    private var hexString: String {
         let colorRef = CGColorGetComponents(self.CGColor)
         
         let r: CGFloat = colorRef[0]
         let g: CGFloat = colorRef[1]
         let b: CGFloat = colorRef[2]
         
-        return String(format: "#%02lX%02lX%02lX", roundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255)))
+        return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
     }
 }

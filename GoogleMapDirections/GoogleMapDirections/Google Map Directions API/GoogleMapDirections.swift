@@ -11,27 +11,58 @@ import Alamofire
 import ObjectMapper
 import MapKit
 
-class GoogleMapDirections {
-    static let baseURLString = "https://maps.googleapis.com/maps/api/directions/json"
+// Documentations: https://developers.google.com/maps/documentation/directions/
+
+public class GoogleMapDirections {
+    enum Error: ErrorType {
+        case APIKeyNotExisted
+    }
+    
+    public static let baseURLString = "https://maps.googleapis.com/maps/api/directions/json"
     static var _APIKey: String?
     
-    class func provideAPIKey(APIKey: String) {
+    /**
+     Provide a Google Directions API key
+     
+     - parameter APIKey: Google Directions API key
+     */
+    public class func provideAPIKey(APIKey: String) {
         _APIKey = APIKey
     }
     
-    private class func APIKey() -> String {
+    private class func APIKey() throws -> String {
         guard let APIKey = _APIKey else {
             NSLog("Error: Please provide an API key")
-            return ""
+            throw Error.APIKeyNotExisted
         }
         return APIKey
     }
     
     class var baseRequestParameters: [String : AnyObject] {
-        return ["key" : APIKey()]
+        return try! ["key" : APIKey()]
     }
     
-    class func directionFromOrigin(origin: Place,
+    /**
+     Request to Google Directions API
+     Documentations: https://developers.google.com/maps/documentation/directions/intro#RequestParameters
+     
+     - parameter origin:                   The address, textual latitude/longitude value, or place ID from which you wish to calculate directions.
+     - parameter destination:              The address, textual latitude/longitude value, or place ID to which you wish to calculate directions.
+     - parameter travelMode:               Mode of transport to use when calculating directions.
+     - parameter wayPoints:                Specifies an array of waypoints. Waypoints alter a route by routing it through the specified location(s).
+     - parameter alternatives:             If set to true, specifies that the Directions service may provide more than one route alternative in the response. Note that providing route alternatives may increase the response time from the server.
+     - parameter avoid:                    Indicates that the calculated route(s) should avoid the indicated features.
+     - parameter language:                 Specifies the language in which to return results. See https://developers.google.com/maps/faq#languagesupport.
+     - parameter units:                    Specifies the unit system to use when displaying results.
+     - parameter region:                   Specifies the region code, specified as a ccTLD ("top-level domain") two-character value.
+     - parameter arrivalTime:              Specifies the desired time of arrival for transit directions
+     - parameter departureTime:            Specifies the desired time of departure.
+     - parameter trafficModel:             Specifies the assumptions to use when calculating time in traffic. (defaults to best_guess)
+     - parameter transitMode:              Specifies one or more preferred modes of transit.
+     - parameter transitRoutingPreference: Specifies preferences for transit routes.
+     - parameter completion:               API responses completion block
+     */
+    public class func directionFromOrigin(origin: Place,
         toDestination destination: Place,
         travelMode: TravelMode = .Driving,
         wayPoints: [Place]? = nil,
@@ -193,7 +224,27 @@ class GoogleMapDirections {
 }
 
 extension GoogleMapDirections {
-    class func directionFromOriginAddress(originAddress: String,
+     /**
+     Request to Google Directions API, with address description strings
+     Documentations: https://developers.google.com/maps/documentation/directions/intro#RequestParameters
+     
+     - parameter originAddress:            The address description from which you wish to calculate directions.
+     - parameter destinationAddress:       The address description to which you wish to calculate directions.
+     - parameter travelMode:               Mode of transport to use when calculating directions.
+     - parameter wayPoints:                Specifies an array of waypoints. Waypoints alter a route by routing it through the specified location(s).
+     - parameter alternatives:             If set to true, specifies that the Directions service may provide more than one route alternative in the response. Note that providing route alternatives may increase the response time from the server.
+     - parameter avoid:                    Indicates that the calculated route(s) should avoid the indicated features.
+     - parameter language:                 Specifies the language in which to return results. See https://developers.google.com/maps/faq#languagesupport.
+     - parameter units:                    Specifies the unit system to use when displaying results.
+     - parameter region:                   Specifies the region code, specified as a ccTLD ("top-level domain") two-character value.
+     - parameter arrivalTime:              Specifies the desired time of arrival for transit directions
+     - parameter departureTime:            Specifies the desired time of departure.
+     - parameter trafficModel:             Specifies the assumptions to use when calculating time in traffic. (defaults to best_guess)
+     - parameter transitMode:              Specifies one or more preferred modes of transit.
+     - parameter transitRoutingPreference: Specifies preferences for transit routes.
+     - parameter completion:               API responses completion block
+     */
+    public class func directionFromOriginAddress(originAddress: String,
         toDestinationAddress destinationAddress: String,
         travelMode: TravelMode = .Driving,
         wayPoints: [Place]? = nil,
@@ -226,7 +277,27 @@ extension GoogleMapDirections {
             completion: completion)
     }
     
-    class func directionFromOriginCoordinate(originCoordinate: CLLocationCoordinate2D,
+    /**
+     Request to Google Directions API, with coordinate
+     Documentations: https://developers.google.com/maps/documentation/directions/intro#RequestParameters
+     
+     - parameter originCoordinate:         The coordinate from which you wish to calculate directions.
+     - parameter destinationCoordinate:    The coordinate to which you wish to calculate directions.
+     - parameter travelMode:               Mode of transport to use when calculating directions.
+     - parameter wayPoints:                Specifies an array of waypoints. Waypoints alter a route by routing it through the specified location(s).
+     - parameter alternatives:             If set to true, specifies that the Directions service may provide more than one route alternative in the response. Note that providing route alternatives may increase the response time from the server.
+     - parameter avoid:                    Indicates that the calculated route(s) should avoid the indicated features.
+     - parameter language:                 Specifies the language in which to return results. See https://developers.google.com/maps/faq#languagesupport.
+     - parameter units:                    Specifies the unit system to use when displaying results.
+     - parameter region:                   Specifies the region code, specified as a ccTLD ("top-level domain") two-character value.
+     - parameter arrivalTime:              Specifies the desired time of arrival for transit directions
+     - parameter departureTime:            Specifies the desired time of departure.
+     - parameter trafficModel:             Specifies the assumptions to use when calculating time in traffic. (defaults to best_guess)
+     - parameter transitMode:              Specifies one or more preferred modes of transit.
+     - parameter transitRoutingPreference: Specifies preferences for transit routes.
+     - parameter completion:               API responses completion block
+     */
+    public class func directionFromOriginCoordinate(originCoordinate: CLLocationCoordinate2D,
         toDestinationCoordinate destinationCoordinate: CLLocationCoordinate2D,
         travelMode: TravelMode = .Driving,
         wayPoints: [Place]? = nil,
@@ -260,6 +331,16 @@ extension GoogleMapDirections {
     }
 }
 
+// MARK: - Plus Operator for Dictionary
+
+/**
+ Combine two dictionaries
+
+ - parameter left:  left operand dictionary
+ - parameter right: right operand dictionary
+
+ - returns: Combined dictionary, existed keys in left dictionary will be overrided by right dictionary
+ */
 private func + <K, V> (left: [K : V], right: [K : V]?) -> [K : V] {
     guard let right = right else { return left }
     return left.reduce(right) {
@@ -269,6 +350,12 @@ private func + <K, V> (left: [K : V], right: [K : V]?) -> [K : V] {
     }
 }
 
+/**
+ Combine two dictionaries
+ 
+ - parameter left:  left operand dictionary
+ - parameter right: right operand dictionary
+ */
 private func += <K, V> (inout left: [K : V], right: [K : V]){
     for (k, v) in right {
         left.updateValue(v, forKey: k)

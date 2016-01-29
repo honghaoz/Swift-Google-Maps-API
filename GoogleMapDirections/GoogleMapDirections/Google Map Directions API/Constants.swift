@@ -9,9 +9,9 @@
 import Foundation
 import ObjectMapper
 
-extension GoogleMapDirections {
+public extension GoogleMapDirections {
     /**
-     The status field within the Directions response object contains the status of the request, 
+     The status field within the Directions response object contains the status of the request,
      and may contain debugging information to help you track down why the Directions service failed.
      Reference: https://developers.google.com/maps/documentation/directions/intro#StatusCodes
      
@@ -24,7 +24,7 @@ extension GoogleMapDirections {
      - RequestDenied:        The service denied use of the directions service by your application.
      - UnknownError:         Directions request could not be processed due to a server error.
      */
-    enum StatusCode: String {
+    public enum StatusCode: String {
         case OK = "OK"
         case NotFound = "NOT_FOUND"
         case ZeroResults = "ZERO_RESULTS"
@@ -41,7 +41,7 @@ extension GoogleMapDirections {
      - OK:          No errors occurred; the address was successfully parsed and at least one geocode was returned.
      - ZeroResults: The geocode was successful but returned no results. This may occur if the geocoder was passed a non-existent address.
      */
-    enum GeocoderStatus: String {
+    public enum GeocoderStatus: String {
         case OK = "OK"
         case ZeroResults = "ZERO_RESULTS"
     }
@@ -77,7 +77,7 @@ extension GoogleMapDirections {
      - Park:                     Named park.
      - PointOfInterest:          Named point of interest. Typically, these "POI"s are prominent local entities that don't easily fit in another category, such as "Empire State Building" or "Statue of Liberty."
      */
-    enum AddressType: String {
+    public enum AddressType: String {
         case StreetAddress = "street_address"
         case Route = "route"
         case Intersection = "intersection"
@@ -107,27 +107,61 @@ extension GoogleMapDirections {
         case PointOfInterest = "point_of_interest"
     }
     
-    enum TravelMode: String {
+    /**
+     Transportation mode
+     
+     - Driving:   Driving directions using the road network. (default)
+     - Walking:   Walking directions via pedestrian paths & sidewalks (where available).
+     - Bicycling: Bicycling directions via bicycle paths & preferred streets (where available).
+     - Transit:   Public transit routes (where available).
+     */
+    public enum TravelMode: String {
         case Driving = "DRIVING"
         case Walking = "WALKING"
         case Bicycling = "BICYCLING"
         case Transit = "TRANSIT"
     }
     
-    enum RouteRestriction: String {
+    /**
+     Calculated route(s) should avoid the indicated features.
+     
+     - Tolls:    Avoid Toll roads/bridges
+     - Highways: Avoid Highways
+     - Ferries:  Avoid Ferries
+     - Indoor:   Avoid indoor steps for walking and transit directions. Only requests that include an API key or a Google Maps APIs Premium Plan client ID will receive indoor steps by default.
+     */
+    public enum RouteRestriction: String {
         case Tolls = "tolls"
         case Highways = "highways"
         case Ferries = "ferries"
         case Indoor = "indoor"
     }
     
-    enum TrafficMode: String {
+    /**
+     Specifies the assumptions to use when calculating time in traffic. 
+     Discussion: This setting affects the value returned in the duration_in_traffic field in the response, which contains the predicted time in traffic based on historical averages. The traffic_model parameter may only be specified for driving directions where the request includes a departure_time, and only if the request includes an API key or a Google Maps APIs Premium Plan client ID.
+     
+     - BestGuess:   (default) indicates that the returned duration_in_traffic should be the best estimate of travel time given what is known about both historical traffic conditions and live traffic. Live traffic becomes more important the closer the departure_time is to now.
+     - Pessimistic: indicates that the returned duration_in_traffic should be longer than the actual travel time on most days, though occasional days with particularly bad traffic conditions may exceed this value.
+     - Optimistic:  indicates that the returned duration_in_traffic should be shorter than the actual travel time on most days, though occasional days with particularly good traffic conditions may be faster than this value.
+     */
+    public enum TrafficMode: String {
         case BestGuess = "best_guess"
         case Pessimistic = "pessimistic"
         case Optimistic = "optimistic"
     }
     
-    enum TransitMode: String {
+    /**
+     Specifies one or more preferred modes of transit.
+     Discussion: This parameter may only be specified for transit directions, and only if the request includes an API key or a Google Maps APIs Premium Plan client ID.
+     
+     - Bus:    Calculated route should prefer travel by bus.
+     - Subway: Calculated route should prefer travel by subway.
+     - Train:  Calculated route should prefer travel by train.
+     - Tram:   Calculated route should prefer travel by tram and light rail.
+     - Rail:   Calculated route should prefer travel by train, tram, light rail, and subway. This is equivalent to transit_mode=train|tram|subway.
+     */
+    public enum TransitMode: String {
         case Bus = "bus"
         case Subway = "subway"
         case Train = "train"
@@ -135,33 +169,69 @@ extension GoogleMapDirections {
         case Rail = "rail"
     }
     
-    enum TransitRoutingPreference: String {
+    /**
+     Specifies preferences for transit routes. 
+     Discussion: Using this parameter, you can bias the options returned, rather than accepting the default best route chosen by the API. This parameter may only be specified for transit directions, and only if the request includes an API key or a Google Maps APIs Premium Plan client ID.
+     
+     - LessWalking:    Calculated route should prefer limited amounts of walking.
+     - FewerTransfers: Calculated route should prefer a limited number of transfers.
+     */
+    public enum TransitRoutingPreference: String {
         case LessWalking = "less_walking"
         case FewerTransfers = "fewer_transfers"
     }
     
-    enum Unit: String {
+    /**
+     Unit system
+     Discussion: Directions results contain text within distance fields that may be displayed to the user to indicate the distance of a particular "step" of the route. By default, this text uses the unit system of the origin's country or region.
+     Note: this unit system setting only affects the text displayed within distance fields. The distance fields also contain values which are always expressed in meters.
+     
+     - Metric:   Metric system. Textual distances are returned using kilometers and meters.
+     - Imperial: Imperial (English) system. Textual distances are returned using miles and feet.
+     */
+    public enum Unit: String {
         case Metric = "metric"
         case Imperial = "imperial"
     }
     
-    enum VehicleType: String {
-        case Rail = "RAIL" // Rail.
-        case MetroRail = "METRO_RAIL" // Light rail transit.
-        case Subway = "SUBWAY" // Underground light rail.
-        case Tram = "TRAM" // Above ground light rail.
-        case Monorail = "MONORAIL" // Monorail.
-        case HeavyRail = "HEAVY_RAIL" // Heavy rail.
-        case CommuterRail = "COMMUTER_TRAIN" // Commuter rail.
-        case HighSpeedTrain = "HIGH_SPEED_TRAIN" // High speed train.
-        case Bus = "BUS" // Bus.
-        case IntercityBus = "INTERCITY_BUS" // Intercity bus.
-        case Trolleybus = "TROLLEYBUS" // Trolleybus.
-        case ShareTaxi = "SHARE_TAXI" // Share taxi is a kind of bus with the ability to drop off and pick up passengers anywhere on its route.
-        case Ferry = "FERRY" // Ferry.
-        case CableCar = "CABLE_CAR" // A vehicle that operates on a cable, usually on the ground. Aerial cable cars may be of the type GONDOLA_LIFT.
-        case GondolaLift = "GONDOLA_LIFT" // An aerial cable car.
-        case Funicular = "FUNICULAR" // A vehicle that is pulled up a steep incline by a cable. A Funicular typically consists of two cars, with each car acting as a counterweight for the other.
-        case Other = "OTHER" // All other vehicles will return this type.
+    /**
+     Type of vehicle that runs on this line
+     
+     - Rail:                                                          Rail
+     - MetroRail:                                                     Light rail transit.
+     - Subway:                                                        Underground light rail.
+     - Tram:                                                          Above ground light rail.
+     - Monorail:                                                      Monorail.
+     - HeavyRail:                                                     Heavy rail.
+     - CommuterRail:                                                  Commuter rail.
+     - HighSpeedTrain:                                                High speed train.
+     - Bus:                                                           Bus.
+     - IntercityBus:                                                  Intercity bus.
+     - Trolleybus:                                                    Trolleybus.
+     - ShareTaxi:                                                     Share taxi is a kind of bus with the ability to drop off and pick up passengers anywhere on its route.
+     - Ferry:                                                         Ferry.
+     - CableCar:                                                      A vehicle that operates on a cable, usually on the ground. Aerial cable cars may be of the type GONDOLA_LIFT.
+     - GondolaLift:                                                   An aerial cable car.
+     - Funicular:                                                     A vehicle that is pulled up a steep incline by a cable. A Funicular typically consists of two cars, with each car acting as a counterweight for the other.
+     - Other:                                                         All other vehicles will return this type.
+     */
+    public enum VehicleType: String {
+        case Rail = "RAIL"
+        case MetroRail = "METRO_RAIL"
+        case Subway = "SUBWAY"
+        case Tram = "TRAM"
+        case Monorail = "MONORAIL"
+        case HeavyRail = "HEAVY_RAIL"
+        case CommuterRail = "COMMUTER_TRAIN"
+        case HighSpeedTrain = "HIGH_SPEED_TRAIN"
+        case Bus = "BUS"
+        case IntercityBus = "INTERCITY_BUS"
+        case Trolleybus = "TROLLEYBUS"
+        case ShareTaxi = "SHARE_TAXI"
+        case Ferry = "FERRY"
+        case CableCar = "CABLE_CAR"
+        case GondolaLift = "GONDOLA_LIFT"
+        case Funicular = "FUNICULAR"
+        case Other = "OTHER"
     }
 }
