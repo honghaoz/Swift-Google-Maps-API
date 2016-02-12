@@ -1,6 +1,6 @@
 [submodule "Submodules/ObjectMapper"]
-	path = Submodules/ObjectMapper
+	path = GoogleMapsDirections/Submodules/ObjectMapper
 	url = https://github.com/Hearst-DD/ObjectMapper.git
 [submodule "Submodules/Alamofire"]
-	path = Submodules/Alamofire
+	path = GoogleMapsDirections/Submodules/Alamofire
 	url = https://github.com/Alamofire/Alamofire.git
