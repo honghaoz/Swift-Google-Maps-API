@@ -10,6 +10,14 @@ import Foundation
 import ObjectMapper
 import MapKit
 
+#if os(iOS)
+    import UIKit
+    public typealias Color = UIColor
+#elseif os(OSX)
+    import Cocoa
+    public typealias Color = NSColor
+#endif
+
 // Documentations: https://developers.google.com/maps/documentation/directions/intro#DirectionsResponseElements
 
 // MARK: - Response
@@ -265,11 +273,11 @@ extension GoogleMapDirections {
     public struct TransitLine: Mappable {
         public var name: String?
         public var shortName: String?
-        public var color: UIColor?
+        public var color: Color?
         public var agencies: [TransitAgency] = []
         public var url: NSURL?
         public var icon: NSURL?
-        public var textColor: UIColor?
+        public var textColor: Color?
         public var vehicle: [TransitLineVehicle] = []
         
         public init?(_ map: Map) { }
@@ -285,13 +293,13 @@ extension GoogleMapDirections {
             vehicle <- map["vehicle"]
         }
         
-        private func colorTransform() -> TransformOf<UIColor, String> {
-            return TransformOf<UIColor, String>(fromJSON: { (value: String?) -> UIColor? in
+        private func colorTransform() -> TransformOf<Color, String> {
+            return TransformOf<Color, String>(fromJSON: { (value: String?) -> Color? in
                 if let value = value {
-                    return UIColor(hexString: value)
+                    return Color(hexString: value)
                 }
                 return nil
-            }, toJSON: { (value: UIColor?) -> String? in
+            }, toJSON: { (value: Color?) -> String? in
                 if let value = value {
                     return value.hexString
                 }
@@ -330,13 +338,13 @@ extension GoogleMapDirections {
 }
 
 // MARK: - Hex Colors
-private extension UIColor {
+private extension Color {
     /**
-     UIColor(hexString: "#CC0000")
+     Color(hexString: "#CC0000")
      
      - parameter hexString: hexString, e.g. "#CC0000"
      
-     - returns: UIColor
+     - returns: Color
      */
     private convenience init?(hexString: String) {
         guard hexString.hasPrefix("#") else {
