@@ -4,6 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = "Swift Wrapper on Google Map Directions API"
   s.description      = <<-DESC
                        Swift Wrapper on Google Map Directions API
+                       https://developers.google.com/maps/documentation/directions/intro
 
                        DESC
   s.homepage         = "https://github.com/honghaoz/Swift-Google-Maps-Directions-API"
@@ -17,10 +18,9 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
 
   s.requires_arc     = true
+  s.source_files     = "Source/*.*"
   s.module_name      = "GoogleMapDirections"
-  s.dependency 
-
-  s.default_subspecs = 'Alamofire', '~> 3.0'
-  s.default_subspecs = 'ObjectMapper', '~> 1.0'
+  s.dependency 'Alamofire', '~> 3.0'
+  s.dependency 'ObjectMapper', '~> 1.0'
 
 end
