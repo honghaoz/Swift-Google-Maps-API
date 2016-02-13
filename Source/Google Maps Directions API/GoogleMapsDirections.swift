@@ -13,34 +13,9 @@ import MapKit
 
 // Documentations: https://developers.google.com/maps/documentation/directions/
 
-public class GoogleMapsDirections {
-    enum Error: ErrorType {
-        case APIKeyNotExisted
-    }
-    
+public class GoogleMapsDirections: GoogleMapsService {
+
     public static let baseURLString = "https://maps.googleapis.com/maps/api/directions/json"
-    static var _APIKey: String?
-    
-    /**
-     Provide a Google Directions API key
-     
-     - parameter APIKey: Google Directions API key
-     */
-    public class func provideAPIKey(APIKey: String) {
-        _APIKey = APIKey
-    }
-    
-    private class func APIKey() throws -> String {
-        guard let APIKey = _APIKey else {
-            NSLog("Error: Please provide an API key")
-            throw Error.APIKeyNotExisted
-        }
-        return APIKey
-    }
-    
-    class var baseRequestParameters: [String : AnyObject] {
-        return try! ["key" : APIKey()]
-    }
     
     /**
      Request to Google Directions API
@@ -62,7 +37,7 @@ public class GoogleMapsDirections {
      - parameter transitRoutingPreference: Specifies preferences for transit routes.
      - parameter completion:               API responses completion block
      */
-    public class func directionFromOrigin(origin: Place,
+    public class func direction(fromOrigin origin: Place,
         toDestination destination: Place,
         travelMode: TravelMode = .Driving,
         wayPoints: [Place]? = nil,
@@ -244,7 +219,7 @@ extension GoogleMapsDirections {
      - parameter transitRoutingPreference: Specifies preferences for transit routes.
      - parameter completion:               API responses completion block
      */
-    public class func directionFromOriginAddress(originAddress: String,
+    public class func direction(fromOriginAddress originAddress: String,
         toDestinationAddress destinationAddress: String,
         travelMode: TravelMode = .Driving,
         wayPoints: [Place]? = nil,
@@ -260,7 +235,7 @@ extension GoogleMapsDirections {
         transitRoutingPreference: TransitRoutingPreference? = nil,
         completion: ((response: Response?, error: NSError?) -> Void)? = nil)
     {
-        directionFromOrigin(Place.StringDescription(address: originAddress),
+        direction(fromOrigin: Place.StringDescription(address: originAddress),
             toDestination: Place.StringDescription(address: destinationAddress),
             travelMode: travelMode,
             wayPoints: wayPoints,
@@ -297,7 +272,7 @@ extension GoogleMapsDirections {
      - parameter transitRoutingPreference: Specifies preferences for transit routes.
      - parameter completion:               API responses completion block
      */
-    public class func directionFromOriginCoordinate(originCoordinate: CLLocationCoordinate2D,
+    public class func direction(fromOriginCoordinate originCoordinate: CLLocationCoordinate2D,
         toDestinationCoordinate destinationCoordinate: CLLocationCoordinate2D,
         travelMode: TravelMode = .Driving,
         wayPoints: [Place]? = nil,
@@ -313,7 +288,7 @@ extension GoogleMapsDirections {
         transitRoutingPreference: TransitRoutingPreference? = nil,
         completion: ((response: Response?, error: NSError?) -> Void)? = nil)
     {
-        directionFromOrigin(Place.Coordinate(coordinate: originCoordinate),
+        direction(fromOrigin: Place.Coordinate(coordinate: originCoordinate),
             toDestination: Place.Coordinate(coordinate: destinationCoordinate),
             travelMode: travelMode,
             wayPoints: wayPoints,
@@ -328,36 +303,5 @@ extension GoogleMapsDirections {
             transitMode: transitMode,
             transitRoutingPreference: transitRoutingPreference,
             completion: completion)
-    }
-}
-
-// MARK: - Plus Operator for Dictionary
-
-/**
- Combine two dictionaries
-
- - parameter left:  left operand dictionary
- - parameter right: right operand dictionary
-
- - returns: Combined dictionary, existed keys in left dictionary will be overrided by right dictionary
- */
-private func + <K, V> (left: [K : V], right: [K : V]?) -> [K : V] {
-    guard let right = right else { return left }
-    return left.reduce(right) {
-        var new = $0 as [K : V]
-        new.updateValue($1.1, forKey: $1.0)
-        return new
-    }
-}
-
-/**
- Combine two dictionaries
- 
- - parameter left:  left operand dictionary
- - parameter right: right operand dictionary
- */
-private func += <K, V> (inout left: [K : V], right: [K : V]){
-    for (k, v) in right {
-        left.updateValue(v, forKey: k)
     }
 }
