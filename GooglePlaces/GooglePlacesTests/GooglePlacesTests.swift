@@ -43,12 +43,59 @@ class GooglePlacesTests: XCTestCase {
             XCTAssertNil(error)
             XCTAssertNotNil(response)
             XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
-//            XCTAssertEqual(response?.geocodedWaypoints.count, 2)
-//            XCTAssertEqual(response?.routes.count, 1)
             expectation.fulfill()
         }
         
         waitForExpectationsWithTimeout(5.0, handler: nil)
     }
     
+    func testResultsReturned() {
+        let expectation = self.expectationWithDescription("It has at least one result returned for `pub`")
+        
+        GooglePlaces.placeAutocomplete(forInput: "pub") { (response, error) -> Void in
+            XCTAssertNil(error)
+            XCTAssertNotNil(response)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
+            XCTAssertTrue(response?.predictions.count > 0)
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
+    
+    func testResultsMatchedSubstrings() {
+        let expectation = self.expectationWithDescription("It has at least one result returned for `pub`")
+        
+        let query = "Pub"
+        
+        GooglePlaces.placeAutocomplete(forInput: query, locationCoordinate: CLLocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377), radius: 10000) { (response, error) -> Void in
+            XCTAssertNil(error)
+            XCTAssertNotNil(response)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
+            XCTAssertTrue(response?.predictions.count > 0)
+            
+            guard let predictions = response?.predictions else {
+                XCTAssert(false, "prediction is nil")
+                return
+            }
+            
+            for prediction in predictions {
+                XCTAssertEqual(prediction.matchedSubstring[0].length, query.characters.count)
+                
+                guard let description = prediction.description,
+                    let length = prediction.matchedSubstring[0].length,
+                    let offset = prediction.matchedSubstring[0].offset else {
+                        XCTAssert(false, "length/offset is nil")
+                        return
+                }
+                
+                let substring = description.substringWithRange(Range<String.Index>(start: description.startIndex.advancedBy(offset), end: description.startIndex.advancedBy(offset + length)))
+                XCTAssertEqual(substring.lowercaseString, query.lowercaseString)
+            }
+            
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(5.0, handler: nil)
+    }
 }
