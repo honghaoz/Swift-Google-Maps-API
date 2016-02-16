@@ -37,6 +37,9 @@
 		0270399B1C6E6BAF0057C4EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039881C6E6BAF0057C4EE /* Response.swift */; };
 		0270399C1C6E6BAF0057C4EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039881C6E6BAF0057C4EE /* Response.swift */; };
 		0270399D1C6E6BAF0057C4EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039881C6E6BAF0057C4EE /* Response.swift */; };
+		02929DD71C737FF000038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
+		02929DE61C737FF100038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
+		02929DE71C737FF100038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
 		02DDFE751C6ECAF0008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
 		02DDFE761C6ECAF3008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		02DDFE771C6ECAF6008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
@@ -789,6 +792,7 @@
 				027039931C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */,
 				02DDFF2B1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */,
 				0270399B1C6E6BAF0057C4EE /* Response.swift in Sources */,
+				02929DD71C737FF000038F9D /* Dictionary+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,6 +815,7 @@
 				027039941C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */,
 				02DDFF2C1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */,
 				0270399C1C6E6BAF0057C4EE /* Response.swift in Sources */,
+				02929DE61C737FF100038F9D /* Dictionary+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +838,7 @@
 				027039951C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */,
 				02DDFF2D1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */,
 				0270399D1C6E6BAF0057C4EE /* Response.swift in Sources */,
+				02929DE71C737FF100038F9D /* Dictionary+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
