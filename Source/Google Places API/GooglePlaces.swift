@@ -22,7 +22,7 @@ public class GooglePlaces: GoogleMapsService {
         language: String? = nil,
         types: [PlaceType]? = nil,
         components: String? = nil,
-        completion: ((response: Response?, error: NSError?) -> Void)? = nil) {
+        completion: ((response: Response?, error: NSError?) -> Void)?) {
             var requestParameters = baseRequestParameters + [
                 "input" : input
             ]

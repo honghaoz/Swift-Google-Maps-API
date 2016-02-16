@@ -16,6 +16,8 @@
 		02DDFF241C6ED19E008413ED /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
 		02DDFF411C6FE301008413ED /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF401C6FE301008413ED /* Response.swift */; };
 		02DDFF611C6FF389008413ED /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF601C6FF389008413ED /* Dictionary+Extensions.swift */; };
+		02F845311C70342A00069928 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEAE1C6ECE0F008413ED /* Alamofire.framework */; };
+		02F845391C70342D00069928 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEC61C6ECE16008413ED /* ObjectMapper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02F845391C70342D00069928 /* ObjectMapper.framework in Frameworks */,
+				02F845311C70342A00069928 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +595,7 @@
 		02DDFE9E1C6ECDE7008413ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -598,6 +603,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GooglePlaces/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GooglePlaces;
 				PRODUCT_NAME = GooglePlaces;
@@ -609,6 +615,7 @@
 		02DDFE9F1C6ECDE7008413ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -616,6 +623,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GooglePlaces/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GooglePlaces;
 				PRODUCT_NAME = GooglePlaces;
