@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                        https://developers.google.com/maps/documentation/directions/intro
 
                        DESC
-  s.homepage         = "https://github.com/honghaoz/Swift-Google-Maps-Directions-API"
+  s.homepage         = "https://github.com/honghaoz/Swift-Google-Maps-API"
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { "Honghao Zhang" => "zhh358@gmail.com" }
   s.source           = { :git => "https://github.com/honghaoz/Swift-Google-Maps-API.git", :tag => s.version.to_s }

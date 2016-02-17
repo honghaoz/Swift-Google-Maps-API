@@ -126,6 +126,6 @@ public class GooglePlaces: GoogleMapsService {
                 completion?(response: response, error: error)
             }
             
-            NSLog("\(request)")
+            debugPrint("\(request)")
     }
 }

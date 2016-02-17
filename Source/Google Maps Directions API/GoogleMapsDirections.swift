@@ -194,7 +194,7 @@ public class GoogleMapsDirections: GoogleMapsService {
             completion?(response: directionsResponse, error: error)
         }
         
-        NSLog("\(request)")
+        debugPrint("\(request)")
     }
 }
 
