@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02929E4F1C74DB5000038F9D /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02929E451C74DB5000038F9D /* GooglePlaces.framework */; };
+		02929E781C74DC2D00038F9D /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEFD1C6ED050008413ED /* SharedTypes.swift */; };
+		02929E791C74DC2D00038F9D /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
+		02929E7A1C74DC2D00038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF601C6FF389008413ED /* Dictionary+Extensions.swift */; };
+		02929E7B1C74DC3000038F9D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF211C6ED0DE008413ED /* Types.swift */; };
+		02929E7C1C74DC3000038F9D /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF111C6ED0D2008413ED /* GooglePlaces.swift */; };
+		02929E7D1C74DC3000038F9D /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF401C6FE301008413ED /* Response.swift */; };
+		02929E7E1C74DC3300038F9D /* GooglePlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFE981C6ECDE7008413ED /* GooglePlacesTests.swift */; };
+		02929E7F1C74DC9600038F9D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEAE1C6ECE0F008413ED /* Alamofire.framework */; };
+		02929E801C74DC9D00038F9D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEC61C6ECE16008413ED /* ObjectMapper.framework */; };
 		02DDFE8D1C6ECDE7008413ED /* GooglePlaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DDFE8C1C6ECDE7008413ED /* GooglePlaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02DDFE941C6ECDE7008413ED /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE891C6ECDE7008413ED /* GooglePlaces.framework */; };
 		02DDFE991C6ECDE7008413ED /* GooglePlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFE981C6ECDE7008413ED /* GooglePlacesTests.swift */; };
@@ -21,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		02929E501C74DB5000038F9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE801C6ECDE7008413ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02929E441C74DB5000038F9D;
+			remoteInfo = "GooglePlaces OSX";
+		};
 		02DDFE951C6ECDE7008413ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 02DDFE801C6ECDE7008413ED /* Project object */;
@@ -129,6 +146,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02929E451C74DB5000038F9D /* GooglePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GooglePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02929E4E1C74DB5000038F9D /* GooglePlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooglePlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DDFE891C6ECDE7008413ED /* GooglePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GooglePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		02DDFE8C1C6ECDE7008413ED /* GooglePlaces.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GooglePlaces.h; sourceTree = "<group>"; };
 		02DDFE8E1C6ECDE7008413ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,6 +165,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		02929E411C74DB5000038F9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02929E801C74DC9D00038F9D /* ObjectMapper.framework in Frameworks */,
+				02929E7F1C74DC9600038F9D /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02929E4B1C74DB5000038F9D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02929E4F1C74DB5000038F9D /* GooglePlaces.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02DDFE851C6ECDE7008413ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,6 +218,8 @@
 			children = (
 				02DDFE891C6ECDE7008413ED /* GooglePlaces.framework */,
 				02DDFE931C6ECDE7008413ED /* GooglePlacesTests.xctest */,
+				02929E451C74DB5000038F9D /* GooglePlaces.framework */,
+				02929E4E1C74DB5000038F9D /* GooglePlacesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,6 +297,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		02929E421C74DB5000038F9D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02DDFE861C6ECDE7008413ED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +315,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		02929E441C74DB5000038F9D /* GooglePlaces OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02929E681C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlaces OSX" */;
+			buildPhases = (
+				02929E401C74DB5000038F9D /* Sources */,
+				02929E411C74DB5000038F9D /* Frameworks */,
+				02929E421C74DB5000038F9D /* Headers */,
+				02929E431C74DB5000038F9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GooglePlaces OSX";
+			productName = "GooglePlaces OSX";
+			productReference = 02929E451C74DB5000038F9D /* GooglePlaces.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		02929E4D1C74DB5000038F9D /* GooglePlacesTests OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02929E691C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlacesTests OSX" */;
+			buildPhases = (
+				02929E4A1C74DB5000038F9D /* Sources */,
+				02929E4B1C74DB5000038F9D /* Frameworks */,
+				02929E4C1C74DB5000038F9D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02929E511C74DB5000038F9D /* PBXTargetDependency */,
+			);
+			name = "GooglePlacesTests OSX";
+			productName = "GooglePlaces OSXTests";
+			productReference = 02929E4E1C74DB5000038F9D /* GooglePlacesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		02DDFE881C6ECDE7008413ED /* GooglePlaces iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02DDFE9D1C6ECDE7008413ED /* Build configuration list for PBXNativeTarget "GooglePlaces iOS" */;
@@ -316,6 +397,12 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Honghao Zhang";
 				TargetAttributes = {
+					02929E441C74DB5000038F9D = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					02929E4D1C74DB5000038F9D = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					02DDFE881C6ECDE7008413ED = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -348,6 +435,8 @@
 			targets = (
 				02DDFE881C6ECDE7008413ED /* GooglePlaces iOS */,
 				02DDFE921C6ECDE7008413ED /* GooglePlacesTests iOS */,
+				02929E441C74DB5000038F9D /* GooglePlaces OSX */,
+				02929E4D1C74DB5000038F9D /* GooglePlacesTests OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -454,6 +543,20 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		02929E431C74DB5000038F9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02929E4C1C74DB5000038F9D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02DDFE871C6ECDE7008413ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +574,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		02929E401C74DB5000038F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02929E781C74DC2D00038F9D /* SharedTypes.swift in Sources */,
+				02929E7C1C74DC3000038F9D /* GooglePlaces.swift in Sources */,
+				02929E791C74DC2D00038F9D /* GoogleMapsService.swift in Sources */,
+				02929E7A1C74DC2D00038F9D /* Dictionary+Extensions.swift in Sources */,
+				02929E7D1C74DC3000038F9D /* Response.swift in Sources */,
+				02929E7B1C74DC3000038F9D /* Types.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02929E4A1C74DB5000038F9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02929E7E1C74DC3300038F9D /* GooglePlacesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02DDFE841C6ECDE7008413ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,6 +619,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		02929E511C74DB5000038F9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02929E441C74DB5000038F9D /* GooglePlaces OSX */;
+			targetProxy = 02929E501C74DB5000038F9D /* PBXContainerItemProxy */;
+		};
 		02DDFE961C6ECDE7008413ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 02DDFE881C6ECDE7008413ED /* GooglePlaces iOS */;
@@ -503,6 +632,78 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		02929E561C74DB5000038F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = GooglePlaces/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-OSX";
+				PRODUCT_NAME = GooglePlaces;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		02929E571C74DB5000038F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = GooglePlaces/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-OSX";
+				PRODUCT_NAME = GooglePlaces;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		02929E581C74DB5000038F9D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GooglePlacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-OSXTests";
+				PRODUCT_NAME = GooglePlacesTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		02929E591C74DB5000038F9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = GooglePlacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-OSXTests";
+				PRODUCT_NAME = GooglePlacesTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		02DDFE9B1C6ECDE7008413ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -605,7 +806,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GooglePlaces;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-iOS";
 				PRODUCT_NAME = GooglePlaces;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -625,7 +826,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GooglePlaces;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-iOS";
 				PRODUCT_NAME = GooglePlaces;
 				SKIP_INSTALL = YES;
 			};
@@ -636,7 +837,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = GooglePlacesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GooglePlacesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-iOSTests";
 				PRODUCT_NAME = GooglePlacesTests;
 			};
 			name = Debug;
@@ -646,7 +847,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = GooglePlacesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GooglePlacesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-iOSTests";
 				PRODUCT_NAME = GooglePlacesTests;
 			};
 			name = Release;
@@ -654,6 +855,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		02929E681C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlaces OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02929E561C74DB5000038F9D /* Debug */,
+				02929E571C74DB5000038F9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		02929E691C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlacesTests OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02929E581C74DB5000038F9D /* Debug */,
+				02929E591C74DB5000038F9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		02DDFE831C6ECDE7008413ED /* Build configuration list for PBXProject "GooglePlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -38,8 +38,13 @@ public extension GoogleMapsService {
 
 
 // MARK: - Place
-import MapKit
 extension GoogleMapsService {
+    public typealias LocationDegrees = Double
+    public struct LocationCoordinate2D {
+        var latitude: LocationDegrees
+        var longitude: LocationDegrees
+    }
+    
     /**
      This struct represents a place/address/location, used in Google Map Directions API
      Reference: https://developers.google.com/maps/documentation/directions/intro#RequestParameters
@@ -49,7 +54,7 @@ extension GoogleMapsService {
      */
     public enum Place {
         case StringDescription(address: String)
-        case Coordinate(coordinate: CLLocationCoordinate2D)
+        case Coordinate(coordinate: LocationCoordinate2D)
         case PlaceID(id: String)
         
         public func toString() -> String {

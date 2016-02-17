@@ -7,15 +7,15 @@
 //
 
 import XCTest
-import MapKit
 @testable import GoogleMapsDirections
 
 class GoogleMapsDirectionsTests: XCTestCase {
     typealias Place = GoogleMapsDirections.Place
+    typealias LocationCoordinate2D = GoogleMapsService.LocationCoordinate2D
     
     let DCInStringDescription = Place.StringDescription(address: "Davis Center, Waterloo, Canada")
     let DCInPostalCode = Place.StringDescription(address: "N2L 3G1, Canada")
-    let DCInCoordinate = Place.Coordinate(coordinate: CLLocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377))
+    let DCInCoordinate = Place.Coordinate(coordinate: LocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377))
     let CMallInStringDescription = Place.StringDescription(address: "Conestoga Mall, Waterloo, Canada")
     let CMallInPostalCode = Place.StringDescription(address: "N2L 5W6, Waterloo, Canada")
     

@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import ObjectMapper
-import MapKit
 
 // Documentations: https://developers.google.com/maps/documentation/directions/
 
@@ -272,8 +271,8 @@ extension GoogleMapsDirections {
      - parameter transitRoutingPreference: Specifies preferences for transit routes.
      - parameter completion:               API responses completion block
      */
-    public class func direction(fromOriginCoordinate originCoordinate: CLLocationCoordinate2D,
-        toDestinationCoordinate destinationCoordinate: CLLocationCoordinate2D,
+    public class func direction(fromOriginCoordinate originCoordinate: LocationCoordinate2D,
+        toDestinationCoordinate destinationCoordinate: LocationCoordinate2D,
         travelMode: TravelMode = .Driving,
         wayPoints: [Place]? = nil,
         alternatives: Bool? = nil,

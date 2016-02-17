@@ -8,7 +8,6 @@
 
 import Foundation
 import ObjectMapper
-import MapKit
 
 #if os(iOS) || os(watchOS) || os(tvOS)
     import UIKit
@@ -94,8 +93,8 @@ extension GoogleMapsDirections {
         public var durationInTraffic: DurationInTraffic?
         public var arrivalTime: Time?
         public var departureTime: Time?
-        public var startLocation: CLLocationCoordinate2D?
-        public var endLocation: CLLocationCoordinate2D?
+        public var startLocation: LocationCoordinate2D?
+        public var endLocation: LocationCoordinate2D?
         public var startAddress: String?
         public var endAddress: String?
         
@@ -120,8 +119,8 @@ extension GoogleMapsDirections {
         public var htmlInstructions: String?
         public var distance: Distance?
         public var duration: Duration?
-        public var startLocation: CLLocationCoordinate2D?
-        public var endLocation: CLLocationCoordinate2D?
+        public var startLocation: LocationCoordinate2D?
+        public var endLocation: LocationCoordinate2D?
         public var polylinePoints: String?
         public var steps: [Step] = []
         public var travelMode: TravelMode?
@@ -209,8 +208,8 @@ extension GoogleMapsDirections {
     }
     
     public struct Bounds: Mappable {
-        public var northeast: CLLocationCoordinate2D?
-        public var southwest: CLLocationCoordinate2D?
+        public var northeast: LocationCoordinate2D?
+        public var southwest: LocationCoordinate2D?
         
         public init?(_ map: Map) { }
         
@@ -259,7 +258,7 @@ extension GoogleMapsDirections {
     }
     
     public struct Stop: Mappable {
-        public var location: CLLocationCoordinate2D?
+        public var location: LocationCoordinate2D?
         public var name: String?
         
         public init?(_ map: Map) { }

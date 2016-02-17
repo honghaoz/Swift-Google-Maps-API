@@ -957,6 +957,7 @@
 		027038C91C6E648C0057C4EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -966,7 +967,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GoogleMapsDirections;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SKIP_INSTALL = YES;
 			};
@@ -975,6 +976,7 @@
 		027038CA1C6E648C0057C4EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -984,7 +986,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GoogleMapsDirections;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SKIP_INSTALL = YES;
 			};
@@ -995,7 +997,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = GoogleMapsDirectionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GoogleMapsDirectionsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
 			};
 			name = Debug;
@@ -1005,7 +1007,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = GoogleMapsDirectionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.GoogleMapsDirectionsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
 			};
 			name = Release;
@@ -1013,6 +1015,7 @@
 		0270394F1C6E6A200057C4EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1035,6 +1038,7 @@
 		027039501C6E6A200057C4EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1087,6 +1091,7 @@
 		0270396B1C6E6A330057C4EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1106,6 +1111,7 @@
 		0270396C1C6E6A330057C4EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

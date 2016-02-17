@@ -8,10 +8,10 @@
 
 import Foundation
 import ObjectMapper
-import MapKit
 
 class CLLocationCoordinate2DTransform: TransformType {
-    typealias Object = CLLocationCoordinate2D
+    typealias LocationCoordinate2D = GoogleMapsService.LocationCoordinate2D
+    typealias Object = LocationCoordinate2D
     typealias JSON = [String : AnyObject]
     
     func transformFromJSON(value: AnyObject?) -> Object? {
@@ -21,7 +21,7 @@ class CLLocationCoordinate2DTransform: TransformType {
                 return nil
             }
             
-            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            return LocationCoordinate2D(latitude: latitude, longitude: longitude)
         }
         return nil
     }

@@ -7,10 +7,10 @@
 //
 
 import XCTest
-import MapKit
 @testable import GooglePlaces
 
 class GooglePlacesTests: XCTestCase {
+    typealias LocationCoordinate2D = GoogleMapsService.LocationCoordinate2D
     
     override func setUp() {
         super.setUp()
@@ -68,7 +68,7 @@ class GooglePlacesTests: XCTestCase {
         
         let query = "Pub"
         
-        GooglePlaces.placeAutocomplete(forInput: query, locationCoordinate: CLLocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377), radius: 10000) { (response, error) -> Void in
+        GooglePlaces.placeAutocomplete(forInput: query, locationCoordinate: LocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377), radius: 10000) { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
             XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
