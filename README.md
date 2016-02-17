@@ -2,8 +2,16 @@
 Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-started/#web-service-apis) in Swift
 
 ## Features:
-- [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/)
-- [Google Places API Web Service](https://developers.google.com/places/web-service/) (WIP)
+- [x] [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/)
+- [ ] [Google Places API Web Service](https://developers.google.com/places/web-service/)
+  - [x] [Place Autocomplete](https://developers.google.com/places/web-service/autocomplete)
+  - [ ] [Place Details](https://developers.google.com/places/web-service/details) (WIP)
+
+## Platforms
+- [x] iOS 8.0+
+- [x] Mac OS X 10.9+
+- [x] watchOS 2.0+
+- [x] tvOS 9.0+
 
 ## Installation
 
@@ -13,4 +21,10 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
   ```ruby
   use_frameworks!
   pod 'GoogleMapDirections', '~> 1.0'
+  ```
+- Google Places API
+
+  ```ruby
+  use_frameworks!
+  pod 'GooglePlaces', '~> 1.0'
   ```
