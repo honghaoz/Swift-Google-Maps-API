@@ -9,8 +9,12 @@ env:
   matrix:
   - SCHEME="GoogleMapsDirections iOS" SDK=iphonesimulator9.2
   - SCHEME="GoogleMapsDirections OSX" SDK=macosx10.11
+  - SCHEME="GoogleMapsDirections tvOS" SDK=appletvsimulator9.1
   - SCHEME="GoogleMapsDirections watchOS" SDK=watchsimulator2.1
-  # - SCHEME="GoogleMapsDirections tvOS" SDK=appletvsimulator9.1
+  - SCHEME="GooglePlaces iOS" SDK=iphonesimulator9.2
+  - SCHEME="GooglePlaces OSX" SDK=macosx10.11
+  - SCHEME="GooglePlaces tvOS" SDK=appletvsimulator9.1
+  - SCHEME="GooglePlaces watchOS" SDK=watchsimulator2.1
 
 before_install:
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
@@ -19,4 +23,4 @@ before_install:
 script:
   - set -o pipefail
   - xcodebuild -version
-  - xctool -project GoogleMapsDirections/GoogleMapsDirections.xcodeproj -scheme "$SCHEME" -sdk "$SDK" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+  - xctool -workspace GoogleMaps.xcworkspace -scheme "$SCHEME" -sdk "$SDK" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
