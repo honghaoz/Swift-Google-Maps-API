@@ -36,302 +36,339 @@ extension GoogleMapsDirections {
             routes <- map["routes"]
             errorMessage <- map["error_message"]
         }
-    }
-}
-
-
-// MARK: - GeocodedWaypoint
-extension GoogleMapsDirections {
-    public struct GeocodedWaypoint: Mappable {
-        public var geocoderStatus: GeocoderStatus?
-        public var partialMatch: Bool = false
-        public var placeID: String?
-        public var types: [AddressType] = []
         
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            geocoderStatus <- (map["geocoder_status"], EnumTransform())
-            partialMatch <- map["geocoded_waypoints"]
-            placeID <- map["place_id"]
-            types <- (map["types"], EnumTransform())
-        }
-    }
-}
-
-
-// MARK: - Route
-extension GoogleMapsDirections {
-    public struct Route: Mappable {
-        public var summary: String?
-        public var legs: [Leg] = []
-        public var waypointOrder: [Int] = []
-        public var overviewPolylinePoints: String?
-        public var bounds: Bounds?
-        public var copyrights: String?
-        public var warnings: [String] = []
-        public var fare: Fare?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            summary <- map["summary"]
-            legs <- map["legs"]
-            waypointOrder <- map["waypointOrder"]
-            overviewPolylinePoints <- map["overview_polyline.points"]
-            bounds <- map["bounds"]
-            copyrights <- map["copyrights"]
-            warnings <- map["warnings"]
-            fare <- map["fare"]
-        }
-    }
-    
-    public struct Leg: Mappable {
-        public var steps: [Step] = []
-        public var distance: Distance?
-        public var duration: Duration?
-        public var durationInTraffic: DurationInTraffic?
-        public var arrivalTime: Time?
-        public var departureTime: Time?
-        public var startLocation: LocationCoordinate2D?
-        public var endLocation: LocationCoordinate2D?
-        public var startAddress: String?
-        public var endAddress: String?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            steps <- map["steps"]
-            distance <- map["distance"]
-            duration <- map["duration"]
-            durationInTraffic <- map["duration_in_traffic"]
-            arrivalTime <- map["arrival_time"]
-            departureTime <- map["departure_time"]
-            startLocation <- (map["start_location"], CLLocationCoordinate2DTransform())
-            endLocation <- (map["end_location"], CLLocationCoordinate2DTransform())
-            startAddress <- map["start_address"]
-            endAddress <- map["end_address"]
-        }
-    }
-    
-    public struct Step: Mappable {
-        /// formatted instructions for this step, presented as an HTML text string.
-        public var htmlInstructions: String?
-        public var distance: Distance?
-        public var duration: Duration?
-        public var startLocation: LocationCoordinate2D?
-        public var endLocation: LocationCoordinate2D?
-        public var polylinePoints: String?
-        public var steps: [Step] = []
-        public var travelMode: TravelMode?
-        public var maneuver: String?
-        public var transitDetails: TransitDetails?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            htmlInstructions <- map["html_instructions"]
-            distance <- map["distance"]
-            duration <- map["duration"]
-            startLocation <- (map["start_location"], CLLocationCoordinate2DTransform())
-            endLocation <- (map["end_location"], CLLocationCoordinate2DTransform())
-            polylinePoints <- map["polyline.points"]
-            steps <- map["steps"]
-            travelMode <- map["travel_mode"]
-            maneuver <- map["maneuver"]
-            transitDetails <- map["transit_details"]
-        }
-    }
-    
-    public struct Distance: Mappable {
-        public var value: Int? // the distance in meters
-        public var text: String? // human-readable representation of the distance
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            value <- map["value"]
-            text <- map["text"]
-        }
-    }
-    
-    public struct Duration: Mappable {
-        public var value: Int? // the duration in seconds.
-        public var text: String? // human-readable representation of the duration.
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            value <- map["value"]
-            text <- map["text"]
-        }
-    }
-    
-    public struct DurationInTraffic: Mappable {
-        public var value: Int? // the duration in seconds.
-        public var text: String? // human-readable representation of the duration.
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            value <- map["value"]
-            text <- map["text"]
-        }
-    }
-    
-    public struct Time: Mappable {
-        public var value: NSDate? // the time specified as a JavaScript Date object.
-        public var text: String? // the time specified as a string.
-        public var timeZone: NSTimeZone? // the time zone of this station. The value is the name of the time zone as defined in the IANA Time Zone Database, e.g. "America/New_York".
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            value <- (map["value"], DateTransformInteger())
-            text <- map["text"]
-            timeZone <- (map["time_zone"], timeZoneTransform())
+        /**
+         *  GeocodedWaypoint
+         */
+        public struct GeocodedWaypoint: Mappable {
+            public var geocoderStatus: GeocoderStatus?
+            public var partialMatch: Bool = false
+            public var placeID: String?
+            public var types: [AddressType] = []
+            
+            public init?(_ map: Map) { }
+            
+            public mutating func mapping(map: Map) {
+                geocoderStatus <- (map["geocoder_status"], EnumTransform())
+                partialMatch <- map["geocoded_waypoints"]
+                placeID <- map["place_id"]
+                types <- (map["types"], EnumTransform())
+            }
         }
         
-        private func timeZoneTransform() -> TransformOf<NSTimeZone, String> {
-            return TransformOf<NSTimeZone, String>(fromJSON: { (value: String?) -> NSTimeZone? in
-                if let value = value {
-                    return NSTimeZone(name: value)
+        /**
+         *  Route
+         */
+        public struct Route: Mappable {
+            public var summary: String?
+            public var legs: [Leg] = []
+            public var waypointOrder: [Int] = []
+            public var overviewPolylinePoints: String?
+            public var bounds: Bounds?
+            public var copyrights: String?
+            public var warnings: [String] = []
+            public var fare: Fare?
+            
+            public init?(_ map: Map) { }
+            
+            public mutating func mapping(map: Map) {
+                summary <- map["summary"]
+                legs <- map["legs"]
+                waypointOrder <- map["waypointOrder"]
+                overviewPolylinePoints <- map["overview_polyline.points"]
+                bounds <- map["bounds"]
+                copyrights <- map["copyrights"]
+                warnings <- map["warnings"]
+                fare <- map["fare"]
+            }
+            
+            /**
+             *  Leg
+             */
+            public struct Leg: Mappable {
+                public var steps: [Step] = []
+                public var distance: Step.Distance?
+                public var duration: Step.Duration?
+                public var durationInTraffic: DurationInTraffic?
+                public var arrivalTime: Time?
+                public var departureTime: Time?
+                public var startLocation: LocationCoordinate2D?
+                public var endLocation: LocationCoordinate2D?
+                public var startAddress: String?
+                public var endAddress: String?
+                
+                public init?(_ map: Map) { }
+                
+                public mutating func mapping(map: Map) {
+                    steps <- map["steps"]
+                    distance <- map["distance"]
+                    duration <- map["duration"]
+                    durationInTraffic <- map["duration_in_traffic"]
+                    arrivalTime <- map["arrival_time"]
+                    departureTime <- map["departure_time"]
+                    startLocation <- (map["start_location"], CLLocationCoordinate2DTransform())
+                    endLocation <- (map["end_location"], CLLocationCoordinate2DTransform())
+                    startAddress <- map["start_address"]
+                    endAddress <- map["end_address"]
                 }
-                return nil
-            }, toJSON: { (value: NSTimeZone?) -> String? in
-                if let value = value {
-                    return value.name
+                
+                /**
+                 *  Step
+                 */
+                public struct Step: Mappable {
+                    /// formatted instructions for this step, presented as an HTML text string.
+                    public var htmlInstructions: String?
+                    public var distance: Distance?
+                    public var duration: Duration?
+                    public var startLocation: LocationCoordinate2D?
+                    public var endLocation: LocationCoordinate2D?
+                    public var polylinePoints: String?
+                    public var steps: [Step] = []
+                    public var travelMode: TravelMode?
+                    public var maneuver: String?
+                    public var transitDetails: TransitDetails?
+                    
+                    public init?(_ map: Map) { }
+                    
+                    public mutating func mapping(map: Map) {
+                        htmlInstructions <- map["html_instructions"]
+                        distance <- map["distance"]
+                        duration <- map["duration"]
+                        startLocation <- (map["start_location"], CLLocationCoordinate2DTransform())
+                        endLocation <- (map["end_location"], CLLocationCoordinate2DTransform())
+                        polylinePoints <- map["polyline.points"]
+                        steps <- map["steps"]
+                        travelMode <- map["travel_mode"]
+                        maneuver <- map["maneuver"]
+                        transitDetails <- map["transit_details"]
+                    }
+                    
+                    /**
+                     *  Distance
+                     */
+                    public struct Distance: Mappable {
+                        public var value: Int? // the distance in meters
+                        public var text: String? // human-readable representation of the distance
+                        
+                        public init?(_ map: Map) { }
+                        
+                        public mutating func mapping(map: Map) {
+                            value <- map["value"]
+                            text <- map["text"]
+                        }
+                    }
+                    
+                    /**
+                     *  Duration
+                     */
+                    public struct Duration: Mappable {
+                        public var value: Int? // the duration in seconds.
+                        public var text: String? // human-readable representation of the duration.
+                        
+                        public init?(_ map: Map) { }
+                        
+                        public mutating func mapping(map: Map) {
+                            value <- map["value"]
+                            text <- map["text"]
+                        }
+                    }
+                    
+                    /**
+                     *  TransitDetails
+                     */
+                    public struct TransitDetails: Mappable {
+                        public var arrivalStop: Stop?
+                        public var departureStop: Stop?
+                        public var arrivalTime: Time?
+                        public var departureTime: Time?
+                        public var headsign: String?
+                        public var headway: Int?
+                        public var numStops: Int?
+                        public var line: TransitLine?
+                        
+                        public init?(_ map: Map) { }
+                        
+                        public mutating func mapping(map: Map) {
+                            arrivalStop <- map["arrival_stop"]
+                            departureStop <- map["departure_stop"]
+                            arrivalTime <- map["arrival_time"]
+                            departureTime <- map["departure_time"]
+                            headsign <- map["headsign"]
+                            headway <- map["headway"]
+                            numStops <- map["num_stops"]
+                            line <- map["line"]
+                        }
+                        
+                        /**
+                         *  Stop
+                         */
+                        public struct Stop: Mappable {
+                            public var location: LocationCoordinate2D?
+                            public var name: String?
+                            
+                            public init?(_ map: Map) { }
+                            
+                            public mutating func mapping(map: Map) {
+                                location <- (map["location"], CLLocationCoordinate2DTransform())
+                                name <- map["name"]
+                            }
+                        }
+                        
+                        /**
+                         *  TransitLine
+                         */
+                        public struct TransitLine: Mappable {
+                            public var name: String?
+                            public var shortName: String?
+                            public var color: Color?
+                            public var agencies: [TransitAgency] = []
+                            public var url: NSURL?
+                            public var icon: NSURL?
+                            public var textColor: Color?
+                            public var vehicle: [TransitLineVehicle] = []
+                            
+                            public init?(_ map: Map) { }
+                            
+                            public mutating func mapping(map: Map) {
+                                name <- map["name"]
+                                shortName <- map["short_name"]
+                                color <- (map["color"], colorTransform())
+                                agencies <- map["agencies"]
+                                url <- (map["url"], URLTransform())
+                                icon <- (map["icon"], URLTransform())
+                                textColor <- (map["text_color"], colorTransform())
+                                vehicle <- map["vehicle"]
+                            }
+                            
+                            private func colorTransform() -> TransformOf<Color, String> {
+                                return TransformOf<Color, String>(fromJSON: { (value: String?) -> Color? in
+                                    if let value = value {
+                                        return Color(hexString: value)
+                                    }
+                                    return nil
+                                    }, toJSON: { (value: Color?) -> String? in
+                                        if let value = value {
+                                            return value.hexString
+                                        }
+                                        return nil
+                                })
+                            }
+                            
+                            /**
+                             *  TransitAgency
+                             */
+                            public struct TransitAgency: Mappable {
+                                public var name: String?
+                                public var phone: String?
+                                public var url: NSURL?
+                                
+                                public init?(_ map: Map) { }
+                                
+                                public mutating func mapping(map: Map) {
+                                    name <- map["name"]
+                                    phone <- map["phone"]
+                                    url <- (map["url"], URLTransform())
+                                }
+                            }
+                            
+                            /**
+                             *  TransitLineVehicle
+                             */
+                            public struct TransitLineVehicle: Mappable {
+                                public var name: String?
+                                public var type: VehicleType?
+                                public var icon: NSURL?
+                                
+                                public init?(_ map: Map) { }
+                                
+                                public mutating func mapping(map: Map) {
+                                    name <- map["name"]
+                                    type <- (map["type"], EnumTransform())
+                                    icon <- (map["icon"], URLTransform())
+                                }
+                            }
+                        }
+                    }
                 }
-                return nil
-            })
-        }
-    }
-    
-    public struct Bounds: Mappable {
-        public var northeast: LocationCoordinate2D?
-        public var southwest: LocationCoordinate2D?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            northeast <- (map["northeast"], CLLocationCoordinate2DTransform())
-            southwest <- (map["southwest"], CLLocationCoordinate2DTransform())
-        }
-    }
-    
-    public struct Fare: Mappable {
-        public var currency: String?
-        public var value: Float?
-        public var text: String?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            currency <- map["currency"]
-            value <- map["value"]
-            text <- map["text"]
-        }
-    }
-    
-    public struct TransitDetails: Mappable {
-        public var arrivalStop: Stop?
-        public var departureStop: Stop?
-        public var arrivalTime: Time?
-        public var departureTime: Time?
-        public var headsign: String?
-        public var headway: Int?
-        public var numStops: Int?
-        public var line: TransitLine?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            arrivalStop <- map["arrival_stop"]
-            departureStop <- map["departure_stop"]
-            arrivalTime <- map["arrival_time"]
-            departureTime <- map["departure_time"]
-            headsign <- map["headsign"]
-            headway <- map["headway"]
-            numStops <- map["num_stops"]
-            line <- map["line"]
-        }
-    }
-    
-    public struct Stop: Mappable {
-        public var location: LocationCoordinate2D?
-        public var name: String?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            location <- (map["location"], CLLocationCoordinate2DTransform())
-            name <- map["name"]
-        }
-    }
-    
-    public struct TransitLine: Mappable {
-        public var name: String?
-        public var shortName: String?
-        public var color: Color?
-        public var agencies: [TransitAgency] = []
-        public var url: NSURL?
-        public var icon: NSURL?
-        public var textColor: Color?
-        public var vehicle: [TransitLineVehicle] = []
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            name <- map["name"]
-            shortName <- map["short_name"]
-            color <- (map["color"], colorTransform())
-            agencies <- map["agencies"]
-            url <- (map["url"], URLTransform())
-            icon <- (map["icon"], URLTransform())
-            textColor <- (map["text_color"], colorTransform())
-            vehicle <- map["vehicle"]
-        }
-        
-        private func colorTransform() -> TransformOf<Color, String> {
-            return TransformOf<Color, String>(fromJSON: { (value: String?) -> Color? in
-                if let value = value {
-                    return Color(hexString: value)
+                
+                /**
+                 *  DurationInTraffic
+                 */
+                public struct DurationInTraffic: Mappable {
+                    public var value: Int? // the duration in seconds.
+                    public var text: String? // human-readable representation of the duration.
+                    
+                    public init?(_ map: Map) { }
+                    
+                    public mutating func mapping(map: Map) {
+                        value <- map["value"]
+                        text <- map["text"]
+                    }
                 }
-                return nil
-            }, toJSON: { (value: Color?) -> String? in
-                if let value = value {
-                    return value.hexString
+                
+                /**
+                 *  Time
+                 */
+                public struct Time: Mappable {
+                    public var value: NSDate? // the time specified as a JavaScript Date object.
+                    public var text: String? // the time specified as a string.
+                    public var timeZone: NSTimeZone? // the time zone of this station. The value is the name of the time zone as defined in the IANA Time Zone Database, e.g. "America/New_York".
+                    
+                    public init?(_ map: Map) { }
+                    
+                    public mutating func mapping(map: Map) {
+                        value <- (map["value"], DateTransformInteger())
+                        text <- map["text"]
+                        timeZone <- (map["time_zone"], timeZoneTransform())
+                    }
+                    
+                    private func timeZoneTransform() -> TransformOf<NSTimeZone, String> {
+                        return TransformOf<NSTimeZone, String>(fromJSON: { (value: String?) -> NSTimeZone? in
+                            if let value = value {
+                                return NSTimeZone(name: value)
+                            }
+                            return nil
+                            }, toJSON: { (value: NSTimeZone?) -> String? in
+                                if let value = value {
+                                    return value.name
+                                }
+                                return nil
+                        })
+                    }
                 }
-                return nil
-            })
-        }
-    }
-    
-    public struct TransitAgency: Mappable {
-        public var name: String?
-        public var phone: String?
-        public var url: NSURL?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            name <- map["name"]
-            phone <- map["phone"]
-            url <- (map["url"], URLTransform())
-        }
-    }
-    
-    public struct TransitLineVehicle: Mappable {
-        public var name: String?
-        public var type: VehicleType?
-        public var icon: NSURL?
-        
-        public init?(_ map: Map) { }
-        
-        public mutating func mapping(map: Map) {
-            name <- map["name"]
-            type <- (map["type"], EnumTransform())
-            icon <- (map["icon"], URLTransform())
+            }
+            
+            /**
+             *  Bounds
+             */
+            public struct Bounds: Mappable {
+                public var northeast: LocationCoordinate2D?
+                public var southwest: LocationCoordinate2D?
+                
+                public init?(_ map: Map) { }
+                
+                public mutating func mapping(map: Map) {
+                    northeast <- (map["northeast"], CLLocationCoordinate2DTransform())
+                    southwest <- (map["southwest"], CLLocationCoordinate2DTransform())
+                }
+            }
+            
+            /**
+             *  Fare
+             */
+            public struct Fare: Mappable {
+                public var currency: String?
+                public var value: Float?
+                public var text: String?
+                
+                public init?(_ map: Map) { }
+                
+                public mutating func mapping(map: Map) {
+                    currency <- map["currency"]
+                    value <- map["value"]
+                    text <- map["text"]
+                }
+            }
         }
     }
 }

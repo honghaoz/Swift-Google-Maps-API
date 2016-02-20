@@ -12,7 +12,7 @@ import ObjectMapper
 
 public class GooglePlaces: GoogleMapsService {
     
-    public static let baseURLString = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
+    public static let placeAutocompleteURLString = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
     
     public class func placeAutocomplete(forInput input: String,
         offset: Int? = nil,
@@ -21,7 +21,7 @@ public class GooglePlaces: GoogleMapsService {
         language: String? = nil,
         types: [PlaceType]? = nil,
         components: String? = nil,
-        completion: ((response: Response?, error: NSError?) -> Void)?)
+        completion: ((response: PlaceAutocompleteResponse?, error: NSError?) -> Void)?)
     {
         var requestParameters = baseRequestParameters + [
             "input" : input
@@ -51,7 +51,7 @@ public class GooglePlaces: GoogleMapsService {
             requestParameters["components"] = components
         }
         
-        let request = Alamofire.request(.GET, baseURLString, parameters: requestParameters).responseJSON { response in
+        let request = Alamofire.request(.GET, placeAutocompleteURLString, parameters: requestParameters).responseJSON { response in
             if response.result.isFailure {
                 NSLog("Error: GET failed")
                 completion?(response: nil, error: NSError(domain: "GooglePlacesError", code: -1, userInfo: nil))
@@ -60,7 +60,7 @@ public class GooglePlaces: GoogleMapsService {
             
             // Nil
             if let _ = response.result.value as? NSNull {
-                completion?(response: Response(), error: nil)
+                completion?(response: PlaceAutocompleteResponse(), error: nil)
                 return
             }
             
@@ -71,7 +71,7 @@ public class GooglePlaces: GoogleMapsService {
                 return
             }
             
-            guard let response = Mapper<Response>().map(json) else {
+            guard let response = Mapper<PlaceAutocompleteResponse>().map(json) else {
                 NSLog("Error: Mapping directions response failed")
                 completion?(response: nil, error: NSError(domain: "GooglePlacesError", code: -3, userInfo: nil))
                 return
@@ -127,5 +127,11 @@ public class GooglePlaces: GoogleMapsService {
         }
         
         debugPrint("\(request)")
+    }
+    
+    public static let placeDetailsURLString = "https://maps.googleapis.com/maps/api/place/details/json"
+    
+    public class func placeDetails(forPlaceID: String, extensions: String? = nil, language: String? = nil) {
+        
     }
 }
