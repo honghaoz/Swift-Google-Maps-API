@@ -23,18 +23,20 @@ import ObjectMapper
 extension GoogleMapsDirections {
     public struct Response: Mappable {
         public var status: StatusCode?
+        public var errorMessage: String?
+        
         public var geocodedWaypoints: [GeocodedWaypoint] = []
         public var routes: [Route] = []
-        public var errorMessage: String?
         
         public init() {}
         public init?(_ map: Map) { }
         
         public mutating func mapping(map: Map) {
             status <- (map["status"], EnumTransform())
+            errorMessage <- map["error_message"]
+            
             geocodedWaypoints <- map["geocoded_waypoints"]
             routes <- map["routes"]
-            errorMessage <- map["error_message"]
         }
         
         /**
@@ -106,8 +108,8 @@ extension GoogleMapsDirections {
                     durationInTraffic <- map["duration_in_traffic"]
                     arrivalTime <- map["arrival_time"]
                     departureTime <- map["departure_time"]
-                    startLocation <- (map["start_location"], CLLocationCoordinate2DTransform())
-                    endLocation <- (map["end_location"], CLLocationCoordinate2DTransform())
+                    startLocation <- (map["start_location"], LocationCoordinate2DTransform())
+                    endLocation <- (map["end_location"], LocationCoordinate2DTransform())
                     startAddress <- map["start_address"]
                     endAddress <- map["end_address"]
                 }
@@ -134,8 +136,8 @@ extension GoogleMapsDirections {
                         htmlInstructions <- map["html_instructions"]
                         distance <- map["distance"]
                         duration <- map["duration"]
-                        startLocation <- (map["start_location"], CLLocationCoordinate2DTransform())
-                        endLocation <- (map["end_location"], CLLocationCoordinate2DTransform())
+                        startLocation <- (map["start_location"], LocationCoordinate2DTransform())
+                        endLocation <- (map["end_location"], LocationCoordinate2DTransform())
                         polylinePoints <- map["polyline.points"]
                         steps <- map["steps"]
                         travelMode <- map["travel_mode"]
@@ -209,7 +211,7 @@ extension GoogleMapsDirections {
                             public init?(_ map: Map) { }
                             
                             public mutating func mapping(map: Map) {
-                                location <- (map["location"], CLLocationCoordinate2DTransform())
+                                location <- (map["location"], LocationCoordinate2DTransform())
                                 name <- map["name"]
                             }
                         }
@@ -348,8 +350,8 @@ extension GoogleMapsDirections {
                 public init?(_ map: Map) { }
                 
                 public mutating func mapping(map: Map) {
-                    northeast <- (map["northeast"], CLLocationCoordinate2DTransform())
-                    southwest <- (map["southwest"], CLLocationCoordinate2DTransform())
+                    northeast <- (map["northeast"], LocationCoordinate2DTransform())
+                    southwest <- (map["southwest"], LocationCoordinate2DTransform())
                 }
             }
             

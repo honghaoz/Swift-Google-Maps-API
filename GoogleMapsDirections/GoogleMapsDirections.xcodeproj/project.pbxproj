@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0231572A1C7907A4003370A2 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
+		023157541C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */; };
+		023157551C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */; };
+		023157561C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */; };
+		023157571C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */; };
+		0231575F1C792359003370A2 /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231575E1C792359003370A2 /* DateTransformInteger.swift */; };
+		023157601C792359003370A2 /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231575E1C792359003370A2 /* DateTransformInteger.swift */; };
+		023157611C792359003370A2 /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231575E1C792359003370A2 /* DateTransformInteger.swift */; };
+		023157621C792359003370A2 /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231575E1C792359003370A2 /* DateTransformInteger.swift */; };
 		027038B81C6E648C0057C4EE /* GoogleMapsDirections.h in Headers */ = {isa = PBXBuildFile; fileRef = 027038B71C6E648C0057C4EE /* GoogleMapsDirections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		027038BF1C6E648C0057C4EE /* GoogleMapsDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027038B41C6E648C0057C4EE /* GoogleMapsDirections.framework */; };
 		027038C41C6E648C0057C4EE /* GoogleMapsDirectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027038C31C6E648C0057C4EE /* GoogleMapsDirectionsTests.swift */; };
@@ -26,14 +34,6 @@
 		0270398F1C6E6BAF0057C4EE /* GoogleMapsDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039841C6E6BAF0057C4EE /* GoogleMapsDirections.swift */; };
 		027039901C6E6BAF0057C4EE /* GoogleMapsDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039841C6E6BAF0057C4EE /* GoogleMapsDirections.swift */; };
 		027039911C6E6BAF0057C4EE /* GoogleMapsDirections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039841C6E6BAF0057C4EE /* GoogleMapsDirections.swift */; };
-		027039921C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039861C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift */; };
-		027039931C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039861C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift */; };
-		027039941C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039861C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift */; };
-		027039951C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039861C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift */; };
-		027039961C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039871C6E6BAF0057C4EE /* DateTransformInteger.swift */; };
-		027039971C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039871C6E6BAF0057C4EE /* DateTransformInteger.swift */; };
-		027039981C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039871C6E6BAF0057C4EE /* DateTransformInteger.swift */; };
-		027039991C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039871C6E6BAF0057C4EE /* DateTransformInteger.swift */; };
 		0270399A1C6E6BAF0057C4EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039881C6E6BAF0057C4EE /* Response.swift */; };
 		0270399B1C6E6BAF0057C4EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039881C6E6BAF0057C4EE /* Response.swift */; };
 		0270399C1C6E6BAF0057C4EE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027039881C6E6BAF0057C4EE /* Response.swift */; };
@@ -182,6 +182,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCoordinate2DTransform.swift; sourceTree = "<group>"; };
+		0231575E1C792359003370A2 /* DateTransformInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformInteger.swift; sourceTree = "<group>"; };
 		027038B41C6E648C0057C4EE /* GoogleMapsDirections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleMapsDirections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		027038B71C6E648C0057C4EE /* GoogleMapsDirections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleMapsDirections.h; sourceTree = "<group>"; };
 		027038B91C6E648C0057C4EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -195,8 +197,6 @@
 		027039751C6E6A3B0057C4EE /* GoogleMapsDirections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleMapsDirections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		027039831C6E6BAF0057C4EE /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		027039841C6E6BAF0057C4EE /* GoogleMapsDirections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsDirections.swift; sourceTree = "<group>"; };
-		027039861C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DTransform.swift; sourceTree = "<group>"; };
-		027039871C6E6BAF0057C4EE /* DateTransformInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformInteger.swift; sourceTree = "<group>"; };
 		027039881C6E6BAF0057C4EE /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		02DDFE451C6ECADD008413ED /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Submodules/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		02DDFE5D1C6ECAE5008413ED /* ObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectMapper.xcodeproj; path = ../Submodules/ObjectMapper/ObjectMapper.xcodeproj; sourceTree = "<group>"; };
@@ -269,6 +269,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023157521C7916DB003370A2 /* ObjectMapperTransformers */ = {
+			isa = PBXGroup;
+			children = (
+				0231575E1C792359003370A2 /* DateTransformInteger.swift */,
+				023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */,
+			);
+			path = ObjectMapperTransformers;
+			sourceTree = "<group>";
+		};
 		027038AA1C6E648C0057C4EE = {
 			isa = PBXGroup;
 			children = (
@@ -319,20 +328,10 @@
 			children = (
 				027039831C6E6BAF0057C4EE /* Types.swift */,
 				027039841C6E6BAF0057C4EE /* GoogleMapsDirections.swift */,
-				027039851C6E6BAF0057C4EE /* ObjectMapperTransformers */,
 				027039881C6E6BAF0057C4EE /* Response.swift */,
 			);
 			name = "Google Maps Directions API";
 			path = "../../Source/Google Maps Directions API";
-			sourceTree = "<group>";
-		};
-		027039851C6E6BAF0057C4EE /* ObjectMapperTransformers */ = {
-			isa = PBXGroup;
-			children = (
-				027039861C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift */,
-				027039871C6E6BAF0057C4EE /* DateTransformInteger.swift */,
-			);
-			path = ObjectMapperTransformers;
 			sourceTree = "<group>";
 		};
 		02DDFE461C6ECADD008413ED /* Products */ = {
@@ -369,6 +368,7 @@
 				02DDFF291C6ED1D9008413ED /* GoogleMapsService.swift */,
 				02DDFEE81C6ECF5A008413ED /* SharedTypes.swift */,
 				02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */,
+				023157521C7916DB003370A2 /* ObjectMapperTransformers */,
 			);
 			name = Core;
 			path = ../../Source/Core;
@@ -762,11 +762,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0231575F1C792359003370A2 /* DateTransformInteger.swift in Sources */,
 				0270398A1C6E6BAF0057C4EE /* Types.swift in Sources */,
-				027039961C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */,
+				023157541C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */,
 				0270398E1C6E6BAF0057C4EE /* GoogleMapsDirections.swift in Sources */,
 				02DDFEE91C6ECF5A008413ED /* SharedTypes.swift in Sources */,
-				027039921C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */,
 				02DDFF2A1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */,
 				0270399A1C6E6BAF0057C4EE /* Response.swift in Sources */,
 				02DDFF511C6FF372008413ED /* Dictionary+Extensions.swift in Sources */,
@@ -785,11 +785,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023157601C792359003370A2 /* DateTransformInteger.swift in Sources */,
 				0270398B1C6E6BAF0057C4EE /* Types.swift in Sources */,
-				027039971C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */,
+				023157551C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */,
 				0270398F1C6E6BAF0057C4EE /* GoogleMapsDirections.swift in Sources */,
 				02DDFEEA1C6ECF5A008413ED /* SharedTypes.swift in Sources */,
-				027039931C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */,
 				02DDFF2B1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */,
 				0270399B1C6E6BAF0057C4EE /* Response.swift in Sources */,
 				02929DD71C737FF000038F9D /* Dictionary+Extensions.swift in Sources */,
@@ -808,11 +808,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023157611C792359003370A2 /* DateTransformInteger.swift in Sources */,
 				0270398C1C6E6BAF0057C4EE /* Types.swift in Sources */,
-				027039981C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */,
+				023157561C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */,
 				027039901C6E6BAF0057C4EE /* GoogleMapsDirections.swift in Sources */,
 				02DDFEEB1C6ECF5A008413ED /* SharedTypes.swift in Sources */,
-				027039941C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */,
 				02DDFF2C1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */,
 				0270399C1C6E6BAF0057C4EE /* Response.swift in Sources */,
 				02929DE61C737FF100038F9D /* Dictionary+Extensions.swift in Sources */,
@@ -831,11 +831,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023157621C792359003370A2 /* DateTransformInteger.swift in Sources */,
 				0270398D1C6E6BAF0057C4EE /* Types.swift in Sources */,
-				027039991C6E6BAF0057C4EE /* DateTransformInteger.swift in Sources */,
+				023157571C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */,
 				027039911C6E6BAF0057C4EE /* GoogleMapsDirections.swift in Sources */,
 				02DDFEEC1C6ECF5A008413ED /* SharedTypes.swift in Sources */,
-				027039951C6E6BAF0057C4EE /* CLLocationCoordinate2DTransform.swift in Sources */,
 				02DDFF2D1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */,
 				0270399D1C6E6BAF0057C4EE /* Response.swift in Sources */,
 				02929DE71C737FF100038F9D /* Dictionary+Extensions.swift in Sources */,

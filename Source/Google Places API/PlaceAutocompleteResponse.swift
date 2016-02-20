@@ -13,16 +13,18 @@ import ObjectMapper
 extension GooglePlaces {
     public struct PlaceAutocompleteResponse: Mappable {
         public var status: StatusCode?
-        public var predictions: [Prediction] = []
         public var errorMessage: String?
+        
+        public var predictions: [Prediction] = []
         
         public init() {}
         public init?(_ map: Map) { }
         
         public mutating func mapping(map: Map) {
             status <- (map["status"], EnumTransform())
-            predictions <- map["predictions"]
             errorMessage <- map["error_message"]
+            
+            predictions <- map["predictions"]
         }
         
         /**

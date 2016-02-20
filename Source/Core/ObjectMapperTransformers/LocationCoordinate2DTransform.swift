@@ -1,5 +1,5 @@
 //
-//  CLLocationCoordinate2DTransform.swift
+//  LocationCoordinate2DTransform.swift
 //  GoogleMapsDirections
 //
 //  Created by Honghao Zhang on 2016-01-23.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class CLLocationCoordinate2DTransform: TransformType {
+class LocationCoordinate2DTransform: TransformType {
     typealias LocationCoordinate2D = GoogleMapsService.LocationCoordinate2D
     typealias Object = LocationCoordinate2D
     typealias JSON = [String : AnyObject]
