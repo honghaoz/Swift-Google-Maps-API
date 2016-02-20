@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0231572A1C7907A4003370A2 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		027038B81C6E648C0057C4EE /* GoogleMapsDirections.h in Headers */ = {isa = PBXBuildFile; fileRef = 027038B71C6E648C0057C4EE /* GoogleMapsDirections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		027038BF1C6E648C0057C4EE /* GoogleMapsDirections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027038B41C6E648C0057C4EE /* GoogleMapsDirections.framework */; };
 		027038C41C6E648C0057C4EE /* GoogleMapsDirectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027038C31C6E648C0057C4EE /* GoogleMapsDirectionsTests.swift */; };
@@ -43,7 +44,6 @@
 		02DDFE751C6ECAF0008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
 		02DDFE761C6ECAF3008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		02DDFE771C6ECAF6008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
-		02DDFE781C6ECAF9008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		02DDFE791C6ECAFE008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
 		02DDFE7A1C6ECB01008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		02DDFE7B1C6ECB08008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
@@ -227,7 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02DDFE781C6ECAF9008413ED /* ObjectMapper.framework in Frameworks */,
+				0231572A1C7907A4003370A2 /* ObjectMapper.framework in Frameworks */,
 				02DDFE771C6ECAF6008413ED /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
