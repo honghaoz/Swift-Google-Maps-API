@@ -26,6 +26,14 @@
 		02DDFF241C6ED19E008413ED /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
 		02DDFF411C6FE301008413ED /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF401C6FE301008413ED /* Response.swift */; };
 		02DDFF611C6FF389008413ED /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF601C6FF389008413ED /* Dictionary+Extensions.swift */; };
+		02EDBE2C1C781BA600C92D1E /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EDBE221C781BA600C92D1E /* GooglePlaces.framework */; };
+		02EDBE471C781C1900C92D1E /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEFD1C6ED050008413ED /* SharedTypes.swift */; };
+		02EDBE481C781C1900C92D1E /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
+		02EDBE491C781C1900C92D1E /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF601C6FF389008413ED /* Dictionary+Extensions.swift */; };
+		02EDBE4A1C781C1C00C92D1E /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF211C6ED0DE008413ED /* Types.swift */; };
+		02EDBE4B1C781C1C00C92D1E /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF111C6ED0D2008413ED /* GooglePlaces.swift */; };
+		02EDBE4C1C781C1C00C92D1E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF401C6FE301008413ED /* Response.swift */; };
+		02EDBE4D1C781C2100C92D1E /* GooglePlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFE981C6ECDE7008413ED /* GooglePlacesTests.swift */; };
 		02F845311C70342A00069928 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEAE1C6ECE0F008413ED /* Alamofire.framework */; };
 		02F845391C70342D00069928 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEC61C6ECE16008413ED /* ObjectMapper.framework */; };
 /* End PBXBuildFile section */
@@ -143,6 +151,13 @@
 			remoteGlobalIDString = 6A05B7AF1BE274BE00F19B53;
 			remoteInfo = "ObjectMapper-tvOSTests";
 		};
+		02EDBE2D1C781BA600C92D1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE801C6ECDE7008413ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02EDBE211C781BA600C92D1E;
+			remoteInfo = "GooglePlaces tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +177,8 @@
 		02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsService.swift; sourceTree = "<group>"; };
 		02DDFF401C6FE301008413ED /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		02DDFF601C6FF389008413ED /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		02EDBE221C781BA600C92D1E /* GooglePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GooglePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02EDBE2B1C781BA600C92D1E /* GooglePlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooglePlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +216,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02EDBE1E1C781BA600C92D1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02EDBE281C781BA600C92D1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02EDBE2C1C781BA600C92D1E /* GooglePlaces.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -220,6 +252,8 @@
 				02DDFE931C6ECDE7008413ED /* GooglePlacesTests.xctest */,
 				02929E451C74DB5000038F9D /* GooglePlaces.framework */,
 				02929E4E1C74DB5000038F9D /* GooglePlacesTests.xctest */,
+				02EDBE221C781BA600C92D1E /* GooglePlaces.framework */,
+				02EDBE2B1C781BA600C92D1E /* GooglePlacesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,6 +346,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02EDBE1F1C781BA600C92D1E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -387,6 +428,42 @@
 			productReference = 02DDFE931C6ECDE7008413ED /* GooglePlacesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		02EDBE211C781BA600C92D1E /* GooglePlaces tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02EDBE451C781BA600C92D1E /* Build configuration list for PBXNativeTarget "GooglePlaces tvOS" */;
+			buildPhases = (
+				02EDBE1D1C781BA600C92D1E /* Sources */,
+				02EDBE1E1C781BA600C92D1E /* Frameworks */,
+				02EDBE1F1C781BA600C92D1E /* Headers */,
+				02EDBE201C781BA600C92D1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GooglePlaces tvOS";
+			productName = "GooglePlaces tvOS";
+			productReference = 02EDBE221C781BA600C92D1E /* GooglePlaces.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		02EDBE2A1C781BA600C92D1E /* GooglePlaces tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02EDBE461C781BA600C92D1E /* Build configuration list for PBXNativeTarget "GooglePlaces tvOSTests" */;
+			buildPhases = (
+				02EDBE271C781BA600C92D1E /* Sources */,
+				02EDBE281C781BA600C92D1E /* Frameworks */,
+				02EDBE291C781BA600C92D1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02EDBE2E1C781BA600C92D1E /* PBXTargetDependency */,
+			);
+			name = "GooglePlaces tvOSTests";
+			productName = "GooglePlaces tvOSTests";
+			productReference = 02EDBE2B1C781BA600C92D1E /* GooglePlacesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -407,6 +484,12 @@
 						CreatedOnToolsVersion = 7.2.1;
 					};
 					02DDFE921C6ECDE7008413ED = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					02EDBE211C781BA600C92D1E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					02EDBE2A1C781BA600C92D1E = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -437,6 +520,8 @@
 				02DDFE921C6ECDE7008413ED /* GooglePlacesTests iOS */,
 				02929E441C74DB5000038F9D /* GooglePlaces OSX */,
 				02929E4D1C74DB5000038F9D /* GooglePlacesTests OSX */,
+				02EDBE211C781BA600C92D1E /* GooglePlaces tvOS */,
+				02EDBE2A1C781BA600C92D1E /* GooglePlaces tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -571,6 +656,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02EDBE201C781BA600C92D1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02EDBE291C781BA600C92D1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -616,6 +715,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		02EDBE1D1C781BA600C92D1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02EDBE471C781C1900C92D1E /* SharedTypes.swift in Sources */,
+				02EDBE4B1C781C1C00C92D1E /* GooglePlaces.swift in Sources */,
+				02EDBE481C781C1900C92D1E /* GoogleMapsService.swift in Sources */,
+				02EDBE491C781C1900C92D1E /* Dictionary+Extensions.swift in Sources */,
+				02EDBE4C1C781C1C00C92D1E /* Response.swift in Sources */,
+				02EDBE4A1C781C1C00C92D1E /* Types.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02EDBE271C781BA600C92D1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02EDBE4D1C781C2100C92D1E /* GooglePlacesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -628,6 +748,11 @@
 			isa = PBXTargetDependency;
 			target = 02DDFE881C6ECDE7008413ED /* GooglePlaces iOS */;
 			targetProxy = 02DDFE951C6ECDE7008413ED /* PBXContainerItemProxy */;
+		};
+		02EDBE2E1C781BA600C92D1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02EDBE211C781BA600C92D1E /* GooglePlaces tvOS */;
+			targetProxy = 02EDBE2D1C781BA600C92D1E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -852,6 +977,68 @@
 			};
 			name = Release;
 		};
+		02EDBE331C781BA600C92D1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GooglePlaces/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-tvOS";
+				PRODUCT_NAME = GooglePlaces;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		02EDBE341C781BA600C92D1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = GooglePlaces/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-tvOS";
+				PRODUCT_NAME = GooglePlaces;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		02EDBE351C781BA600C92D1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GooglePlacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-tvOSTests";
+				PRODUCT_NAME = GooglePlacesTests;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		02EDBE361C781BA600C92D1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GooglePlacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GooglePlaces-tvOSTests";
+				PRODUCT_NAME = GooglePlacesTests;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -862,6 +1049,7 @@
 				02929E571C74DB5000038F9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02929E691C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlacesTests OSX" */ = {
 			isa = XCConfigurationList;
@@ -870,6 +1058,7 @@
 				02929E591C74DB5000038F9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02DDFE831C6ECDE7008413ED /* Build configuration list for PBXProject "GooglePlaces" */ = {
 			isa = XCConfigurationList;
@@ -897,6 +1086,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		02EDBE451C781BA600C92D1E /* Build configuration list for PBXNativeTarget "GooglePlaces tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02EDBE331C781BA600C92D1E /* Debug */,
+				02EDBE341C781BA600C92D1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		02EDBE461C781BA600C92D1E /* Build configuration list for PBXNativeTarget "GooglePlaces tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02EDBE351C781BA600C92D1E /* Debug */,
+				02EDBE361C781BA600C92D1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
