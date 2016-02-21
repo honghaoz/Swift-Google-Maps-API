@@ -21,7 +21,7 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
 
   ```ruby
   use_frameworks!
-  pod 'GoogleMapDirections', '~> 1.0'
+  pod 'GoogleMapsDirections', '~> 1.0'
   ```
 - Google Places API
 
