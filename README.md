@@ -5,7 +5,8 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
 - [x] [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/)
 - [ ] [Google Places API Web Service](https://developers.google.com/places/web-service/)
   - [x] [Place Autocomplete](https://developers.google.com/places/web-service/autocomplete)
-  - [ ] [Place Details](https://developers.google.com/places/web-service/details) (WIP)
+  - [x] [Place Details](https://developers.google.com/places/web-service/details)
+- [ ] More...
 
 ## Platforms
 - [x] iOS 8.0+
