@@ -15,7 +15,7 @@ extension GooglePlaces {
         public var status: StatusCode?
         public var errorMessage: String?
         
-        public var result: [Result] = []
+        public var result: Result?
         public var htmlAttributions: [String] = []
         
         public init() {}

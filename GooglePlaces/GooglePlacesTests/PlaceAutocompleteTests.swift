@@ -1,5 +1,5 @@
 //
-//  GooglePlacesTests.swift
+//  PlaceAutocompleteTests.swift
 //  GooglePlacesTests
 //
 //  Created by Honghao Zhang on 2016-02-12.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import GooglePlaces
 
-class GooglePlacesTests: XCTestCase {
+class PlaceAutocompleteTests: XCTestCase {
     typealias LocationCoordinate2D = GoogleMapsService.LocationCoordinate2D
     
     override func setUp() {
