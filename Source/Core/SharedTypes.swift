@@ -43,6 +43,11 @@ extension GoogleMapsService {
     public struct LocationCoordinate2D {
         public var latitude: LocationDegrees
         public var longitude: LocationDegrees
+        
+        public init(latitude: LocationDegrees, longitude: LocationDegrees) {
+            self.latitude = latitude
+            self.longitude = latitude
+        }
     }
     
     /**
