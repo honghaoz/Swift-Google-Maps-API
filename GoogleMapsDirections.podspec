@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GoogleMapsDirections"
-  s.version          = "1.0.1"
+  s.version          = "1.0.4"
   s.summary          = "Swift Wrapper on Google Maps Directions API"
   s.description      = <<-DESC
                        Swift Wrapper on Google Maps Directions API
