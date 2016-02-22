@@ -63,6 +63,7 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
     import GooglePlaces
     
     GooglePlaces.provideAPIKey("A VALID GOOGLE MAPS KEY")
+    
     GooglePlaces.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
       // Check Status Code
       guard response?.status == GooglePlaces.StatusCode.OK else {
