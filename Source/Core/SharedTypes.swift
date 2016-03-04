@@ -46,7 +46,7 @@ extension GoogleMapsService {
         
         public init(latitude: LocationDegrees, longitude: LocationDegrees) {
             self.latitude = latitude
-            self.longitude = latitude
+            self.longitude = longitude
         }
     }
     
