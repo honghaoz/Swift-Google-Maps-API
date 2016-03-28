@@ -86,11 +86,11 @@ public class GoogleMapsDirections: GoogleMapsService {
             NSLog("Warning: You can only specify one of arrivalTime or departureTime at most, requests may failed")
         }
         
-        if let arrivalTime = arrivalTime where travelMode == .Transit {
+        if let arrivalTime = arrivalTime where (travelMode == .Transit || travelMode == .Driving) {
             requestParameters["arrival_time"] = Int(arrivalTime.timeIntervalSince1970)
         }
         
-        if let departureTime = departureTime where travelMode == .Transit {
+        if let departureTime = departureTime where (travelMode == .Transit || travelMode == .Driving) {
             requestParameters["departure_time"] = Int(departureTime.timeIntervalSince1970)
         }
         
