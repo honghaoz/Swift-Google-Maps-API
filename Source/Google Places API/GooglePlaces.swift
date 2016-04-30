@@ -12,6 +12,8 @@ import ObjectMapper
 
 public class GooglePlaces: GoogleMapsService {
     
+    private static var pendingRequest: Alamofire.Request?
+    
     public static let placeAutocompleteURLString = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
     
     public class func placeAutocomplete(forInput input: String,
@@ -21,6 +23,7 @@ public class GooglePlaces: GoogleMapsService {
         language: String? = nil,
         types: [PlaceType]? = nil,
         components: String? = nil,
+        cancelPendingRequestsAutomatically: Bool = true,
         completion: ((response: PlaceAutocompleteResponse?, error: NSError?) -> Void)?)
     {
         var requestParameters = baseRequestParameters + [
@@ -51,9 +54,20 @@ public class GooglePlaces: GoogleMapsService {
             requestParameters["components"] = components
         }
         
+        if let pendingRquest = pendingRequest where cancelPendingRequestsAutomatically {
+            pendingRequest?.cancel()
+            pendingRequest = nil
+        }
+        
         let request = Alamofire.request(.GET, placeAutocompleteURLString, parameters: requestParameters).responseJSON { response in
+            if response.result.error?.code == NSURLErrorCancelled {
+                // nothing to do, another active request is coming
+                return
+            }
+            
             if response.result.isFailure {
                 NSLog("Error: GET failed")
+                print(response.result.error?.code)
                 completion?(response: nil, error: NSError(domain: "GooglePlacesError", code: -1, userInfo: nil))
                 return
             }
@@ -101,6 +115,8 @@ public class GooglePlaces: GoogleMapsService {
             
             completion?(response: response, error: error)
         }
+        
+        pendingRequest = request
         
         debugPrint("\(request)")
     }
