@@ -67,7 +67,6 @@ public class GooglePlaces: GoogleMapsService {
             
             if response.result.isFailure {
                 NSLog("Error: GET failed")
-                print(response.result.error?.code)
                 completion?(response: nil, error: NSError(domain: "GooglePlacesError", code: -1, userInfo: nil))
                 return
             }
