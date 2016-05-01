@@ -396,10 +396,8 @@ private extension Color {
             return nil
         }
         let red = digits.substringToIndex(digits.startIndex.advancedBy(2))
-        let green = digits.substringWithRange(Range<String.Index>(start: digits.startIndex.advancedBy(2),
-            end: digits.startIndex.advancedBy(4)))
-        let blue = digits.substringWithRange(Range<String.Index>(start: digits.startIndex.advancedBy(4),
-            end:digits.startIndex.advancedBy(6)))
+        let green = digits.substringWithRange(digits.startIndex.advancedBy(2) ..< digits.startIndex.advancedBy(4))
+        let blue = digits.substringWithRange(digits.startIndex.advancedBy(4) ..< digits.startIndex.advancedBy(6))
         let redf = CGFloat(Double(Int(red, radix: 16)!) / 255.0)
         let greenf = CGFloat(Double(Int(green, radix: 16)!) / 255.0)
         let bluef = CGFloat(Double(Int(blue, radix: 16)!) / 255.0)
