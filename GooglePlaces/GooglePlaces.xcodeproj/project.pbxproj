@@ -49,6 +49,9 @@
 		02DDFF241C6ED19E008413ED /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
 		02DDFF411C6FE301008413ED /* PlaceAutocompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF401C6FE301008413ED /* PlaceAutocompleteResponse.swift */; };
 		02DDFF611C6FF389008413ED /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF601C6FF389008413ED /* Dictionary+Extensions.swift */; };
+		02E599221CD68A89000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
+		02E599311CD68A8A000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
+		02E599321CD68A8B000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
 		02EDBE2C1C781BA600C92D1E /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EDBE221C781BA600C92D1E /* GooglePlaces.framework */; };
 		02EDBE471C781C1900C92D1E /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEFD1C6ED050008413ED /* SharedTypes.swift */; };
 		02EDBE481C781C1900C92D1E /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
@@ -768,6 +771,7 @@
 			files = (
 				0231575D1C7916E7003370A2 /* LocationCoordinate2DTransform.swift in Sources */,
 				023157161C790675003370A2 /* SharedTypes.swift in Sources */,
+				02E599321CD68A8B000867EE /* PlaceDetailsResponse.swift in Sources */,
 				0231571A1C79067A003370A2 /* GooglePlaces.swift in Sources */,
 				023157171C790675003370A2 /* GoogleMapsService.swift in Sources */,
 				023157181C790675003370A2 /* Dictionary+Extensions.swift in Sources */,
@@ -783,6 +787,7 @@
 			files = (
 				0231575B1C7916E7003370A2 /* LocationCoordinate2DTransform.swift in Sources */,
 				02929E781C74DC2D00038F9D /* SharedTypes.swift in Sources */,
+				02E599221CD68A89000867EE /* PlaceDetailsResponse.swift in Sources */,
 				02929E7C1C74DC3000038F9D /* GooglePlaces.swift in Sources */,
 				02929E791C74DC2D00038F9D /* GoogleMapsService.swift in Sources */,
 				02929E7A1C74DC2D00038F9D /* Dictionary+Extensions.swift in Sources */,
@@ -832,6 +837,7 @@
 			files = (
 				0231575C1C7916E7003370A2 /* LocationCoordinate2DTransform.swift in Sources */,
 				02EDBE471C781C1900C92D1E /* SharedTypes.swift in Sources */,
+				02E599311CD68A8A000867EE /* PlaceDetailsResponse.swift in Sources */,
 				02EDBE4B1C781C1C00C92D1E /* GooglePlaces.swift in Sources */,
 				02EDBE481C781C1900C92D1E /* GoogleMapsService.swift in Sources */,
 				02EDBE491C781C1900C92D1E /* Dictionary+Extensions.swift in Sources */,

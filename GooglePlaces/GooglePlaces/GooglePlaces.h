@@ -6,7 +6,7 @@
 //  Copyright © 2016 Honghao Zhang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for GooglePlaces.
 FOUNDATION_EXPORT double GooglePlacesVersionNumber;
