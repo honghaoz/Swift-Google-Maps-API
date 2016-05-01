@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0231572A1C7907A4003370A2 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		023157541C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */; };
 		023157551C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */; };
 		023157561C7916DB003370A2 /* LocationCoordinate2DTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023157531C7916DB003370A2 /* LocationCoordinate2DTransform.swift */; };
@@ -43,7 +42,6 @@
 		02929DE71C737FF100038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
 		02DDFE751C6ECAF0008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
 		02DDFE761C6ECAF3008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
-		02DDFE771C6ECAF6008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
 		02DDFE791C6ECAFE008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
 		02DDFE7A1C6ECB01008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		02DDFE7B1C6ECB08008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
@@ -57,6 +55,8 @@
 		02DDFF2C1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF291C6ED1D9008413ED /* GoogleMapsService.swift */; };
 		02DDFF2D1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF291C6ED1D9008413ED /* GoogleMapsService.swift */; };
 		02DDFF511C6FF372008413ED /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
+		02E599551CD68CAF000867EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE541C6ECADD008413ED /* Alamofire.framework */; };
+		02E599561CD68CB4000867EE /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE6A1C6ECAE5008413ED /* ObjectMapper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,8 +227,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0231572A1C7907A4003370A2 /* ObjectMapper.framework in Frameworks */,
-				02DDFE771C6ECAF6008413ED /* Alamofire.framework in Frameworks */,
+				02E599561CD68CB4000867EE /* ObjectMapper.framework in Frameworks */,
+				02E599551CD68CAF000867EE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

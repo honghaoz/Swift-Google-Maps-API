@@ -52,6 +52,8 @@
 		02E599221CD68A89000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
 		02E599311CD68A8A000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
 		02E599321CD68A8B000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
+		02E5993E1CD68C2D000867EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEB61C6ECE0F008413ED /* Alamofire.framework */; };
+		02E599461CD68C37000867EE /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFECC1C6ECE16008413ED /* ObjectMapper.framework */; };
 		02EDBE2C1C781BA600C92D1E /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EDBE221C781BA600C92D1E /* GooglePlaces.framework */; };
 		02EDBE471C781C1900C92D1E /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEFD1C6ED050008413ED /* SharedTypes.swift */; };
 		02EDBE481C781C1900C92D1E /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
@@ -260,6 +262,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E599461CD68C37000867EE /* ObjectMapper.framework in Frameworks */,
+				02E5993E1CD68C2D000867EE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
