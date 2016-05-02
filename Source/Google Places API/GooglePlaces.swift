@@ -112,6 +112,8 @@ public class GooglePlaces: GoogleMapsService {
                 }
             }
             
+            pendingRequest = nil
+            
             completion?(response: response, error: error)
         }
         
