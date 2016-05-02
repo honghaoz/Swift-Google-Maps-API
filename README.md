@@ -1,4 +1,7 @@
 # Swift Google Maps API
+
+[![CI Status](https://travis-ci.org/honghaoz/Swift-Google-Maps-API.svg?branch=master)](https://travis-ci.org/honghaoz/Swift-Google-Maps-API)
+
 Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-started/#web-service-apis) in Swift
 
 ## Features:
