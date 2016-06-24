@@ -1,8 +1,10 @@
 # Swift Google Maps API
 
-[![CI Status](https://travis-ci.org/honghaoz/Swift-Google-Maps-API.svg?branch=master)](https://travis-ci.org/honghaoz/Swift-Google-Maps-API)
+[![CI Status](https://travis-ci.org/honghaoz/Swift-Google-Maps-API.svg)](https://travis-ci.org/honghaoz/Swift-Google-Maps-API)
 
 Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-started/#web-service-apis) in Swift
+
+**`GooglePlaces`** is renamed to **`GooglePlacesAPI`** upon Google's request.
 
 ## Features:
 - [x] [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/)
@@ -30,7 +32,7 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
 
   ```ruby
   use_frameworks!
-  pod 'GooglePlaces', '~> 1.0'
+  pod 'GooglePlacesAPI', '~> 1.0'
   ```
   
 ## Usage
@@ -63,11 +65,11 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
 - Google Places API
   - Place Autocomplete:
     ```swift
-    import GooglePlaces
+    import GooglePlacesAPI
     
-    GooglePlaces.provideAPIKey("A VALID GOOGLE MAPS KEY")
+    GooglePlacesAPI.provideAPIKey("A VALID GOOGLE MAPS KEY")
     
-    GooglePlaces.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
+    GooglePlacesAPI.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
       // Check Status Code
       guard response?.status == GooglePlaces.StatusCode.OK else {
         // Status Code is Not OK
@@ -82,11 +84,11 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
     ```
   - Place Details
     ```swift
-    import GooglePlaces
+    import GooglePlacesAPI
     
-    GooglePlaces.provideAPIKey("A VALID GOOGLE MAPS KEY")
+    GooglePlacesAPI.provideAPIKey("A VALID GOOGLE MAPS KEY")
     
-    GooglePlaces.placeDetails(forPlaceID: "ChIJb9sw59k0K4gRZZlYrnOomfc") { (response, error) -> Void in
+    GooglePlacesAPI.placeDetails(forPlaceID: "ChIJb9sw59k0K4gRZZlYrnOomfc") { (response, error) -> Void in
       // Check Status Code
       guard response?.status == GooglePlaces.StatusCode.OK else {
         // Status Code is Not OK
