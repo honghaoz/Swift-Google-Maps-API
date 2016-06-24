@@ -54,7 +54,7 @@ public class GooglePlaces: GoogleMapsService {
             requestParameters["components"] = components
         }
         
-        if let pendingRquest = pendingRequest where cancelPendingRequestsAutomatically {
+        if pendingRequest != nil && cancelPendingRequestsAutomatically {
             pendingRequest?.cancel()
             pendingRequest = nil
         }
