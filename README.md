@@ -4,7 +4,7 @@
 
 Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-started/#web-service-apis) in Swift
 
-**`GooglePlaces`** is renamed to **`GooglePlacesAPI`** upon Google's request.
+**`GooglePlaces`** is renamed to **`GooglePlacesAPI`** as official `GooglePlaces` pod is coming.
 
 ## Features:
 - [x] [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/)
