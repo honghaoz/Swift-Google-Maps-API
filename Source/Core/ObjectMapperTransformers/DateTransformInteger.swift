@@ -10,24 +10,24 @@ import Foundation
 import ObjectMapper
 
 class DateTransformInteger: TransformType {
-	typealias Object = NSDate
+	typealias Object = Date
 	typealias JSON = Int
 	
 	init() {}
 	
-	func transformFromJSON(value: AnyObject?) -> NSDate? {
+	func transformFromJSON(_ value: Any?) -> Date? {
 		if let timeInt = value as? Int {
-			return NSDate(timeIntervalSince1970: NSTimeInterval(timeInt))
+			return Date(timeIntervalSince1970: TimeInterval(timeInt))
 		}
 		
 		if let timeStr = value as? String {
-			return NSDate(timeIntervalSince1970: NSTimeInterval(atof(timeStr)))
+			return Date(timeIntervalSince1970: TimeInterval(atof(timeStr)))
 		}
 		
 		return nil
 	}
 	
-	func transformToJSON(value: NSDate?) -> Int? {
+	func transformToJSON(_ value: Date?) -> Int? {
 		if let date = value {
 			return Int(date.timeIntervalSince1970)
 		}

@@ -58,17 +58,17 @@ extension GoogleMapsService {
      - PlaceID:           Place id from Google Map API
      */
     public enum Place {
-        case StringDescription(address: String)
-        case Coordinate(coordinate: LocationCoordinate2D)
-        case PlaceID(id: String)
+        case stringDescription(address: String)
+        case coordinate(coordinate: LocationCoordinate2D)
+        case placeID(id: String)
         
         public func toString() -> String {
             switch self {
-            case .StringDescription(let address):
+            case .stringDescription(let address):
                 return address
-            case .Coordinate(let coordinate):
+            case .coordinate(let coordinate):
                 return "\(coordinate.latitude),\(coordinate.longitude)"
-            case .PlaceID(let id):
+            case .placeID(let id):
                 return "place_id:\(id)"
             }
         }

@@ -19,7 +19,7 @@ extension GooglePlaces {
         public var htmlAttributions: [String] = []
         
         public init() {}
-        public init?(_ map: Map) { }
+        public init?(map: Map) { }
         
         public mutating func mapping(map: Map) {
             status <- (map["status"], EnumTransform())
@@ -43,7 +43,7 @@ extension GooglePlaces {
             public var geometryLocation: LocationCoordinate2D?
             
             /// the URL of a suggested icon which may be displayed to the user when indicating this result on a map
-            public var icon: NSURL?
+            public var icon: URL?
             
             /// the place's phone number in international format. International format includes the country code, and is prefixed with the plus (+) sign. For example, the international_phone_number for Google's Sydney, Australia office is +61 2 9374 4000.
             public var internationalPhoneNumber: String?
@@ -82,7 +82,7 @@ extension GooglePlaces {
             public var types: [String] = []
             
             /// the URL of the official Google page for this place. This will be the Google-owned page that contains the best available information about the place. Applications must link to or embed this page on any screen that shows detailed results about the place to the user.
-            public var url: NSURL?
+            public var url: URL?
             
             /// the number of minutes this place’s current timezone is offset from UTC. For example, for places in Sydney, Australia during daylight saving time this would be 660 (+11 hours from UTC), and for places in California outside of daylight saving time this would be -480 (-8 hours from UTC).
             public var utcOffset: Int?
@@ -94,7 +94,7 @@ extension GooglePlaces {
             public var website: String?
             
             public init() {}
-            public init?(_ map: Map) { }
+            public init?(map: Map) { }
             
             public mutating func mapping(map: Map) {
                 addressComponents <- map["address_components"]
@@ -135,7 +135,7 @@ extension GooglePlaces {
                 public var shortName: String?
                 
                 public init() {}
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     types <- map["types"]
@@ -155,7 +155,7 @@ extension GooglePlaces {
                 public var weekdayText: [String] = []
                 
                 public init() {}
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     openNow <- map["open_now"]
@@ -171,7 +171,7 @@ extension GooglePlaces {
                     public var close: DayTime?
                     
                     public init() {}
-                    public init?(_ map: Map) { }
+                    public init?(map: Map) { }
                     
                     public mutating func mapping(map: Map) {
                         open <- map["open"]
@@ -186,7 +186,7 @@ extension GooglePlaces {
                         public var time: Int?
                         
                         public init() {}
-                        public init?(_ map: Map) { }
+                        public init?(map: Map) { }
                         
                         public mutating func mapping(map: Map) {
                             day <- map["day"]
@@ -210,7 +210,7 @@ extension GooglePlaces {
                 public var htmlAttributions: [String] = []
                 
                 public init() {}
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     photoReference <- map["photo_reference"]
@@ -239,7 +239,7 @@ extension GooglePlaces {
                 public var scope: Scope?
                 
                 public init() {}
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     placeID <- map["place_id"]
@@ -257,11 +257,11 @@ extension GooglePlaces {
              - VeryExpensive: Very Expensive
              */
             public enum PriceLevel: Int {
-                case Free = 0
-                case Inexpensive
-                case Moderate
-                case Expensive
-                case VeryExpensive
+                case free = 0
+                case inexpensive
+                case moderate
+                case expensive
+                case veryExpensive
             }
             
             public struct Review: Mappable {
@@ -272,7 +272,7 @@ extension GooglePlaces {
                 public var authorName: String?
                 
                 ///  the URL to the users Google+ profile, if available.
-                public var authorURL: NSURL?
+                public var authorURL: URL?
                 
                 /// an IETF language code indicating the language used in the user's review. This field contains the main language tag only, and not the secondary tag indicating country or region. For example, all the English reviews are tagged as 'en', and not 'en-AU' or 'en-UK' and so on.
                 public var language: String?
@@ -284,7 +284,7 @@ extension GooglePlaces {
                 public var text: String?
                 
                 /// the time that the review was submitted, measured in the number of seconds since since midnight, January 1, 1970 UTC.
-                public var time: NSDate?
+                public var time: Date?
                 
                 /// a rich and concise review curated by Google's editorial staff. This field will be absent unless you pass the extensions=review_summary parameter in your details request. Note that this field may not be available in the requested language.
                 public var reviewSummary: String?
@@ -293,7 +293,7 @@ extension GooglePlaces {
                 public var zagatSelected: Bool = false
                 
                 public init() {}
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     aspects <- map["aspects"]
@@ -316,7 +316,7 @@ extension GooglePlaces {
                     public var rating: Float?
                     
                     public init() {}
-                    public init?(_ map: Map) { }
+                    public init?(map: Map) { }
                     
                     public mutating func mapping(map: Map) {
                         type <- map["type"]
@@ -326,7 +326,7 @@ extension GooglePlaces {
                     /**
                      the name of the aspect that is being rated.
                      */
-                    public enum Type: String {
+                    public enum `Type`: String {
                         case Appeal = "appeal"
                         case Atmosphere = "atmosphere"
                         case Decor = "decor"
