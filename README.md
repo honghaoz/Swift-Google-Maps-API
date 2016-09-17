@@ -13,11 +13,10 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
   - [x] [Place Details](https://developers.google.com/places/web-service/details)
 - [ ] More...
 
-## Platforms
-- [x] iOS 8.0+
-- [x] Mac OS X 10.9+
-- [x] watchOS 2.0+
-- [x] tvOS 9.0+
+## Requirements
+- [x] iOS 9.0+ / Mac OS X 10.11+ / tvOS 9.0+ / watchOS 2.0+
+- [x] Xcode 8.0+
+- [x] Swift 3.0+
 
 ## Installation
 
@@ -26,13 +25,13 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
 
   ```ruby
   use_frameworks!
-  pod 'GoogleMapsDirections', '~> 1.0'
+  pod 'GoogleMapsDirections', '~> 1.1'
   ```
 - Google Places API
 
   ```ruby
   use_frameworks!
-  pod 'GooglePlacesAPI', '~> 1.0'
+  pod 'GooglePlacesAPI', '~> 1.1'
   ```
   
 ## Usage
@@ -40,10 +39,10 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
   ```swift
   import GoogleMapsDirections
   
-  GoogleMapsDirections.provideAPIKey("A VALID GOOGLE MAPS KEY")
+  GoogleMapsDirections.provide(apiKey: "A VALID GOOGLE MAPS KEY")
   
-  let origin = Place.StringDescription(address: "Davis Center, Waterloo, Canada")
-  let destination = Place.StringDescription(address: "Conestoga Mall, Waterloo, Canada")
+  let origin = Place.stringDescription(address: "Davis Center, Waterloo, Canada")
+  let destination = Place.stringDescription(address: "Conestoga Mall, Waterloo, Canada")
   
   // You can also use coordinates or placeID for a place
   // let origin = Place.Coordinate(coordinate: LocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377))
@@ -51,7 +50,7 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
   
   GoogleMapsDirections.direction(fromOrigin: origin, toDestination: destination) { (response, error) -> Void in
     // Check Status Code
-    guard response?.status == GoogleMapsDirections.StatusCode.OK else {
+    guard response?.status == GoogleMapsDirections.StatusCode.ok else {
       // Status Code is Not OK
       debugPrint(response?.errorMessage)
       return
@@ -67,11 +66,11 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
     ```swift
     import GooglePlacesAPI
     
-    GooglePlacesAPI.provideAPIKey("A VALID GOOGLE MAPS KEY")
+    GooglePlacesAPI.provide(apiKey: "A VALID GOOGLE MAPS KEY")
     
     GooglePlacesAPI.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
       // Check Status Code
-      guard response?.status == GooglePlaces.StatusCode.OK else {
+      guard response?.status == GooglePlaces.StatusCode.ok else {
         // Status Code is Not OK
         debugPrint(response?.errorMessage)
         return
@@ -86,11 +85,11 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
     ```swift
     import GooglePlacesAPI
     
-    GooglePlacesAPI.provideAPIKey("A VALID GOOGLE MAPS KEY")
+    GooglePlacesAPI.provide(apiKey: "A VALID GOOGLE MAPS KEY")
     
     GooglePlacesAPI.placeDetails(forPlaceID: "ChIJb9sw59k0K4gRZZlYrnOomfc") { (response, error) -> Void in
       // Check Status Code
-      guard response?.status == GooglePlaces.StatusCode.OK else {
+      guard response?.status == GooglePlaces.StatusCode.ok else {
         // Status Code is Not OK
         debugPrint(response?.errorMessage)
         return
