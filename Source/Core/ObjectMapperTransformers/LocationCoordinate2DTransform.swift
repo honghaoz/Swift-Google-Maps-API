@@ -12,7 +12,7 @@ import ObjectMapper
 class LocationCoordinate2DTransform: TransformType {
     typealias LocationCoordinate2D = GoogleMapsService.LocationCoordinate2D
     typealias Object = LocationCoordinate2D
-    typealias JSON = [String : AnyObject]
+    typealias JSON = [String : Any]
     
     func transformFromJSON(_ value: Any?) -> Object? {
         if let value = value as? JSON {
@@ -29,8 +29,8 @@ class LocationCoordinate2DTransform: TransformType {
     func transformToJSON(_ value: Object?) -> JSON? {
         if let value = value {
             return [
-                "lat" : "\(value.latitude)" as AnyObject,
-                "lng" : "\(value.longitude)" as AnyObject
+                "lat" : "\(value.latitude)",
+                "lng" : "\(value.longitude)"
             ]
         }
         return nil

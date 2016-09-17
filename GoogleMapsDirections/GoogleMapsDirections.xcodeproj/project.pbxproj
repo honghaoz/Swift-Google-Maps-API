@@ -550,9 +550,11 @@
 				TargetAttributes = {
 					027038B31C6E648C0057C4EE = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					027038BD1C6E648C0057C4EE = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					0270393C1C6E6A200057C4EE = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -965,11 +967,12 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -984,11 +987,12 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -999,6 +1003,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1009,6 +1014,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
