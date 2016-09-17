@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 // MARK: - PlaceAutocompleteResponse
-extension GooglePlaces {
+public extension GooglePlaces {
     public struct PlaceAutocompleteResponse: Mappable {
         public var status: StatusCode?
         public var errorMessage: String?

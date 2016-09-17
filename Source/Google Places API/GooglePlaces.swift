@@ -126,7 +126,7 @@ public class GooglePlaces: GoogleMapsService {
 
 
 // MARK: - Place Details
-extension GooglePlaces {
+public extension GooglePlaces {
     
     public static let placeDetailsURLString = "https://maps.googleapis.com/maps/api/place/details/json"
     

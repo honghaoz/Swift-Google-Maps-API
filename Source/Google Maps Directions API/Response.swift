@@ -20,7 +20,7 @@ import ObjectMapper
 // Documentations: https://developers.google.com/maps/documentation/directions/intro#DirectionsResponseElements
 
 // MARK: - Response
-extension GoogleMapsDirections {
+public extension GoogleMapsDirections {
     public struct Response: Mappable {
         public var status: StatusCode?
         public var errorMessage: String?

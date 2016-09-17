@@ -36,7 +36,7 @@ public extension GoogleMapsService {
 
 
 // MARK: - Place
-extension GoogleMapsService {
+public extension GoogleMapsService {
     public typealias LocationDegrees = Double
     public struct LocationCoordinate2D {
         public var latitude: LocationDegrees
