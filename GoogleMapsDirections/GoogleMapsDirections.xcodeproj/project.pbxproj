@@ -1040,11 +1040,12 @@
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-OSX";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1063,11 +1064,12 @@
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-OSX";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1083,6 +1085,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-OSXTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1098,6 +1101,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-OSXTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1117,6 +1121,7 @@
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1138,6 +1143,7 @@
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1151,6 +1157,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-tvOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
@@ -1163,6 +1170,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-tvOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
@@ -1183,6 +1191,7 @@
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -1204,6 +1213,7 @@
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
