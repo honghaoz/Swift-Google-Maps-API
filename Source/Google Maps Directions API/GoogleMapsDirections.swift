@@ -38,7 +38,7 @@ public class GoogleMapsDirections: GoogleMapsService {
      */
     open class func direction(fromOrigin origin: Place,
         toDestination destination: Place,
-        travelMode: TravelMode = .Driving,
+        travelMode: TravelMode = .driving,
         wayPoints: [Place]? = nil,
         alternatives: Bool? = nil,
         avoid: [RouteRestriction]? = nil,
@@ -86,11 +86,11 @@ public class GoogleMapsDirections: GoogleMapsService {
             NSLog("Warning: You can only specify one of arrivalTime or departureTime at most, requests may failed")
         }
         
-        if let arrivalTime = arrivalTime, (travelMode == .Transit || travelMode == .Driving) {
+        if let arrivalTime = arrivalTime, (travelMode == .transit || travelMode == .driving) {
             requestParameters["arrival_time"] = Int(arrivalTime.timeIntervalSince1970)
         }
         
-        if let departureTime = departureTime, (travelMode == .Transit || travelMode == .Driving) {
+        if let departureTime = departureTime, (travelMode == .transit || travelMode == .driving) {
             requestParameters["departure_time"] = Int(departureTime.timeIntervalSince1970)
         }
         
@@ -220,7 +220,7 @@ extension GoogleMapsDirections {
      */
     public class func direction(fromOriginAddress originAddress: String,
         toDestinationAddress destinationAddress: String,
-        travelMode: TravelMode = .Driving,
+        travelMode: TravelMode = .driving,
         wayPoints: [Place]? = nil,
         alternatives: Bool? = nil,
         avoid: [RouteRestriction]? = nil,
@@ -273,7 +273,7 @@ extension GoogleMapsDirections {
      */
     public class func direction(fromOriginCoordinate originCoordinate: LocationCoordinate2D,
         toDestinationCoordinate destinationCoordinate: LocationCoordinate2D,
-        travelMode: TravelMode = .Driving,
+        travelMode: TravelMode = .driving,
         wayPoints: [Place]? = nil,
         alternatives: Bool? = nil,
         avoid: [RouteRestriction]? = nil,
