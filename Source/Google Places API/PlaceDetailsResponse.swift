@@ -122,7 +122,7 @@ extension GooglePlaces {
             
             /**
              *  AddressComponent
-                address components used to compose a given address. For example, the address "111 8th Avenue, New York, NY" contains separate address components for "111" (the street number, "8th Avenue" (the route), "New York" (the city) and "NY" (the US state)
+             address components used to compose a given address. For example, the address "111 8th Avenue, New York, NY" contains separate address components for "111" (the street number, "8th Avenue" (the route), "New York" (the city) and "NY" (the US state)
              */
             public struct AddressComponent: Mappable {
                 /// an array indicating the type of the address component.
@@ -220,15 +220,13 @@ extension GooglePlaces {
                 }
             }
             
-            /**
-             the scope of the place_id
-             
-             - App:    The place ID is recognised by your application only. This is because your application added the place, and the place has not yet passed the moderation process.
-             - Google: The place ID is available to other applications and on Google Maps.
-             */
+            /// The scope of the place_id
+            ///
+            /// - app:    The place ID is recognised by your application only. This is because your application added the place, and the place has not yet passed the moderation process.
+            /// - google: The place ID is available to other applications and on Google Maps.
             public enum Scope: String {
-                case App = "APP"
-                case Google = "GOOGLE"
+                case app = "APP"
+                case google = "GOOGLE"
             }
             
             public struct PlaceIDScope: Mappable {
@@ -250,11 +248,11 @@ extension GooglePlaces {
             /**
              The price level of the place, on a scale of 0 to 4. The exact amount indicated by a specific value will vary from region to region.
              
-             - Free:          Free
-             - Inexpensive:   Inexpensive
-             - Moderate:      Moderate
-             - Expensive:     Expensive
-             - VeryExpensive: Very Expensive
+             - free:          Free
+             - inexpensive:   Inexpensive
+             - moderate:      Moderate
+             - expensive:     Expensive
+             - veryExpensive: Very Expensive
              */
             public enum PriceLevel: Int {
                 case free = 0
@@ -327,14 +325,14 @@ extension GooglePlaces {
                      the name of the aspect that is being rated.
                      */
                     public enum `Type`: String {
-                        case Appeal = "appeal"
-                        case Atmosphere = "atmosphere"
-                        case Decor = "decor"
-                        case Facilities = "facilities"
-                        case Food = "food"
-                        case Overall = "overall"
-                        case Quality = "quality"
-                        case Service = "service"
+                        case appeal = "appeal"
+                        case atmosphere = "atmosphere"
+                        case decor = "decor"
+                        case facilities = "facilities"
+                        case food = "food"
+                        case overall = "overall"
+                        case quality = "quality"
+                        case service = "service"
                     }
                 }
             }

@@ -29,7 +29,7 @@ class PlaceDetailsTests: XCTestCase {
             XCTAssertNotNil(error)
             XCTAssertNotNil(response)
             XCTAssertNotNil(response?.errorMessage)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.RequestDenied)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.requestDenied)
             expectation.fulfill()
         }
         
@@ -43,7 +43,7 @@ class PlaceDetailsTests: XCTestCase {
             XCTAssertNil(error)
             XCTAssertNotNil(response)
             XCTAssertEqual(response?.result?.placeID , "ChIJb9sw59k0K4gRZZlYrnOomfc")
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.ok)
             expectation.fulfill()
         }
         

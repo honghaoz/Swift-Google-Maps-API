@@ -11,13 +11,13 @@ import Foundation
 // MARK: - Plus Operator for Dictionary
 
 /**
-Combine two dictionaries
-
-- parameter left:  left operand dictionary
-- parameter right: right operand dictionary
-
-- returns: Combined dictionary, existed keys in left dictionary will be overrided by right dictionary
-*/
+ Combine two dictionaries
+ 
+ - parameter left:  left operand dictionary
+ - parameter right: right operand dictionary
+ 
+ - returns: Combined dictionary, existed keys in left dictionary will be overrided by right dictionary
+ */
 func + <K, V> (left: [K : V], right: [K : V]?) -> [K : V] {
     guard let right = right else { return left }
     return left.reduce(right) {

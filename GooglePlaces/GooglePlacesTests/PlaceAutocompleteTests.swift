@@ -29,7 +29,7 @@ class PlaceAutocompleteTests: XCTestCase {
             XCTAssertNotNil(error)
             XCTAssertNotNil(response)
             XCTAssertNotNil(response?.errorMessage)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.RequestDenied)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.requestDenied)
             expectation.fulfill()
         }
         
@@ -42,7 +42,7 @@ class PlaceAutocompleteTests: XCTestCase {
         GooglePlaces.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.ok)
             expectation.fulfill()
         }
         
@@ -55,7 +55,7 @@ class PlaceAutocompleteTests: XCTestCase {
         GooglePlaces.placeAutocomplete(forInput: "pub") { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
-            XCTAssertEqual(response!.status, GooglePlaces.StatusCode.OK)
+            XCTAssertEqual(response!.status, GooglePlaces.StatusCode.ok)
             XCTAssertTrue(response!.predictions.count > 0)
             expectation.fulfill()
         }
@@ -71,7 +71,7 @@ class PlaceAutocompleteTests: XCTestCase {
         GooglePlaces.placeAutocomplete(forInput: query, locationCoordinate: LocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377), radius: 10000) { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
-            XCTAssertEqual(response!.status, GooglePlaces.StatusCode.OK)
+            XCTAssertEqual(response!.status, GooglePlaces.StatusCode.ok)
             XCTAssertTrue(response!.predictions.count > 0)
             
             guard let predictions = response?.predictions else {

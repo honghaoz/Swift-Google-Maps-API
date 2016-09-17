@@ -17,16 +17,16 @@ public class GooglePlaces: GoogleMapsService {
     public static let placeAutocompleteURLString = "https://maps.googleapis.com/maps/api/place/autocomplete/json"
     
     public class func placeAutocomplete(forInput input: String,
-        offset: Int? = nil,
-        locationCoordinate: LocationCoordinate2D? = nil,
-        radius: Int? = nil,
-        language: String? = nil,
-        types: [PlaceType]? = nil,
-        components: String? = nil,
-        cancelPendingRequestsAutomatically: Bool = true,
-        completion: ((PlaceAutocompleteResponse?, NSError?) -> Void)?)
+                                        offset: Int? = nil,
+                                        locationCoordinate: LocationCoordinate2D? = nil,
+                                        radius: Int? = nil,
+                                        language: String? = nil,
+                                        types: [PlaceType]? = nil,
+                                        components: String? = nil,
+                                        cancelPendingRequestsAutomatically: Bool = true,
+                                        completion: ((PlaceAutocompleteResponse?, NSError?) -> Void)?)
     {
-		var requestParameters: [String : Any] = baseRequestParameters + [
+        var requestParameters: [String : Any] = baseRequestParameters + [
             "input" : input
         ]
         
@@ -59,7 +59,7 @@ public class GooglePlaces: GoogleMapsService {
             pendingRequest = nil
         }
         
-		let request = Alamofire.request(placeAutocompleteURLString, method: .get, parameters: requestParameters).responseJSON { response in
+        let request = Alamofire.request(placeAutocompleteURLString, method: .get, parameters: requestParameters).responseJSON { response in
             if response.result.error?._code == NSURLErrorCancelled {
                 // nothing to do, another active request is coming
                 return
@@ -83,8 +83,8 @@ public class GooglePlaces: GoogleMapsService {
                 completion?(nil, NSError(domain: "GooglePlacesError", code: -2, userInfo: nil))
                 return
             }
-			
-			guard let response = Mapper<PlaceAutocompleteResponse>().map(JSON: json) else {
+            
+            guard let response = Mapper<PlaceAutocompleteResponse>().map(JSON: json) else {
                 NSLog("Error: Mapping directions response failed")
                 completion?(nil, NSError(domain: "GooglePlacesError", code: -3, userInfo: nil))
                 return
@@ -101,7 +101,7 @@ public class GooglePlaces: GoogleMapsService {
                 error = NSError(domain: "GooglePlacesError", code: -1, userInfo: userInfo)
             case .some(let status):
                 switch status {
-                case .OK:
+                case .ok:
                     break
                 default:
                     let userInfo = [
@@ -143,7 +143,7 @@ extension GooglePlaces {
             requestParameters["language"] = language
         }
         
-		let request = Alamofire.request(placeDetailsURLString, method: .get, parameters: requestParameters).responseJSON { response in
+        let request = Alamofire.request(placeDetailsURLString, method: .get, parameters: requestParameters).responseJSON { response in
             if response.result.isFailure {
                 NSLog("Error: GET failed")
                 completion?(nil, NSError(domain: "GooglePlacesError", code: -1, userInfo: nil))
@@ -162,8 +162,8 @@ extension GooglePlaces {
                 completion?(nil, NSError(domain: "GooglePlacesError", code: -2, userInfo: nil))
                 return
             }
-			
-			guard let response = Mapper<PlaceDetailsResponse>().map(JSON: json) else {
+            
+            guard let response = Mapper<PlaceDetailsResponse>().map(JSON: json) else {
                 NSLog("Error: Mapping directions response failed")
                 completion?(nil, NSError(domain: "GooglePlacesError", code: -3, userInfo: nil))
                 return
@@ -180,7 +180,7 @@ extension GooglePlaces {
                 error = NSError(domain: "GooglePlacesError", code: -1, userInfo: userInfo)
             case .some(let status):
                 switch status {
-                case .OK:
+                case .ok:
                     break
                 default:
                     let userInfo = [
