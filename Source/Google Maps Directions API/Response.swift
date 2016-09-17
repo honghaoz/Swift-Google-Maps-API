@@ -29,7 +29,7 @@ extension GoogleMapsDirections {
         public var routes: [Route] = []
         
         public init() {}
-        public init?(_ map: Map) { }
+        public init?(map: Map) { }
         
         public mutating func mapping(map: Map) {
             status <- (map["status"], EnumTransform())
@@ -48,7 +48,7 @@ extension GoogleMapsDirections {
             public var placeID: String?
             public var types: [AddressType] = []
             
-            public init?(_ map: Map) { }
+            public init?(map: Map) { }
             
             public mutating func mapping(map: Map) {
                 geocoderStatus <- (map["geocoder_status"], EnumTransform())
@@ -71,7 +71,7 @@ extension GoogleMapsDirections {
             public var warnings: [String] = []
             public var fare: Fare?
             
-            public init?(_ map: Map) { }
+            public init?(map: Map) { }
             
             public mutating func mapping(map: Map) {
                 summary <- map["summary"]
@@ -99,7 +99,7 @@ extension GoogleMapsDirections {
                 public var startAddress: String?
                 public var endAddress: String?
                 
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     steps <- map["steps"]
@@ -130,7 +130,7 @@ extension GoogleMapsDirections {
                     public var maneuver: String?
                     public var transitDetails: TransitDetails?
                     
-                    public init?(_ map: Map) { }
+                    public init?(map: Map) { }
                     
                     public mutating func mapping(map: Map) {
                         htmlInstructions <- map["html_instructions"]
@@ -152,7 +152,7 @@ extension GoogleMapsDirections {
                         public var value: Int? // the distance in meters
                         public var text: String? // human-readable representation of the distance
                         
-                        public init?(_ map: Map) { }
+                        public init?(map: Map) { }
                         
                         public mutating func mapping(map: Map) {
                             value <- map["value"]
@@ -167,7 +167,7 @@ extension GoogleMapsDirections {
                         public var value: Int? // the duration in seconds.
                         public var text: String? // human-readable representation of the duration.
                         
-                        public init?(_ map: Map) { }
+                        public init?(map: Map) { }
                         
                         public mutating func mapping(map: Map) {
                             value <- map["value"]
@@ -188,7 +188,7 @@ extension GoogleMapsDirections {
                         public var numStops: Int?
                         public var line: TransitLine?
                         
-                        public init?(_ map: Map) { }
+                        public init?(map: Map) { }
                         
                         public mutating func mapping(map: Map) {
                             arrivalStop <- map["arrival_stop"]
@@ -208,7 +208,7 @@ extension GoogleMapsDirections {
                             public var location: LocationCoordinate2D?
                             public var name: String?
                             
-                            public init?(_ map: Map) { }
+                            public init?(map: Map) { }
                             
                             public mutating func mapping(map: Map) {
                                 location <- (map["location"], LocationCoordinate2DTransform())
@@ -224,12 +224,12 @@ extension GoogleMapsDirections {
                             public var shortName: String?
                             public var color: Color?
                             public var agencies: [TransitAgency] = []
-                            public var url: NSURL?
-                            public var icon: NSURL?
+                            public var url: URL?
+                            public var icon: URL?
                             public var textColor: Color?
                             public var vehicle: [TransitLineVehicle] = []
                             
-                            public init?(_ map: Map) { }
+                            public init?(map: Map) { }
                             
                             public mutating func mapping(map: Map) {
                                 name <- map["name"]
@@ -242,7 +242,7 @@ extension GoogleMapsDirections {
                                 vehicle <- map["vehicle"]
                             }
                             
-                            private func colorTransform() -> TransformOf<Color, String> {
+                            fileprivate func colorTransform() -> TransformOf<Color, String> {
                                 return TransformOf<Color, String>(fromJSON: { (value: String?) -> Color? in
                                     if let value = value {
                                         return Color(hexString: value)
@@ -262,9 +262,9 @@ extension GoogleMapsDirections {
                             public struct TransitAgency: Mappable {
                                 public var name: String?
                                 public var phone: String?
-                                public var url: NSURL?
+                                public var url: URL?
                                 
-                                public init?(_ map: Map) { }
+                                public init?(map: Map) { }
                                 
                                 public mutating func mapping(map: Map) {
                                     name <- map["name"]
@@ -279,9 +279,9 @@ extension GoogleMapsDirections {
                             public struct TransitLineVehicle: Mappable {
                                 public var name: String?
                                 public var type: VehicleType?
-                                public var icon: NSURL?
+                                public var icon: URL?
                                 
-                                public init?(_ map: Map) { }
+                                public init?(map: Map) { }
                                 
                                 public mutating func mapping(map: Map) {
                                     name <- map["name"]
@@ -300,7 +300,7 @@ extension GoogleMapsDirections {
                     public var value: Int? // the duration in seconds.
                     public var text: String? // human-readable representation of the duration.
                     
-                    public init?(_ map: Map) { }
+                    public init?(map: Map) { }
                     
                     public mutating func mapping(map: Map) {
                         value <- map["value"]
@@ -312,11 +312,11 @@ extension GoogleMapsDirections {
                  *  Time
                  */
                 public struct Time: Mappable {
-                    public var value: NSDate? // the time specified as a JavaScript Date object.
+                    public var value: Date? // the time specified as a JavaScript Date object.
                     public var text: String? // the time specified as a string.
-                    public var timeZone: NSTimeZone? // the time zone of this station. The value is the name of the time zone as defined in the IANA Time Zone Database, e.g. "America/New_York".
+                    public var timeZone: TimeZone? // the time zone of this station. The value is the name of the time zone as defined in the IANA Time Zone Database, e.g. "America/New_York".
                     
-                    public init?(_ map: Map) { }
+                    public init?(map: Map) { }
                     
                     public mutating func mapping(map: Map) {
                         value <- (map["value"], DateTransformInteger())
@@ -324,15 +324,15 @@ extension GoogleMapsDirections {
                         timeZone <- (map["time_zone"], timeZoneTransform())
                     }
                     
-                    private func timeZoneTransform() -> TransformOf<NSTimeZone, String> {
-                        return TransformOf<NSTimeZone, String>(fromJSON: { (value: String?) -> NSTimeZone? in
+                    fileprivate func timeZoneTransform() -> TransformOf<TimeZone, String> {
+                        return TransformOf<TimeZone, String>(fromJSON: { (value: String?) -> TimeZone? in
                             if let value = value {
-                                return NSTimeZone(name: value)
+                                return TimeZone(identifier: value)
                             }
                             return nil
-                            }, toJSON: { (value: NSTimeZone?) -> String? in
+                            }, toJSON: { (value: TimeZone?) -> String? in
                                 if let value = value {
-                                    return value.name
+                                    return value.identifier
                                 }
                                 return nil
                         })
@@ -347,7 +347,7 @@ extension GoogleMapsDirections {
                 public var northeast: LocationCoordinate2D?
                 public var southwest: LocationCoordinate2D?
                 
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     northeast <- (map["northeast"], LocationCoordinate2DTransform())
@@ -363,7 +363,7 @@ extension GoogleMapsDirections {
                 public var value: Float?
                 public var text: String?
                 
-                public init?(_ map: Map) { }
+                public init?(map: Map) { }
                 
                 public mutating func mapping(map: Map) {
                     currency <- map["currency"]
@@ -384,20 +384,20 @@ private extension Color {
      
      - returns: Color
      */
-    private convenience init?(hexString: String) {
+    convenience init?(hexString: String) {
         guard hexString.hasPrefix("#") else {
             return nil
         }
         guard hexString.characters.count == "#000000".characters.count else {
             return nil
         }
-        let digits = hexString.substringFromIndex(hexString.startIndex.advancedBy(1))
+        let digits = hexString.substring(from: hexString.characters.index(hexString.startIndex, offsetBy: 1))
         guard Int(digits, radix: 16) != nil else {
             return nil
         }
-        let red = digits.substringToIndex(digits.startIndex.advancedBy(2))
-        let green = digits.substringWithRange(digits.startIndex.advancedBy(2) ..< digits.startIndex.advancedBy(4))
-        let blue = digits.substringWithRange(digits.startIndex.advancedBy(4) ..< digits.startIndex.advancedBy(6))
+        let red = digits.substring(to: digits.characters.index(digits.startIndex, offsetBy: 2))
+        let green = digits.substring(with: digits.characters.index(digits.startIndex, offsetBy: 2) ..< digits.characters.index(digits.startIndex, offsetBy: 4))
+        let blue = digits.substring(with: digits.characters.index(digits.startIndex, offsetBy: 4) ..< digits.characters.index(digits.startIndex, offsetBy: 6))
         let redf = CGFloat(Double(Int(red, radix: 16)!) / 255.0)
         let greenf = CGFloat(Double(Int(green, radix: 16)!) / 255.0)
         let bluef = CGFloat(Double(Int(blue, radix: 16)!) / 255.0)
@@ -405,12 +405,12 @@ private extension Color {
     }
     
     /// Get Hex6 String, e.g. "#CC0000"
-    private var hexString: String {
-        let colorRef = CGColorGetComponents(self.CGColor)
+    var hexString: String {
+        let colorRef = self.cgColor.components
         
-        let r: CGFloat = colorRef[0]
-        let g: CGFloat = colorRef[1]
-        let b: CGFloat = colorRef[2]
+        let r: CGFloat = colorRef![0]
+        let g: CGFloat = colorRef![1]
+        let b: CGFloat = colorRef![2]
         
         return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
     }

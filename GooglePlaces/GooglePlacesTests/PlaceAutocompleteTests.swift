@@ -14,7 +14,7 @@ class PlaceAutocompleteTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        GooglePlaces.provideAPIKey("AIzaSyDftpY3fi6x_TL4rntL8pgZb-A8mf6D0Ss")
+        GooglePlaces.provide(apiKey: "AIzaSyDftpY3fi6x_TL4rntL8pgZb-A8mf6D0Ss")
     }
     
     override func tearDown() {
@@ -22,57 +22,57 @@ class PlaceAutocompleteTests: XCTestCase {
     }
     
     func testAPIIsInvalid() {
-        let expectation = self.expectationWithDescription("results")
-        GooglePlaces.provideAPIKey("fake_key")
+        let expectation = self.expectation(description: "results")
+        GooglePlaces.provide(apiKey: "fake_key")
         
         GooglePlaces.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
             XCTAssertNotNil(error)
             XCTAssertNotNil(response)
             XCTAssertNotNil(response?.errorMessage)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.RequestDenied)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.requestDenied)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testAPIIsValid() {
-        let expectation = self.expectationWithDescription("results")
+        let expectation = self.expectation(description: "results")
         
         GooglePlaces.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.ok)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testResultsReturned() {
-        let expectation = self.expectationWithDescription("It has at least one result returned for `pub`")
+        let expectation = self.expectation(description: "It has at least one result returned for `pub`")
         
         GooglePlaces.placeAutocomplete(forInput: "pub") { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
-            XCTAssertTrue(response?.predictions.count > 0)
+            XCTAssertEqual(response!.status, GooglePlaces.StatusCode.ok)
+            XCTAssertTrue(response!.predictions.count > 0)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testResultsMatchedSubstrings() {
-        let expectation = self.expectationWithDescription("It has at least one result returned for `pub`")
+        let expectation = self.expectation(description: "It has at least one result returned for `pub`")
         
         let query = "Pub"
         
         GooglePlaces.placeAutocomplete(forInput: query, locationCoordinate: LocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377), radius: 10000) { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
-            XCTAssertTrue(response?.predictions.count > 0)
+            XCTAssertEqual(response!.status, GooglePlaces.StatusCode.ok)
+            XCTAssertTrue(response!.predictions.count > 0)
             
             guard let predictions = response?.predictions else {
                 XCTAssert(false, "prediction is nil")
@@ -88,14 +88,17 @@ class PlaceAutocompleteTests: XCTestCase {
                         XCTAssert(false, "length/offset is nil")
                         return
                 }
-                
-                let substring = description.substringWithRange(Range<String.Index>(start: description.startIndex.advancedBy(offset), end: description.startIndex.advancedBy(offset + length)))
-                XCTAssertEqual(substring.lowercaseString, query.lowercaseString)
+				
+				let start = description.index(description.startIndex, offsetBy: offset)
+				let end = description.index(description.startIndex, offsetBy: offset + length)
+				let substring = description.substring(with: start ..< end)
+				
+                XCTAssertEqual(substring.lowercased(), query.lowercased())
             }
             
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
 }

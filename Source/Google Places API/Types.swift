@@ -10,10 +10,10 @@ import Foundation
 
 public extension GooglePlaces {
     public enum PlaceType: String {        
-        case Geocode = "geocode"
-        case Address = "address"
-        case Establishment = "establishment"
-        case Regions = "(regions)"
-        case Cities = "(cities)"
+        case geocode = "geocode"
+        case address = "address"
+        case establishment = "establishment"
+        case regions = "(regions)"
+        case cities = "(cities)"
     }
 }

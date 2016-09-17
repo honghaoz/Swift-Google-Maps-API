@@ -14,7 +14,7 @@ class PlaceDetailsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        GooglePlaces.provideAPIKey("AIzaSyDftpY3fi6x_TL4rntL8pgZb-A8mf6D0Ss")
+        GooglePlaces.provide(apiKey: "AIzaSyDftpY3fi6x_TL4rntL8pgZb-A8mf6D0Ss")
     }
     
     override func tearDown() {
@@ -22,31 +22,31 @@ class PlaceDetailsTests: XCTestCase {
     }
     
     func testAPIIsInvalid() {
-        let expectation = self.expectationWithDescription("results")
-        GooglePlaces.provideAPIKey("fake_key")
+        let expectation = self.expectation(description: "results")
+        GooglePlaces.provide(apiKey: "fake_key")
         
         GooglePlaces.placeDetails(forPlaceID: "") { (response, error) -> Void in
             XCTAssertNotNil(error)
             XCTAssertNotNil(response)
             XCTAssertNotNil(response?.errorMessage)
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.RequestDenied)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.requestDenied)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
     
     func testAPIIsValid() {
-        let expectation = self.expectationWithDescription("results")
+        let expectation = self.expectation(description: "results")
         
         GooglePlaces.placeDetails(forPlaceID: "ChIJb9sw59k0K4gRZZlYrnOomfc") { (response, error) -> Void in
             XCTAssertNil(error)
             XCTAssertNotNil(response)
             XCTAssertEqual(response?.result?.placeID , "ChIJb9sw59k0K4gRZZlYrnOomfc")
-            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.OK)
+            XCTAssertEqual(response?.status, GooglePlaces.StatusCode.ok)
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
 }
