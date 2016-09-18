@@ -41,8 +41,8 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
   
   GoogleMapsDirections.provide(apiKey: "A VALID GOOGLE MAPS KEY")
   
-  let origin = Place.stringDescription(address: "Davis Center, Waterloo, Canada")
-  let destination = Place.stringDescription(address: "Conestoga Mall, Waterloo, Canada")
+  let origin = GoogleMapsDirections.Place.stringDescription(address: "Davis Center, Waterloo, Canada")
+  let destination = GoogleMapsDirections.Place.stringDescription(address: "Conestoga Mall, Waterloo, Canada")
   
   // You can also use coordinates or placeID for a place
   // let origin = Place.Coordinate(coordinate: LocationCoordinate2D(latitude: 43.4697354, longitude: -80.5397377))
