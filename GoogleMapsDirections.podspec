@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
   s.module_name      = "GoogleMapsDirections"
 
   s.dependency 'Alamofire', '~> 4.1'
-  s.dependency 'ObjectMapper', '~> 2.0.0'
+  s.dependency 'ObjectMapper', '~> 2.2.0'
 
 end
