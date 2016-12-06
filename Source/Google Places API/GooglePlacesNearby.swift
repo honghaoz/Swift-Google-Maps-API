@@ -39,7 +39,7 @@ public extension GooglePlaces {
                                         opennow: Bool? = nil,
                                         rankby: Rank? = nil,
                                         type: NearbyPlaceType? = nil,
-                                        types: [NearbyPlaceType],
+                                        types: [NearbyPlaceType]? = nil,
                                         cancelPendingRequestsAutomatically: Bool = true,
                                         completion: ((PlaceNearbyResponse?, NSError?) -> Void)?)
     {
@@ -79,7 +79,9 @@ public extension GooglePlaces {
             requestParameters["type"] = type.rawValue
         }
         
-        requestParameters["types"] = types.map { $0.rawValue }.joined(separator: "|")
+        if let types = types {
+            requestParameters["types"] = types.map { $0.rawValue }.joined(separator: "|")
+        }
         
         if pendingRequest != nil && cancelPendingRequestsAutomatically {
             pendingRequest?.cancel()
