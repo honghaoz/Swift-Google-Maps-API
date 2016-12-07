@@ -47,8 +47,12 @@ public extension GooglePlaces {
         
         requestParameters["location"] = "\(locationCoordinate.latitude),\(locationCoordinate.longitude)"
         
-        if let radius = radius {
-            requestParameters["radius"] = radius
+        if let keyword = radius {
+            requestParameters["keyword"] = radius
+        }
+        
+        if let rankby = keyword {
+            requestParameters["rankby"] = rankby
         }
         
         if let language = language {
