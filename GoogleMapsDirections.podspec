@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GoogleMapsDirections"
-  s.version          = "1.1.0"
+  s.version          = "1.1.1"
   s.summary          = "Swift Wrapper on Google Maps Directions API"
   s.description      = <<-DESC
                        Swift Wrapper on Google Maps Directions API
@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
   s.module_name      = "GoogleMapsDirections"
 
   s.dependency 'Alamofire', '~> 4.0'
-  s.dependency 'ObjectMapper', '~> 2.0.0'
+  s.dependency 'ObjectMapper', '~> 2.0'
 
 end
