@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.author           = { "Honghao Zhang" => "zhh358@gmail.com" }
   s.source           = { :git => "https://github.com/honghaoz/Swift-Google-Maps-API.git", :tag => s.version.to_s }
 
-  s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.10"
+  s.ios.deployment_target = "9.0"
+  s.osx.deployment_target = "10.11"
   s.watchos.deployment_target = "2.0"
   s.tvos.deployment_target = "9.0"
 
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source_files     = "Source/Core/**/*.*", "Source/Google Maps Directions API/**/*.*"
   s.module_name      = "GoogleMapsDirections"
 
-  s.dependency 'Alamofire', '~> 4.1'
-  s.dependency 'ObjectMapper', '~> 2.2.0'
+  s.dependency 'Alamofire', '~> 4.0'
+  s.dependency 'ObjectMapper', '~> 2.0'
 
 end
