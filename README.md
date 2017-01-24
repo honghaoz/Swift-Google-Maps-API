@@ -11,10 +11,11 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
 - [ ] [Google Places API Web Service](https://developers.google.com/places/web-service/)
   - [x] [Place Autocomplete](https://developers.google.com/places/web-service/autocomplete)
   - [x] [Place Details](https://developers.google.com/places/web-service/details)
+  - [x] [Place Nearby](https://developers.google.com/places/web-service/search)
 - [ ] More...
 
 ## Requirements
-- [x] iOS 9.0+ / Mac OS X 10.11+ / tvOS 9.0+ / watchOS 2.0+
+- [x] iOS 8.0+ / Mac OS X 10.10+ / tvOS 9.0+ / watchOS 2.0+
 - [x] Xcode 8.0+
 - [x] Swift 3.0+
 
@@ -25,13 +26,13 @@ Use [Google Maps Web Service APIs](https://developers.google.com/maps/get-starte
 
   ```ruby
   use_frameworks!
-  pod 'GoogleMapsDirections', '~> 1.1'
+  pod 'GoogleMapsDirections'
   ```
 - Google Places API
 
   ```ruby
   use_frameworks!
-  pod 'GooglePlacesAPI', '~> 1.1'
+  pod 'GooglePlacesAPI'
   ```
   
 ## Usage
