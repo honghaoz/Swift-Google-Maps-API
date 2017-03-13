@@ -340,7 +340,7 @@
 				02DDFE501C6ECADD008413ED /* Alamofire.framework */,
 				02DDFE521C6ECADD008413ED /* Alamofire iOS Tests.xctest */,
 				02DDFE541C6ECADD008413ED /* Alamofire.framework */,
-				02DDFE561C6ECADD008413ED /* Alamofire OSX Tests.xctest */,
+				02DDFE561C6ECADD008413ED /* Alamofire macOS Tests.xctest */,
 				02DDFE581C6ECADD008413ED /* Alamofire.framework */,
 				02DDFE5A1C6ECADD008413ED /* Alamofire tvOS Tests.xctest */,
 				02DDFE5C1C6ECADD008413ED /* Alamofire.framework */,
@@ -628,10 +628,10 @@
 			remoteRef = 02DDFE531C6ECADD008413ED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		02DDFE561C6ECADD008413ED /* Alamofire OSX Tests.xctest */ = {
+		02DDFE561C6ECADD008413ED /* Alamofire macOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Alamofire OSX Tests.xctest";
+			path = "Alamofire macOS Tests.xctest";
 			remoteRef = 02DDFE551C6ECADD008413ED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -973,7 +973,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
@@ -994,7 +994,7 @@
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
@@ -1040,7 +1040,7 @@
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-OSX";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = macosx;
@@ -1064,7 +1064,7 @@
 				INFOPLIST_FILE = GoogleMapsDirections/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-OSX";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SDKROOT = macosx;

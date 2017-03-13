@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GooglePlacesAPI"
-  s.version          = "1.1.2"
+  s.version          = "1.1.3"
   s.summary          = "Swift Wrapper on Google Places API"
   s.description      = <<-DESC
                        Swift Wrapper on Google Places API
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.author           = { "Honghao Zhang" => "zhh358@gmail.com" }
   s.source           = { :git => "https://github.com/honghaoz/Swift-Google-Maps-API.git", :tag => s.version.to_s }
 
-  s.ios.deployment_target = "9.0"
-  s.osx.deployment_target = "10.11"
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.10"
   s.watchos.deployment_target = "2.0"
   s.tvos.deployment_target = "9.0"
 
