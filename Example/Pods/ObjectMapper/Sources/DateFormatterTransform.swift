@@ -1,12 +1,12 @@
 //
-//  URLTransform.swift
+//  DateFormatterTransform.swift
 //  ObjectMapper
 //
-//  Created by Tristan Himmelman on 2014-10-27.
+//  Created by Tristan Himmelman on 2015-03-09.
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014-2015 Hearst
+//  Copyright (c) 2014-2016 Hearst
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,37 +28,26 @@
 
 import Foundation
 
-open class URLTransform: TransformType {
-	public typealias Object = URL
+open class DateFormatterTransform: TransformType {
+	public typealias Object = Date
 	public typealias JSON = String
-	private let shouldEncodeURLString: Bool
-
-	/**
-	Initializes the URLTransform with an option to encode URL strings before converting them to an NSURL
-	- parameter shouldEncodeUrlString: when true (the default) the string is encoded before passing
-	to `NSURL(string:)`
-	- returns: an initialized transformer
-	*/
-	public init(shouldEncodeURLString: Bool = true) {
-		self.shouldEncodeURLString = shouldEncodeURLString
+	
+	public let dateFormatter: DateFormatter
+	
+	public init(dateFormatter: DateFormatter) {
+		self.dateFormatter = dateFormatter
 	}
-
-	public func transformFromJSON(_ value: Any?) -> URL? {
-		guard let URLString = value as? String else { return nil }
-		
-		if !shouldEncodeURLString {
-			return URL(string: URLString)
+	
+	open func transformFromJSON(_ value: Any?) -> Date? {
+		if let dateString = value as? String {
+			return dateFormatter.date(from: dateString)
 		}
-		
-		guard let escapedURLString = URLString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else {
-			return nil
-		}
-		return URL(string: escapedURLString)
+		return nil
 	}
-
-	public func transformToJSON(_ value: URL?) -> String? {
-		if let URL = value {
-			return URL.absoluteString
+	
+	open func transformToJSON(_ value: Date?) -> String? {
+		if let date = value {
+			return dateFormatter.string(from: date)
 		}
 		return nil
 	}

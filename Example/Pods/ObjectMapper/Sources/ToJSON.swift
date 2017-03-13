@@ -6,7 +6,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014-2015 Hearst
+//  Copyright (c) 2014-2016 Hearst
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,15 +26,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import class Foundation.NSNumber
+import Foundation
 
 private func setValue(_ value: Any, map: Map) {
-	setValue(value, key: map.currentKey!, checkForNestedKeys: map.keyIsNested, dictionary: &map.JSON)
+	setValue(value, key: map.currentKey!, checkForNestedKeys: map.keyIsNested, delimiter: map.nestedKeyDelimiter, dictionary: &map.JSON)
 }
 
-private func setValue(_ value: Any, key: String, checkForNestedKeys: Bool, dictionary: inout [String : Any]) {
+private func setValue(_ value: Any, key: String, checkForNestedKeys: Bool, delimiter: String, dictionary: inout [String : Any]) {
 	if checkForNestedKeys {
-		let keyComponents = ArraySlice(key.characters.split { $0 == "." })
+		let keyComponents = ArraySlice(key.components(separatedBy: delimiter).filter { !$0.isEmpty }.map { $0.characters })
 		setValue(value, forKeyPathComponents: keyComponents, dictionary: &dictionary)
 	} else {
 		dictionary[key] = value
@@ -73,6 +73,7 @@ internal final class ToJSON {
 			|| x is Double
 			|| x is Float
 			|| x is String
+			|| x is NSNull
 			|| x is Array<NSNumber> // Arrays
 			|| x is Array<Bool>
 			|| x is Array<Int>
@@ -92,10 +93,12 @@ internal final class ToJSON {
 			setValue(x, map: map)
 		}
 	}
-
+	
 	class func optionalBasicType<N>(_ field: N?, map: Map) {
 		if let field = field {
 			basicType(field, map: map)
+		} else if map.shouldIncludeNilValues {
+			basicType(NSNull(), map: map)  //If BasicType is nil, emil NSNull into the JSON output
 		}
 	}
 
@@ -155,13 +158,13 @@ internal final class ToJSON {
 		
 		setValue(JSONObjects, map: map)
 	}
-	
+
 	class func optionalObjectDictionary<N: BaseMappable>(_ field: Dictionary<String, N>?, map: Map) {
-        if let field = field {
+		if let field = field {
 			objectDictionary(field, map: map)
-        }
-    }
-	
+		}
+	}
+
 	class func objectDictionaryOfArrays<N: BaseMappable>(_ field: Dictionary<String, [N]>, map: Map) {
 		let JSONObjects = Mapper(context: map.context).toJSONDictionaryOfArrays(field)
 

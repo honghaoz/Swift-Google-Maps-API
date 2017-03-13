@@ -6,7 +6,7 @@
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014-2015 Hearst
+//  Copyright (c) 2014-2016 Hearst
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -40,95 +40,89 @@ public final class Map {
 	
 	public internal(set) var JSON: [String: Any] = [:]
 	public internal(set) var isKeyPresent = false
-	public var currentValue: Any?
-	public var context: MapContext?
-	var currentKey: String?
+	public internal(set) var currentValue: Any?
+	public internal(set) var currentKey: String?
 	var keyIsNested = false
+	public internal(set) var nestedKeyDelimiter: String = "."
+	public var context: MapContext?
+	public var shouldIncludeNilValues = false  /// If this is set to true, toJSON output will include null values for any variables that are not set.
 	
 	let toObject: Bool // indicates whether the mapping is being applied to an existing object
 	
-	/// Counter for failing cases of deserializing values to `let` properties.
-	private var failedCount: Int = 0
-	
-	public init(mappingType: MappingType, JSON: [String: Any], toObject: Bool = false, context: MapContext? = nil) {
+	public init(mappingType: MappingType, JSON: [String: Any], toObject: Bool = false, context: MapContext? = nil, shouldIncludeNilValues: Bool = false) {
+				
 		self.mappingType = mappingType
 		self.JSON = JSON
 		self.toObject = toObject
 		self.context = context
+		self.shouldIncludeNilValues = shouldIncludeNilValues
 	}
 	
 	/// Sets the current mapper value and key.
 	/// The Key paramater can be a period separated string (ex. "distance.value") to access sub objects.
 	public subscript(key: String) -> Map {
 		// save key and value associated to it
-		let nested = key.contains(".")
-        return self[key, nested: nested, ignoreNil: false]
+		return self[key, delimiter: ".", ignoreNil: false]
 	}
 	
+	public subscript(key: String, delimiter delimiter: String) -> Map {
+		let nested = key.contains(delimiter)
+		return self[key, nested: nested, delimiter: delimiter, ignoreNil: false]
+	}
+
 	public subscript(key: String, nested nested: Bool) -> Map {
-	    return self[key, nested: nested, ignoreNil: false]
+	    return self[key, nested: nested, delimiter: ".", ignoreNil: false]
 	}
 	
-    public subscript(key: String, ignoreNil ignoreNil: Bool) -> Map {
-        let nested = key.contains(".")
-        return self[key, nested: nested, ignoreNil: ignoreNil]
+	public subscript(key: String, nested nested: Bool, delimiter delimiter: String) -> Map {
+	    return self[key, nested: nested, delimiter: delimiter, ignoreNil: false]
+	}
+
+	public subscript(key: String, ignoreNil ignoreNil: Bool) -> Map {
+		return self[key, delimiter: ".", ignoreNil: ignoreNil]
+	}
+	
+    public subscript(key: String, delimiter delimiter: String, ignoreNil ignoreNil: Bool) -> Map {
+        let nested = key.contains(delimiter)
+        return self[key, nested: nested, delimiter: delimiter, ignoreNil: ignoreNil]
     }
-    
-    public subscript(key: String, nested nested: Bool, ignoreNil ignoreNil: Bool) -> Map {
+
+	public subscript(key: String, nested nested: Bool, ignoreNil ignoreNil: Bool) -> Map {
+		return self[key, nested: nested, delimiter: ".", ignoreNil: ignoreNil]
+	}
+	
+    public subscript(key: String, nested nested: Bool, delimiter delimiter: String, ignoreNil ignoreNil: Bool) -> Map {
 		// save key and value associated to it
 		currentKey = key
 		keyIsNested = nested
+		nestedKeyDelimiter = delimiter
 
-		// check if a value exists for the current key 
-		// do this pre-check for performance reasons
-		if nested == false {
-			let object = JSON[key]
-			let isNSNull = object is NSNull
-			isKeyPresent = isNSNull ? true : object != nil
-			currentValue = isNSNull ? nil : object
-		} else {
-			// break down the components of the key that are separated by .
-			(isKeyPresent, currentValue) = valueFor(ArraySlice(key.components(separatedBy: ".")), dictionary: JSON)
+		if mappingType == .fromJSON {
+			// check if a value exists for the current key 
+			// do this pre-check for performance reasons
+			if nested == false {
+				let object = JSON[key]
+				let isNSNull = object is NSNull
+				isKeyPresent = isNSNull ? true : object != nil
+				currentValue = isNSNull ? nil : object
+			} else {
+				// break down the components of the key that are separated by .
+				(isKeyPresent, currentValue) = valueFor(ArraySlice(key.components(separatedBy: delimiter)), dictionary: JSON)
+			}
+			
+			// update isKeyPresent if ignoreNil is true
+			if ignoreNil && currentValue == nil {
+				isKeyPresent = false
+			}
 		}
-		
-		// update isKeyPresent if ignoreNil is true
-        if ignoreNil && currentValue == nil {
-            isKeyPresent = false
-        }
 		
 		return self
 	}
 	
-	// MARK: Immutable Mapping
-	
 	public func value<T>() -> T? {
 		return currentValue as? T
 	}
-	
-	public func valueOr<T>( _ defaultValue: @autoclosure() -> T) -> T {
-		return value() ?? defaultValue()
-	}
-	
-	/// Returns current JSON value of type `T` if it is existing, or returns a
-	/// unusable proxy value for `T` and collects failed count.
-	public func valueOrFail<T>() -> T {
-		if let value: T = value() {
-			return value
-		} else {
-			// Collects failed count
-			failedCount += 1
-			
-			// Returns dummy memory as a proxy for type `T`
-			let pointer = UnsafeMutablePointer<T>.allocate(capacity: 0)
-			pointer.deallocate(capacity: 0)
-			return pointer.pointee
-		}
-	}
-	
-	/// Returns whether the receiver is success or failure.
-	public var isValid: Bool {
-		return failedCount == 0
-	}
+
 }
 
 /// Fetch value from JSON dictionary, loop through keyPathComponents until we reach the desired object
@@ -142,10 +136,10 @@ private func valueFor(_ keyPathComponents: ArraySlice<String>, dictionary: [Stri
 		let object = dictionary[keyPath]
 		if object is NSNull {
 			return (true, nil)
-		} else if let dict = object as? [String: Any] , keyPathComponents.count > 1 {
+		} else if keyPathComponents.count > 1, let dict = object as? [String: Any] {
 			let tail = keyPathComponents.dropFirst()
 			return valueFor(tail, dictionary: dict)
-		} else if let array = object as? [Any] , keyPathComponents.count > 1 {
+		} else if keyPathComponents.count > 1, let array = object as? [Any] {
 			let tail = keyPathComponents.dropFirst()
 			return valueFor(tail, array: array)
 		} else {
@@ -168,19 +162,19 @@ private func valueFor(_ keyPathComponents: ArraySlice<String>, array: [Any]) -> 
 	if let keyPath = keyPathComponents.first,
 		let index = Int(keyPath) , index >= 0 && index < array.count {
 			
-			let object = array[index]
-			
-			if object is NSNull {
-				return (true, nil)
-			} else if let array = object as? [Any] , keyPathComponents.count > 1 {
-				let tail = keyPathComponents.dropFirst()
-				return valueFor(tail, array: array)
-			} else if let dict = object as? [String: Any] , keyPathComponents.count > 1 {
-				let tail = keyPathComponents.dropFirst()
-				return valueFor(tail, dictionary: dict)
-			} else {
-				return (true, object)
-			}
+		let object = array[index]
+		
+		if object is NSNull {
+			return (true, nil)
+		} else if keyPathComponents.count > 1, let array = object as? [Any]  {
+			let tail = keyPathComponents.dropFirst()
+			return valueFor(tail, array: array)
+		} else if  keyPathComponents.count > 1, let dict = object as? [String: Any] {
+			let tail = keyPathComponents.dropFirst()
+			return valueFor(tail, dictionary: dict)
+		} else {
+			return (true, object)
+		}
 	}
 	
 	return (false, nil)

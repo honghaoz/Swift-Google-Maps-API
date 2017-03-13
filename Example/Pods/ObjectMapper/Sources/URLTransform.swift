@@ -1,12 +1,12 @@
 //
-//  DateTransform.swift
+//  URLTransform.swift
 //  ObjectMapper
 //
-//  Created by Tristan Himmelman on 2014-10-13.
+//  Created by Tristan Himmelman on 2014-10-27.
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014-2015 Hearst
+//  Copyright (c) 2014-2016 Hearst
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,27 +28,37 @@
 
 import Foundation
 
-open class DateTransform: TransformType {
-	public typealias Object = Date
-	public typealias JSON = Double
+open class URLTransform: TransformType {
+	public typealias Object = URL
+	public typealias JSON = String
+	private let shouldEncodeURLString: Bool
 
-	public init() {}
-
-	public func transformFromJSON(_ value: Any?) -> Date? {
-		if let timeInt = value as? Double {
-			return Date(timeIntervalSince1970: TimeInterval(timeInt))
-		}
-		
-		if let timeStr = value as? String {
-			return Date(timeIntervalSince1970: TimeInterval(atof(timeStr)))
-		}
-		
-		return nil
+	/**
+	Initializes the URLTransform with an option to encode URL strings before converting them to an NSURL
+	- parameter shouldEncodeUrlString: when true (the default) the string is encoded before passing
+	to `NSURL(string:)`
+	- returns: an initialized transformer
+	*/
+	public init(shouldEncodeURLString: Bool = true) {
+		self.shouldEncodeURLString = shouldEncodeURLString
 	}
 
-	public func transformToJSON(_ value: Date?) -> Double? {
-		if let date = value {
-			return Double(date.timeIntervalSince1970)
+	open func transformFromJSON(_ value: Any?) -> URL? {
+		guard let URLString = value as? String else { return nil }
+		
+		if !shouldEncodeURLString {
+			return URL(string: URLString)
+		}
+		
+		guard let escapedURLString = URLString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else {
+			return nil
+		}
+		return URL(string: escapedURLString)
+	}
+
+	open func transformToJSON(_ value: URL?) -> String? {
+		if let URL = value {
+			return URL.absoluteString
 		}
 		return nil
 	}

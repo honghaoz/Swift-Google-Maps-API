@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GooglePlacesAPI"
-  s.version          = "1.1.1"
+  s.version          = "1.1.2"
   s.summary          = "Swift Wrapper on Google Places API"
   s.description      = <<-DESC
                        Swift Wrapper on Google Places API
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source_files     = "Source/Core/**/*.*", "Source/Google Places API/**/*.*"
   s.module_name      = "GooglePlacesAPI"
 
-  s.dependency 'Alamofire', '~> 4.0'
-  s.dependency 'ObjectMapper', '~> 2.0'
+  s.dependency 'Alamofire', '~> 4'
+  s.dependency 'ObjectMapper', '~> 2'
 
 end

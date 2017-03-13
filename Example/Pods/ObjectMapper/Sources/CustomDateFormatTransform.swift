@@ -1,12 +1,12 @@
 //
-//  DateFormatterTransform.swift
+//  CustomDateFormatTransform.swift
 //  ObjectMapper
 //
-//  Created by Tristan Himmelman on 2015-03-09.
+//  Created by Dan McCracken on 3/8/15.
 //
 //  The MIT License (MIT)
 //
-//  Copyright (c) 2014-2015 Hearst
+//  Copyright (c) 2014-2016 Hearst
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,27 +28,13 @@
 
 import Foundation
 
-open class DateFormatterTransform: TransformType {
-	public typealias Object = Date
-	public typealias JSON = String
+open class CustomDateFormatTransform: DateFormatterTransform {
 	
-	let dateFormatter: DateFormatter
-	
-	public init(dateFormatter: DateFormatter) {
-		self.dateFormatter = dateFormatter
-	}
-	
-	public func transformFromJSON(_ value: Any?) -> Date? {
-		if let dateString = value as? String {
-			return dateFormatter.date(from: dateString)
-		}
-		return nil
-	}
-	
-	public func transformToJSON(_ value: Date?) -> String? {
-		if let date = value {
-			return dateFormatter.string(from: date)
-		}
-		return nil
-	}
+    public init(formatString: String) {
+		let formatter = DateFormatter()
+		formatter.locale = Locale(identifier: "en_US_POSIX")
+		formatter.dateFormat = formatString
+		
+		super.init(dateFormatter: formatter)
+    }
 }

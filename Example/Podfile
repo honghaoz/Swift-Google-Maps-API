@@ -5,7 +5,7 @@ target 'Example' do
   use_frameworks!
 
   pod 'GoogleMaps'
-  pod 'GoogleMapsDirections'
-  pod 'GooglePlacesAPI'
+  pod 'GoogleMapsDirections', :path => '../GoogleMapsDirections.podspec'
+  pod 'GooglePlacesAPI', :path => '../GooglePlacesAPI.podspec'
 
 end

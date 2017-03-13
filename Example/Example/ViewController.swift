@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             // Check Status Code
             guard response?.status == GoogleMapsDirections.StatusCode.ok else {
                 // Status Code is Not OK
-                debugPrint(response?.errorMessage)
+                debugPrint(response?.errorMessage ?? "")
                 return
             }
             
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
             // Check Status Code
             guard response?.status == GooglePlaces.StatusCode.ok else {
                 // Status Code is Not OK
-                debugPrint(response?.errorMessage)
+                debugPrint(response?.errorMessage ?? "")
                 return
             }
             
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
             // Check Status Code
             guard response?.status == GooglePlaces.StatusCode.ok else {
                 // Status Code is Not OK
-                debugPrint(response?.errorMessage)
+                debugPrint(response?.errorMessage ?? "")
                 return
             }
             
