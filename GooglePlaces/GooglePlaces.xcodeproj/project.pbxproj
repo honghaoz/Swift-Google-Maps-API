@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023157111C79065D003370A2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEAE1C6ECE0F008413ED /* Alamofire.framework */; };
-		023157121C790662003370A2 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEC61C6ECE16008413ED /* ObjectMapper.framework */; };
 		023157131C79066A003370A2 /* GooglePlaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DDFE8C1C6ECDE7008413ED /* GooglePlaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		023157141C79066B003370A2 /* GooglePlaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DDFE8C1C6ECDE7008413ED /* GooglePlaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		023157151C79066C003370A2 /* GooglePlaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DDFE8C1C6ECDE7008413ED /* GooglePlaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,8 +36,6 @@
 		02929E7C1C74DC3000038F9D /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF111C6ED0D2008413ED /* GooglePlaces.swift */; };
 		02929E7D1C74DC3000038F9D /* PlaceAutocompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF401C6FE301008413ED /* PlaceAutocompleteResponse.swift */; };
 		02929E7E1C74DC3300038F9D /* PlaceAutocompleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFE981C6ECDE7008413ED /* PlaceAutocompleteTests.swift */; };
-		02929E7F1C74DC9600038F9D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEAE1C6ECE0F008413ED /* Alamofire.framework */; };
-		02929E801C74DC9D00038F9D /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEC61C6ECE16008413ED /* ObjectMapper.framework */; };
 		02DDFE8D1C6ECDE7008413ED /* GooglePlaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DDFE8C1C6ECDE7008413ED /* GooglePlaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02DDFE941C6ECDE7008413ED /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE891C6ECDE7008413ED /* GooglePlaces.framework */; };
 		02DDFE991C6ECDE7008413ED /* PlaceAutocompleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFE981C6ECDE7008413ED /* PlaceAutocompleteTests.swift */; };
@@ -52,8 +48,6 @@
 		02E599221CD68A89000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
 		02E599311CD68A8A000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
 		02E599321CD68A8B000867EE /* PlaceDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231573D1C791116003370A2 /* PlaceDetailsResponse.swift */; };
-		02E5993E1CD68C2D000867EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEB61C6ECE0F008413ED /* Alamofire.framework */; };
-		02E599461CD68C37000867EE /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFECC1C6ECE16008413ED /* ObjectMapper.framework */; };
 		02EDBE2C1C781BA600C92D1E /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EDBE221C781BA600C92D1E /* GooglePlaces.framework */; };
 		02EDBE471C781C1900C92D1E /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEFD1C6ED050008413ED /* SharedTypes.swift */; };
 		02EDBE481C781C1900C92D1E /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF231C6ED19E008413ED /* GoogleMapsService.swift */; };
@@ -62,11 +56,72 @@
 		02EDBE4B1C781C1C00C92D1E /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF111C6ED0D2008413ED /* GooglePlaces.swift */; };
 		02EDBE4C1C781C1C00C92D1E /* PlaceAutocompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF401C6FE301008413ED /* PlaceAutocompleteResponse.swift */; };
 		02EDBE4D1C781C2100C92D1E /* PlaceAutocompleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFE981C6ECDE7008413ED /* PlaceAutocompleteTests.swift */; };
-		02F845311C70342A00069928 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEAE1C6ECE0F008413ED /* Alamofire.framework */; };
-		02F845391C70342D00069928 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFEC61C6ECE16008413ED /* ObjectMapper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		022A24FC217931570019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEBB1C6ECE15008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AAC8F7519F03C2900E7A677;
+			remoteInfo = "ObjectMapper-iOS";
+		};
+		022A250E217931570019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEBB1C6ECE15008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DBB9B41F2142A25100078E5A;
+			remoteInfo = "ObjectMapper-Mac-Static";
+		};
+		022A2510217931670019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEA31C6ECE0F008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		022A25122179316D0019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEA31C6ECE0F008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DD67C0A1A5C55C900ED2280;
+			remoteInfo = "Alamofire macOS";
+		};
+		022A2514217931760019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEBB1C6ECE15008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1602FE1AC023D5000CD69A;
+			remoteInfo = "ObjectMapper-Mac";
+		};
+		022A2516217931810019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEA31C6ECE0F008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CF626EE1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		022A2518217931850019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEBB1C6ECE15008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A05B7A51BE274BE00F19B53;
+			remoteInfo = "ObjectMapper-tvOS";
+		};
+		022A251A2179318C0019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEA31C6ECE0F008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4202FCD1B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		022A251C2179318F0019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFEBB1C6ECE15008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A2AD03C1B2C78540097E150;
+			remoteInfo = "ObjectMapper-watchOS";
+		};
 		02929E501C74DB5000038F9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 02DDFE801C6ECDE7008413ED /* Project object */;
@@ -219,8 +274,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				023157121C790662003370A2 /* ObjectMapper.framework in Frameworks */,
-				023157111C79065D003370A2 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +281,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02929E801C74DC9D00038F9D /* ObjectMapper.framework in Frameworks */,
-				02929E7F1C74DC9600038F9D /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,8 +296,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F845391C70342D00069928 /* ObjectMapper.framework in Frameworks */,
-				02F845311C70342A00069928 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +311,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E599461CD68C37000867EE /* ObjectMapper.framework in Frameworks */,
-				02E5993E1CD68C2D000867EE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +404,7 @@
 				02DDFECE1C6ECE16008413ED /* ObjectMapper-iOSTests.xctest */,
 				02DDFED01C6ECE16008413ED /* ObjectMapper-MacTests.xctest */,
 				02DDFED21C6ECE16008413ED /* ObjectMapper-tvOSTests.xctest */,
+				022A250F217931570019BEE8 /* libObjectMapper.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -435,6 +483,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A251D2179318F0019BEE8 /* PBXTargetDependency */,
+				022A251B2179318C0019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GooglePlaces watchOS";
 			productName = "GooglePlaces watchOS";
@@ -453,6 +503,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A2515217931760019BEE8 /* PBXTargetDependency */,
+				022A25132179316D0019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GooglePlaces OSX";
 			productName = "GooglePlaces OSX";
@@ -489,6 +541,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A2511217931670019BEE8 /* PBXTargetDependency */,
+				022A24FD217931570019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GooglePlaces iOS";
 			productName = GooglePlaces;
@@ -525,6 +579,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A2519217931850019BEE8 /* PBXTargetDependency */,
+				022A2517217931810019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GooglePlaces tvOS";
 			productName = "GooglePlaces tvOS";
@@ -618,6 +674,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		022A250F217931570019BEE8 /* libObjectMapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libObjectMapper.a;
+			remoteRef = 022A250E217931570019BEE8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		02DDFEAE1C6ECE0F008413ED /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -865,6 +928,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		022A24FD217931570019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-iOS";
+			targetProxy = 022A24FC217931570019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2511217931670019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 022A2510217931670019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A25132179316D0019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire macOS";
+			targetProxy = 022A25122179316D0019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2515217931760019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-Mac";
+			targetProxy = 022A2514217931760019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2517217931810019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire tvOS";
+			targetProxy = 022A2516217931810019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2519217931850019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-tvOS";
+			targetProxy = 022A2518217931850019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A251B2179318C0019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire watchOS";
+			targetProxy = 022A251A2179318C0019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A251D2179318F0019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-watchOS";
+			targetProxy = 022A251C2179318F0019BEE8 /* PBXContainerItemProxy */;
+		};
 		02929E511C74DB5000038F9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 02929E441C74DB5000038F9D /* GooglePlaces OSX */;

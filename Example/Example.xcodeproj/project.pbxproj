@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					02DDFDE91C6E9DBB008413ED = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = UYW9ZSKZAQ;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -329,6 +330,7 @@
 			baseConfigurationReference = 3A451F48E382EF801E893E6C /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UYW9ZSKZAQ;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.Example;
@@ -342,6 +344,7 @@
 			baseConfigurationReference = D9FCE7B39072DC8E77B9046A /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UYW9ZSKZAQ;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.honghaoz.Example;

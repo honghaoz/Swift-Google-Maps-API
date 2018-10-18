@@ -40,12 +40,6 @@
 		02929DD71C737FF000038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
 		02929DE61C737FF100038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
 		02929DE71C737FF100038F9D /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
-		02DDFE751C6ECAF0008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
-		02DDFE761C6ECAF3008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
-		02DDFE791C6ECAFE008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
-		02DDFE7A1C6ECB01008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
-		02DDFE7B1C6ECB08008413ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE501C6ECADD008413ED /* Alamofire.framework */; };
-		02DDFE7C1C6ECB0B008413ED /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE681C6ECAE5008413ED /* ObjectMapper.framework */; };
 		02DDFEE91C6ECF5A008413ED /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEE81C6ECF5A008413ED /* SharedTypes.swift */; };
 		02DDFEEA1C6ECF5A008413ED /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEE81C6ECF5A008413ED /* SharedTypes.swift */; };
 		02DDFEEB1C6ECF5A008413ED /* SharedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFEE81C6ECF5A008413ED /* SharedTypes.swift */; };
@@ -55,11 +49,72 @@
 		02DDFF2C1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF291C6ED1D9008413ED /* GoogleMapsService.swift */; };
 		02DDFF2D1C6ED1D9008413ED /* GoogleMapsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF291C6ED1D9008413ED /* GoogleMapsService.swift */; };
 		02DDFF511C6FF372008413ED /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DDFF501C6FF372008413ED /* Dictionary+Extensions.swift */; };
-		02E599551CD68CAF000867EE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE541C6ECADD008413ED /* Alamofire.framework */; };
-		02E599561CD68CB4000867EE /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02DDFE6A1C6ECAE5008413ED /* ObjectMapper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		022A251E2179323F0019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE451C6ECADD008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DD67C0A1A5C55C900ED2280;
+			remoteInfo = "Alamofire macOS";
+		};
+		022A25302179323F0019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE5D1C6ECAE5008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DBB9B41F2142A25100078E5A;
+			remoteInfo = "ObjectMapper-Mac-Static";
+		};
+		022A2532217932430019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE5D1C6ECAE5008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CD1602FE1AC023D5000CD69A;
+			remoteInfo = "ObjectMapper-Mac";
+		};
+		022A2534217932500019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE451C6ECADD008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		022A2536217932520019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE5D1C6ECAE5008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AAC8F7519F03C2900E7A677;
+			remoteInfo = "ObjectMapper-iOS";
+		};
+		022A2538217932590019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE5D1C6ECAE5008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A05B7A51BE274BE00F19B53;
+			remoteInfo = "ObjectMapper-tvOS";
+		};
+		022A253A2179325F0019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE451C6ECADD008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CF626EE1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		022A253C217932660019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE451C6ECADD008413ED /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4202FCD1B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		022A253E217932690019BEE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02DDFE5D1C6ECAE5008413ED /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A2AD03C1B2C78540097E150;
+			remoteInfo = "ObjectMapper-watchOS";
+		};
 		027038C01C6E648C0057C4EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 027038AB1C6E648C0057C4EE /* Project object */;
@@ -210,8 +265,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02DDFE761C6ECAF3008413ED /* ObjectMapper.framework in Frameworks */,
-				02DDFE751C6ECAF0008413ED /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +280,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E599561CD68CB4000867EE /* ObjectMapper.framework in Frameworks */,
-				02E599551CD68CAF000867EE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +295,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02DDFE7A1C6ECB01008413ED /* ObjectMapper.framework in Frameworks */,
-				02DDFE791C6ECAFE008413ED /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +310,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02DDFE7C1C6ECB0B008413ED /* ObjectMapper.framework in Frameworks */,
-				02DDFE7B1C6ECB08008413ED /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +405,7 @@
 				02DDFE701C6ECAE5008413ED /* ObjectMapper-iOSTests.xctest */,
 				02DDFE721C6ECAE5008413ED /* ObjectMapper-MacTests.xctest */,
 				02DDFE741C6ECAE5008413ED /* ObjectMapper-tvOSTests.xctest */,
+				022A25312179323F0019BEE8 /* libObjectMapper.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,6 +472,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A2537217932520019BEE8 /* PBXTargetDependency */,
+				022A2535217932500019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GoogleMapsDirections iOS";
 			productName = GoogleMapsDirections;
@@ -460,6 +510,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A2533217932430019BEE8 /* PBXTargetDependency */,
+				022A251F2179323F0019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GoogleMapsDirections OSX";
 			productName = "GoogleMapsDirections OSX";
@@ -496,6 +548,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A253B2179325F0019BEE8 /* PBXTargetDependency */,
+				022A2539217932590019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GoogleMapsDirections tvOS";
 			productName = "GoogleMapsDirections tvOS";
@@ -532,6 +586,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				022A253F217932690019BEE8 /* PBXTargetDependency */,
+				022A253D217932660019BEE8 /* PBXTargetDependency */,
 			);
 			name = "GoogleMapsDirections watchOS";
 			productName = "GoogleMapsDirections watchOS";
@@ -607,6 +663,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		022A25312179323F0019BEE8 /* libObjectMapper.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libObjectMapper.a;
+			remoteRef = 022A25302179323F0019BEE8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		02DDFE501C6ECADD008413ED /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -847,6 +910,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		022A251F2179323F0019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire macOS";
+			targetProxy = 022A251E2179323F0019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2533217932430019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-Mac";
+			targetProxy = 022A2532217932430019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2535217932500019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 022A2534217932500019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2537217932520019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-iOS";
+			targetProxy = 022A2536217932520019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A2539217932590019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-tvOS";
+			targetProxy = 022A2538217932590019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A253B2179325F0019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire tvOS";
+			targetProxy = 022A253A2179325F0019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A253D217932660019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire watchOS";
+			targetProxy = 022A253C217932660019BEE8 /* PBXContainerItemProxy */;
+		};
+		022A253F217932690019BEE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-watchOS";
+			targetProxy = 022A253E217932690019BEE8 /* PBXContainerItemProxy */;
+		};
 		027038C11C6E648C0057C4EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 027038B31C6E648C0057C4EE /* GoogleMapsDirections iOS */;
