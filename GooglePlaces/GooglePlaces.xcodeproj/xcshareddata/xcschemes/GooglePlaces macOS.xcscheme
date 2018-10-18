@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02929E441C74DB5000038F9D"
                BuildableName = "GooglePlaces.framework"
-               BlueprintName = "GooglePlaces OSX"
+               BlueprintName = "GooglePlaces macOS"
                ReferencedContainer = "container:GooglePlaces.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,7 +34,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02929E4D1C74DB5000038F9D"
                BuildableName = "GooglePlacesTests.xctest"
-               BlueprintName = "GooglePlacesTests OSX"
+               BlueprintName = "GooglePlacesTests macOS"
                ReferencedContainer = "container:GooglePlaces.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02929E441C74DB5000038F9D"
             BuildableName = "GooglePlaces.framework"
-            BlueprintName = "GooglePlaces OSX"
+            BlueprintName = "GooglePlaces macOS"
             ReferencedContainer = "container:GooglePlaces.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02929E441C74DB5000038F9D"
             BuildableName = "GooglePlaces.framework"
-            BlueprintName = "GooglePlaces OSX"
+            BlueprintName = "GooglePlaces macOS"
             ReferencedContainer = "container:GooglePlaces.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02929E441C74DB5000038F9D"
             BuildableName = "GooglePlaces.framework"
-            BlueprintName = "GooglePlaces OSX"
+            BlueprintName = "GooglePlaces macOS"
             ReferencedContainer = "container:GooglePlaces.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

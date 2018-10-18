@@ -498,9 +498,9 @@
 			productReference = 027038BE1C6E648C0057C4EE /* GoogleMapsDirectionsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0270393C1C6E6A200057C4EE /* GoogleMapsDirections OSX */ = {
+		0270393C1C6E6A200057C4EE /* GoogleMapsDirections macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0270394E1C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirections OSX" */;
+			buildConfigurationList = 0270394E1C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirections macOS" */;
 			buildPhases = (
 				027039381C6E6A200057C4EE /* Sources */,
 				027039391C6E6A200057C4EE /* Frameworks */,
@@ -513,14 +513,14 @@
 				022A2533217932430019BEE8 /* PBXTargetDependency */,
 				022A251F2179323F0019BEE8 /* PBXTargetDependency */,
 			);
-			name = "GoogleMapsDirections OSX";
+			name = "GoogleMapsDirections macOS";
 			productName = "GoogleMapsDirections OSX";
 			productReference = 0270393D1C6E6A200057C4EE /* GoogleMapsDirections.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		027039451C6E6A200057C4EE /* GoogleMapsDirectionsTests OSX */ = {
+		027039451C6E6A200057C4EE /* GoogleMapsDirectionsTests macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 027039511C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirectionsTests OSX" */;
+			buildConfigurationList = 027039511C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirectionsTests macOS" */;
 			buildPhases = (
 				027039421C6E6A200057C4EE /* Sources */,
 				027039431C6E6A200057C4EE /* Frameworks */,
@@ -531,7 +531,7 @@
 			dependencies = (
 				027039491C6E6A200057C4EE /* PBXTargetDependency */,
 			);
-			name = "GoogleMapsDirectionsTests OSX";
+			name = "GoogleMapsDirectionsTests macOS";
 			productName = "GoogleMapsDirections OSXTests";
 			productReference = 027039461C6E6A200057C4EE /* GoogleMapsDirectionsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -653,8 +653,8 @@
 			targets = (
 				027038B31C6E648C0057C4EE /* GoogleMapsDirections iOS */,
 				027038BD1C6E648C0057C4EE /* GoogleMapsDirectionsTests iOS */,
-				0270393C1C6E6A200057C4EE /* GoogleMapsDirections OSX */,
-				027039451C6E6A200057C4EE /* GoogleMapsDirectionsTests OSX */,
+				0270393C1C6E6A200057C4EE /* GoogleMapsDirections macOS */,
+				027039451C6E6A200057C4EE /* GoogleMapsDirectionsTests macOS */,
 				027039581C6E6A330057C4EE /* GoogleMapsDirections tvOS */,
 				027039611C6E6A330057C4EE /* GoogleMapsDirectionsTests tvOS */,
 				027039741C6E6A3B0057C4EE /* GoogleMapsDirections watchOS */,
@@ -957,7 +957,7 @@
 		};
 		027039491C6E6A200057C4EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0270393C1C6E6A200057C4EE /* GoogleMapsDirections OSX */;
+			target = 0270393C1C6E6A200057C4EE /* GoogleMapsDirections macOS */;
 			targetProxy = 027039481C6E6A200057C4EE /* PBXContainerItemProxy */;
 		};
 		027039651C6E6A330057C4EE /* PBXTargetDependency */ = {
@@ -1097,7 +1097,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -1119,7 +1118,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOS";
 				PRODUCT_NAME = GoogleMapsDirections;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -1372,7 +1370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0270394E1C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirections OSX" */ = {
+		0270394E1C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirections macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0270394F1C6E6A200057C4EE /* Debug */,
@@ -1381,7 +1379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		027039511C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirectionsTests OSX" */ = {
+		027039511C6E6A200057C4EE /* Build configuration list for PBXNativeTarget "GoogleMapsDirectionsTests macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				027039521C6E6A200057C4EE /* Debug */,

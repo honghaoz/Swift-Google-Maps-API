@@ -1,7 +1,7 @@
 # Reference: https://github.com/pinterest/PINRemoteImage/blob/master/.travis.yml
 #            https://github.com/Alamofire/Alamofire/blob/master/.travis.yml
 language: objective-c
-osx_image: xcode8
+osx_image: xcode10
 env:
   global:
     - LC_CTYPE=en_US.UTF-8
@@ -10,46 +10,47 @@ env:
     - WORKSPACE=GoogleMaps.xcworkspace
 
     - DIRECTIONS_IOS_FRAMEWORK_SCHEME="GoogleMapsDirections iOS"
-    - DIRECTIONS_OSX_FRAMEWORK_SCHEME="GoogleMapsDirections OSX"
+    - DIRECTIONS_OSX_FRAMEWORK_SCHEME="GoogleMapsDirections macOS"
     - DIRECTIONS_TVOS_FRAMEWORK_SCHEME="GoogleMapsDirections tvOS"
     - DIRECTIONS_WATCHOS_FRAMEWORK_SCHEME="GoogleMapsDirections watchOS"
 
     - PLACES_IOS_FRAMEWORK_SCHEME="GooglePlaces iOS"
-    - PLACES_OSX_FRAMEWORK_SCHEME="GooglePlaces OSX"
+    - PLACES_OSX_FRAMEWORK_SCHEME="GooglePlaces macOS"
     - PLACES_TVOS_FRAMEWORK_SCHEME="GooglePlaces tvOS"
     - PLACES_WATCHOS_FRAMEWORK_SCHEME="GooglePlaces watchOS"
-
-    - IOS_SDK=iphonesimulator10.0
-    - OSX_SDK=macosx10.12
-    - TVOS_SDK=appletvsimulator10.0
-    - WATCHOS_SDK=watchsimulator3.0
 
     - EXAMPLE_SCHEME="iOS Example"
 
   matrix:
     # Directions
-    - DESTINATION="OS=3.0,name=Apple Watch - 42mm" SCHEME="$DIRECTIONS_WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
-    - DESTINATION="OS=2.0,name=Apple Watch - 42mm" SCHEME="$DIRECTIONS_WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" RUN_TESTS="NO"
+    - DESTINATION="OS=4.2,name=Apple Watch - 42mm" SCHEME="$DIRECTIONS_WATCHOS_FRAMEWORK_SCHEME" RUN_TESTS="NO"
+    - DESTINATION="OS=3.2,name=Apple Watch - 42mm" SCHEME="$DIRECTIONS_WATCHOS_FRAMEWORK_SCHEME" RUN_TESTS="NO"
+    - DESTINATION="OS=2.2,name=Apple Watch - 42mm" SCHEME="$DIRECTIONS_WATCHOS_FRAMEWORK_SCHEME" RUN_TESTS="NO"
 
-    - DESTINATION="OS=10.0,name=iPhone 7 Plus"     SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
-    - DESTINATION="OS=9.0,name=iPhone 5"           SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"
+    - DESTINATION="OS=11.4,name=iPhone X"          SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
+    - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"   SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
+    - DESTINATION="OS=9.3,name=iPhone 6"           SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
 
-    - DESTINATION="OS=10.0,name=Apple TV 1080p"    SCHEME="$DIRECTIONS_TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
-    - DESTINATION="OS=9.0,name=Apple TV 1080p"     SCHEME="$DIRECTIONS_TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    RUN_TESTS="YES"
+    - DESTINATION="OS=11.4,name=Apple TV 4K"       SCHEME="$DIRECTIONS_TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"
+    - DESTINATION="OS=10.2,name=Apple TV 1080p"    SCHEME="$DIRECTIONS_TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"
+    - DESTINATION="OS=9.2,name=Apple TV 1080p"     SCHEME="$DIRECTIONS_TVOS_FRAMEWORK_SCHEME"    RUN_TESTS="YES"
 
-    - DESTINATION="arch=x86_64"                    SCHEME="$DIRECTIONS_OSX_FRAMEWORK_SCHEME"     SDK="$OSX_SDK"     RUN_TESTS="YES"
+    - DESTINATION="arch=x86_64"                    SCHEME="$DIRECTIONS_OSX_FRAMEWORK_SCHEME"     RUN_TESTS="YES"
 
     # Places
-    - DESTINATION="OS=3.0,name=Apple Watch - 42mm" SCHEME="$PLACES_WATCHOS_FRAMEWORK_SCHEME"     SDK="$WATCHOS_SDK" RUN_TESTS="NO"
-    - DESTINATION="OS=2.0,name=Apple Watch - 42mm" SCHEME="$PLACES_WATCHOS_FRAMEWORK_SCHEME"     SDK="$WATCHOS_SDK" RUN_TESTS="NO"
+    - DESTINATION="OS=4.2,name=Apple Watch - 42mm" SCHEME="$PLACES_WATCHOS_FRAMEWORK_SCHEME"     RUN_TESTS="NO"
+    - DESTINATION="OS=3.2,name=Apple Watch - 42mm" SCHEME="$PLACES_WATCHOS_FRAMEWORK_SCHEME"     RUN_TESTS="NO"
+    - DESTINATION="OS=2.2,name=Apple Watch - 42mm" SCHEME="$PLACES_WATCHOS_FRAMEWORK_SCHEME"     RUN_TESTS="NO"
 
-    - DESTINATION="OS=10.0,name=iPhone 7 Plus"     SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"         SDK="$IOS_SDK"     RUN_TESTS="YES"
-    - DESTINATION="OS=9.0,name=iPhone 5"           SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"         SDK="$IOS_SDK"     RUN_TESTS="YES"
+    - DESTINATION="OS=11.4,name=iPhone X"          SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"         RUN_TESTS="YES"
+    - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"   SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"         RUN_TESTS="YES"
+    - DESTINATION="OS=9.3,name=iPhone 6"           SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"         RUN_TESTS="YES"
 
-    - DESTINATION="OS=10.0,name=Apple TV 1080p"    SCHEME="$PLACES_TVOS_FRAMEWORK_SCHEME"        SDK="$TVOS_SDK"    RUN_TESTS="YES"
-    - DESTINATION="OS=9.0,name=Apple TV 1080p"     SCHEME="$PLACES_TVOS_FRAMEWORK_SCHEME"        SDK="$TVOS_SDK"    RUN_TESTS="YES"
+    - DESTINATION="OS=11.4,name=Apple TV 4K"       SCHEME="$PLACES_TVOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
+    - DESTINATION="OS=10.2,name=Apple TV 1080p"    SCHEME="$PLACES_TVOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
+    - DESTINATION="OS=9.2,name=Apple TV 1080p"     SCHEME="$PLACES_TVOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
 
-    - DESTINATION="arch=x86_64"                    SCHEME="$PLACES_OSX_FRAMEWORK_SCHEME"         SDK="$OSX_SDK"     RUN_TESTS="YES"
+    - DESTINATION="arch=x86_64"                    SCHEME="$PLACES_OSX_FRAMEWORK_SCHEME"         RUN_TESTS="YES"
 
 before_install:
   - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
@@ -62,14 +63,14 @@ script:
 
   # Build Framework in Debug and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
     else
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
     fi
 
   # Build Framework in Release and Run Tests if specified
   - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
     else
-      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty -c;
+      xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty;
     fi

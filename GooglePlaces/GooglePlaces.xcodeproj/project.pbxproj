@@ -491,9 +491,9 @@
 			productReference = 023156FB1C7905E3003370A2 /* GooglePlaces.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		02929E441C74DB5000038F9D /* GooglePlaces OSX */ = {
+		02929E441C74DB5000038F9D /* GooglePlaces macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02929E681C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlaces OSX" */;
+			buildConfigurationList = 02929E681C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlaces macOS" */;
 			buildPhases = (
 				02929E401C74DB5000038F9D /* Sources */,
 				02929E411C74DB5000038F9D /* Frameworks */,
@@ -506,14 +506,14 @@
 				022A2515217931760019BEE8 /* PBXTargetDependency */,
 				022A25132179316D0019BEE8 /* PBXTargetDependency */,
 			);
-			name = "GooglePlaces OSX";
+			name = "GooglePlaces macOS";
 			productName = "GooglePlaces OSX";
 			productReference = 02929E451C74DB5000038F9D /* GooglePlaces.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		02929E4D1C74DB5000038F9D /* GooglePlacesTests OSX */ = {
+		02929E4D1C74DB5000038F9D /* GooglePlacesTests macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 02929E691C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlacesTests OSX" */;
+			buildConfigurationList = 02929E691C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlacesTests macOS" */;
 			buildPhases = (
 				02929E4A1C74DB5000038F9D /* Sources */,
 				02929E4B1C74DB5000038F9D /* Frameworks */,
@@ -524,7 +524,7 @@
 			dependencies = (
 				02929E511C74DB5000038F9D /* PBXTargetDependency */,
 			);
-			name = "GooglePlacesTests OSX";
+			name = "GooglePlacesTests macOS";
 			productName = "GooglePlaces OSXTests";
 			productReference = 02929E4E1C74DB5000038F9D /* GooglePlacesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -664,8 +664,8 @@
 			targets = (
 				02DDFE881C6ECDE7008413ED /* GooglePlaces iOS */,
 				02DDFE921C6ECDE7008413ED /* GooglePlacesTests iOS */,
-				02929E441C74DB5000038F9D /* GooglePlaces OSX */,
-				02929E4D1C74DB5000038F9D /* GooglePlacesTests OSX */,
+				02929E441C74DB5000038F9D /* GooglePlaces macOS */,
+				02929E4D1C74DB5000038F9D /* GooglePlacesTests macOS */,
 				02EDBE211C781BA600C92D1E /* GooglePlaces tvOS */,
 				02EDBE2A1C781BA600C92D1E /* GooglePlaces tvOSTests */,
 				023156FA1C7905E3003370A2 /* GooglePlaces watchOS */,
@@ -970,7 +970,7 @@
 		};
 		02929E511C74DB5000038F9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 02929E441C74DB5000038F9D /* GooglePlaces OSX */;
+			target = 02929E441C74DB5000038F9D /* GooglePlaces macOS */;
 			targetProxy = 02929E501C74DB5000038F9D /* PBXContainerItemProxy */;
 		};
 		02DDFE961C6ECDE7008413ED /* PBXTargetDependency */ = {
@@ -1369,7 +1369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02929E681C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlaces OSX" */ = {
+		02929E681C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlaces macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02929E561C74DB5000038F9D /* Debug */,
@@ -1378,7 +1378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		02929E691C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlacesTests OSX" */ = {
+		02929E691C74DB5000038F9D /* Build configuration list for PBXNativeTarget "GooglePlacesTests macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				02929E581C74DB5000038F9D /* Debug */,
