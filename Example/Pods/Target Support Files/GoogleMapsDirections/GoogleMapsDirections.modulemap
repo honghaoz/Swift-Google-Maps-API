@@ -1,6 +1,0 @@
-framework module GoogleMapsDirections {
-  umbrella header "GoogleMapsDirections-umbrella.h"
-
-  export *
-  module * { export * }
-}

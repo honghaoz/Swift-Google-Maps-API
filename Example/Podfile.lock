@@ -1,22 +1,28 @@
 PODS:
-  - Alamofire (4.4.0)
-  - GoogleMaps (2.0.1):
-    - GoogleMaps/Maps (= 2.0.1)
-  - GoogleMaps/Base (2.0.1)
-  - GoogleMaps/Maps (2.0.1):
-    - GoogleMaps/Base (= 2.0.1)
-  - GoogleMapsDirections (1.1.2):
+  - Alamofire (4.7.3)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GoogleMapsDirections (1.1.4):
     - Alamofire (~> 4)
-    - ObjectMapper (~> 2)
-  - GooglePlacesAPI (1.1.2):
+    - ObjectMapper (~> 3)
+  - GooglePlacesAPI (1.1.4):
     - Alamofire (~> 4)
-    - ObjectMapper (~> 2)
-  - ObjectMapper (2.2.5)
+    - ObjectMapper (~> 3)
+  - ObjectMapper (3.3.0)
 
 DEPENDENCIES:
   - GoogleMaps
   - GoogleMapsDirections (from `../GoogleMapsDirections.podspec`)
   - GooglePlacesAPI (from `../GooglePlacesAPI.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - GoogleMaps
+    - ObjectMapper
 
 EXTERNAL SOURCES:
   GoogleMapsDirections:
@@ -25,12 +31,12 @@ EXTERNAL SOURCES:
     :path: "../GooglePlacesAPI.podspec"
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
-  GoogleMapsDirections: 635eefb5b8bf387bd889dd60cda700874236bbb2
-  GooglePlacesAPI: 08de934464c69a5bcbbe7f48f4823d08c23f299c
-  ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GoogleMapsDirections: 7e6b825d50af94cfe47bfd8b0fac9508f760d6a2
+  GooglePlacesAPI: 42600345b9df5b0b7dc2816f953c7cffe163092a
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
 
-PODFILE CHECKSUM: a5d1fbeaa79192101090c10e4e01e510a56da47f
+PODFILE CHECKSUM: 161bb96c63f609f04c7568a1558b0e2c9c0b98a1
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.6.0.beta.1

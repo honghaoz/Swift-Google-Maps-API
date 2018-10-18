@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         }
         
         // Google Places
-        GooglePlaces.provide(apiKey: "A VALID GOOGLE MAPS KEY")
+        GooglePlaces.provide(apiKey: "AIzaSyDftpY3fi6x_TL4rntL8pgZb-A8mf6D0Ss")
         
         GooglePlaces.placeAutocomplete(forInput: "Pub") { (response, error) -> Void in
             // Check Status Code
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             }
             
             // Use .predictions to access response details
-            debugPrint("first matched result: \(response?.predictions.first?.description)")
+            debugPrint("first matched result: \(response?.predictions.first?.description ?? "nil")")
         }
         
         GooglePlaces.placeDetails(forPlaceID: "ChIJb9sw59k0K4gRZZlYrnOomfc") { (response, error) -> Void in
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
             }
             
             // Use .result to access response details
-            debugPrint("the formated address is: \(response?.result?.formattedAddress)")
+            debugPrint("the formated address is: \(response?.result?.formattedAddress ?? "nil")")
         }
     }
 }
