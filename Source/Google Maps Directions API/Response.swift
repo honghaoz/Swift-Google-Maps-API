@@ -376,42 +376,47 @@ public extension GoogleMapsDirections {
 }
 
 // MARK: - Hex Colors
-private extension Color {
+
+public extension Color {
     /**
-     Color(hexString: "#CC0000")
-     
-     - parameter hexString: hexString, e.g. "#CC0000"
-     
-     - returns: Color
+     The rgba string representation of color with alpha of the form #RRGGBBAA/#RRGGBB.
+
+     - parameter hexString: String value represents rgba values.
      */
-    convenience init?(hexString: String) {
+    public convenience init?(hexString: String) {
+        assert(hexString.count == 6)
+
         guard hexString.hasPrefix("#") else {
             return nil
         }
-        guard hexString.characters.count == "#000000".characters.count else {
+
+        let hexString: String = String(hexString[String.Index.init(encodedOffset: 1)...])
+        var hexValue:  UInt32 = 0
+
+        guard Scanner(string: hexString).scanHexInt32(&hexValue) else {
             return nil
         }
-        let digits = hexString.substring(from: hexString.characters.index(hexString.startIndex, offsetBy: 1))
-        guard Int(digits, radix: 16) != nil else {
+
+        switch (hexString.count) {
+        case 6:
+            let divisor = CGFloat(255)
+            let red     = CGFloat((hexValue & 0xFF0000) >> 16) / divisor
+            let green   = CGFloat((hexValue & 0x00FF00) >>  8) / divisor
+            let blue    = CGFloat( hexValue & 0x0000FF       ) / divisor
+            self.init(red: red, green: green, blue: blue, alpha: 1)
+        default:
             return nil
         }
-        let red = digits.substring(to: digits.characters.index(digits.startIndex, offsetBy: 2))
-        let green = digits.substring(with: digits.characters.index(digits.startIndex, offsetBy: 2) ..< digits.characters.index(digits.startIndex, offsetBy: 4))
-        let blue = digits.substring(with: digits.characters.index(digits.startIndex, offsetBy: 4) ..< digits.characters.index(digits.startIndex, offsetBy: 6))
-        let redf = CGFloat(Double(Int(red, radix: 16)!) / 255.0)
-        let greenf = CGFloat(Double(Int(green, radix: 16)!) / 255.0)
-        let bluef = CGFloat(Double(Int(blue, radix: 16)!) / 255.0)
-        self.init(red: redf, green: greenf, blue: bluef, alpha: CGFloat(1.0))
     }
-    
+
     /// Get Hex6 String, e.g. "#CC0000"
     var hexString: String {
         let colorRef = self.cgColor.components
-        
+
         let r: CGFloat = colorRef![0]
         let g: CGFloat = colorRef![1]
         let b: CGFloat = colorRef![2]
-        
+
         return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
     }
 }

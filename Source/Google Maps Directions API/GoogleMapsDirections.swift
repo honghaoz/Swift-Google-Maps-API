@@ -136,7 +136,7 @@ public class GoogleMapsDirections: GoogleMapsService {
             
             switch directionsResponse.status {
             case .none:
-                let userInfo: [AnyHashable: Any] = [
+                let userInfo = [
                     NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "Status Code not found", comment: ""),
                     NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: "Status Code not found", comment: "")
                 ]
@@ -146,43 +146,43 @@ public class GoogleMapsDirections: GoogleMapsService {
                 case .ok:
                     break
                 case .notFound:
-                    let userInfo: [AnyHashable: Any] = [
+                    let userInfo = [
                         NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "At least one of the locations specified in the request's origin, destination, or waypoints could not be geocoded.", comment: ""),
                         NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: directionsResponse.errorMessage ?? "", comment: "")
                     ]
                     error = NSError(domain: "GoogleMapsDirectionsError", code: -5, userInfo: userInfo)
                 case .zeroResults:
-                    let userInfo: [AnyHashable: Any] = [
+                    let userInfo = [
                         NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "No route could be found between the origin and destination.", comment: ""),
                         NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: directionsResponse.errorMessage ?? "", comment: "")
                     ]
                     error = NSError(domain: "GoogleMapsDirectionsError", code: -6, userInfo: userInfo)
                 case .maxWaypointsExceeded:
-                    let userInfo: [AnyHashable: Any] = [
+                    let userInfo = [
                         NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "Too many waypoints were provided in the request. The maximum allowed number of waypoints is 23, plus the origin and destination. (If the request does not include an API key, the maximum allowed number of waypoints is 8.", comment: ""),
                         NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: directionsResponse.errorMessage ?? "", comment: "")
                     ]
                     error = NSError(domain: "GoogleMapsDirectionsError", code: -7, userInfo: userInfo)
                 case .invalidRequest:
-                    let userInfo: [AnyHashable: Any] = [
+                    let userInfo = [
                         NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "Provided request was invalid. Common causes of this status include an invalid parameter or parameter value.", comment: ""),
                         NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: directionsResponse.errorMessage ?? "", comment: "")
                     ]
                     error = NSError(domain: "GoogleMapsDirectionsError", code: -8, userInfo: userInfo)
                 case .overQueryLimit:
-                    let userInfo: [AnyHashable: Any] = [
+                    let userInfo = [
                         NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "Service has received too many requests from your application within the allowed time period.", comment: ""),
                         NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: directionsResponse.errorMessage ?? "", comment: "")
                     ]
                     error = NSError(domain: "GoogleMapsDirectionsError", code: -9, userInfo: userInfo)
                 case .requestDenied:
-                    let userInfo: [AnyHashable: Any] = [
+                    let userInfo = [
                         NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "Service denied use of the directions service by your application.", comment: ""),
                         NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: directionsResponse.errorMessage ?? "", comment: "")
                     ]
                     error = NSError(domain: "GoogleMapsDirectionsError", code: -10, userInfo: userInfo)
                 case .unknownError:
-                    let userInfo: [AnyHashable: Any] = [
+                    let userInfo = [
                         NSLocalizedDescriptionKey : NSLocalizedString("StatusCodeError", value: "A directions request could not be processed due to a server error. The request may succeed if you try again.", comment: ""),
                         NSLocalizedFailureReasonErrorKey : NSLocalizedString("StatusCodeError", value: directionsResponse.errorMessage ?? "", comment: "")
                     ]
