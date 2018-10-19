@@ -1,5 +1,3 @@
-# Reference: https://github.com/pinterest/PINRemoteImage/blob/master/.travis.yml
-#            https://github.com/Alamofire/Alamofire/blob/master/.travis.yml
 language: swift
 osx_image: xcode10
 env:
@@ -25,8 +23,8 @@ env:
     # GoogleMapsDirections
     ## iOS
     - DESTINATION="OS=12.0,name=iPhone XS Max"                 SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
-    - DESTINATION="OS=11.4,name=iPhone SE"                     SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
-    - DESTINATION="OS=10.3.1,name=iPhone 7"                    SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
+    # - DESTINATION="OS=11.4,name=iPhone X"                      SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
+    # - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"               SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
     - DESTINATION="OS=9.3,name=iPhone 6s Plus"                 SCHEME="$DIRECTIONS_IOS_FRAMEWORK_SCHEME"        RUN_TESTS="YES"
          
     ## macOS         
@@ -47,8 +45,8 @@ env:
     # GooglePlaces
     ## iOS
     - DESTINATION="OS=12.0,name=iPhone XS Max"                 SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"            RUN_TESTS="YES"
-    - DESTINATION="OS=11.4,name=iPhone 8 Plus"                 SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"            RUN_TESTS="YES"
-    - DESTINATION="OS=10.3.1,name=iPhone 7"                    SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"            RUN_TESTS="YES"
+    # - DESTINATION="OS=11.4,name=iPhone X"                      SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"            RUN_TESTS="YES"
+    # - DESTINATION="OS=10.3.1,name=iPhone 7 Plus"               SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"            RUN_TESTS="YES"
     - DESTINATION="OS=9.3,name=iPhone 6s Plus"                 SCHEME="$PLACES_IOS_FRAMEWORK_SCHEME"            RUN_TESTS="YES"
              
     ## macOS             
