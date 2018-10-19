@@ -118,8 +118,6 @@ public class GooglePlaces: GoogleMapsService {
         }
         
         pendingRequest = request
-        
-        debugPrint("\(request)")
     }
 }
 
@@ -143,7 +141,7 @@ public extension GooglePlaces {
             requestParameters["language"] = language
         }
         
-        let request = Alamofire.request(placeDetailsURLString, method: .get, parameters: requestParameters).responseJSON { response in
+        Alamofire.request(placeDetailsURLString, method: .get, parameters: requestParameters).responseJSON { response in
             if response.result.isFailure {
                 NSLog("Error: GET failed")
                 completion?(nil, NSError(domain: "GooglePlacesError", code: -1, userInfo: nil))
@@ -193,7 +191,5 @@ public extension GooglePlaces {
             
             completion?(response, error)
         }
-        
-        debugPrint("\(request)")
     }
 }

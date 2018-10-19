@@ -106,7 +106,7 @@ public class GoogleMapsDirections: GoogleMapsService {
             requestParameters["transit_routing_preference"] = transitRoutingPreference.rawValue
         }
         
-        let request = Alamofire.request(baseURLString, method: .get, parameters: requestParameters).responseJSON { response in
+        Alamofire.request(baseURLString, method: .get, parameters: requestParameters).responseJSON { response in
             if response.result.isFailure {
                 NSLog("Error: GET failed")
                 completion?(nil, NSError(domain: "GoogleMapsDirectionsError", code: -1, userInfo: nil))
@@ -192,8 +192,6 @@ public class GoogleMapsDirections: GoogleMapsService {
             
             completion?(directionsResponse, error)
         }
-        
-        debugPrint("\(request)")
     }
 }
 

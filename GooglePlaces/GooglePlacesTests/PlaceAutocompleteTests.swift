@@ -80,7 +80,7 @@ class PlaceAutocompleteTests: XCTestCase {
             }
             
             for prediction in predictions {
-                XCTAssertEqual(prediction.matchedSubstring[0].length, query.characters.count)
+                XCTAssertEqual(prediction.matchedSubstring[0].length, query.count)
                 
                 guard let description = prediction.description,
                     let length = prediction.matchedSubstring[0].length,

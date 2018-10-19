@@ -1129,7 +1129,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -1141,7 +1140,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.honghaoz.GoogleMapsDirections-iOSTests";
 				PRODUCT_NAME = GoogleMapsDirectionsTests;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
